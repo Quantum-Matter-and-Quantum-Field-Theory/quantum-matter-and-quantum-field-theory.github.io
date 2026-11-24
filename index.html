@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101114">
+    <meta
+      name="description"
+      content="The Quantum Matter and Quantum Field Theory group at State University of Londrina, Brazil."
+    >
+    <title>Quantum Matter Group — State University of Londrina</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#home" aria-label="Quantum Matter Group home">
+          <span class="logo-placeholder" aria-hidden="true">
+            <span class="logo-orbit orbit-one"></span>
+            <span class="logo-orbit orbit-two"></span>
+            <span class="logo-core"></span>
+          </span>
+          <span class="brand-copy">
+            <span class="brand-name">Quantum Matter</span>
+            <span class="brand-subtitle">Research group · UEL</span>
+          </span>
+        </a>
+        <a class="university-link" href="https://www.uel.br/">
+          State University of Londrina
+          <span aria-hidden="true">↗</span>
+        </a>
+      </header>
+
+      <main>
+        <section class="hero" id="home" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="status-dot"></span> Physics · Londrina, Brazil</p>
+            <h1 id="hero-title">Exploring the<br><span>quantum universe.</span></h1>
+            <p class="hero-description">
+              We study the fundamental properties of matter and fields, bringing
+              theory and curiosity together to understand the world at its most
+              essential scales.
+            </p>
+            <a class="text-link" href="#panel-research" data-open-tab="research">
+              Discover our research <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="visual-grid"></div>
+            <div class="visual-orbit orbit-large"></div>
+            <div class="visual-orbit orbit-small"></div>
+            <div class="visual-particle particle-one"></div>
+            <div class="visual-particle particle-two"></div>
+            <div class="visual-particle particle-three"></div>
+            <div class="visual-caption">Matter / Energy / Space</div>
+          </div>
+        </section>
+
+        <nav class="section-nav" aria-label="Group information">
+          <div class="tab-list" role="tablist" aria-label="Explore the group">
+            <button class="tab-button is-active" id="tab-about" type="button" role="tab"
+              aria-selected="true" aria-controls="panel-about" tabindex="0" data-tab="about">
+              About
+            </button>
+            <button class="tab-button" id="tab-research" type="button" role="tab"
+              aria-selected="false" aria-controls="panel-research" tabindex="-1" data-tab="research">
+              Research
+            </button>
+            <button class="tab-button" id="tab-members" type="button" role="tab"
+              aria-selected="false" aria-controls="panel-members" tabindex="-1" data-tab="members">
+              Members
+            </button>
+            <button class="tab-button" id="tab-presentations" type="button" role="tab"
+              aria-selected="false" aria-controls="panel-presentations" tabindex="-1" data-tab="presentations">
+              Presentations
+            </button>
+            <button class="tab-button" id="tab-events" type="button" role="tab"
+              aria-selected="false" aria-controls="panel-events" tabindex="-1" data-tab="events">
+              Events
+            </button>
+          </div>
+          <span class="nav-index"><span id="current-index">01</span> / 05</span>
+        </nav>
+
+        <section class="content-panel" id="panel-about" role="tabpanel"
+          aria-labelledby="tab-about" tabindex="0" data-panel="about">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">01 — The group</p>
+              <h2>Curiosity, grounded in physics.</h2>
+            </div>
+            <p class="heading-aside">An open space for ideas, collaboration, and discovery.</p>
+          </div>
+          <div class="about-grid">
+            <p class="about-lead">
+              The Quantum Matter and Quantum Field Theory group brings together
+              researchers at the <strong>State University of Londrina</strong>
+              to investigate the principles that shape matter and the universe.
+            </p>
+            <div class="about-note">
+              <span class="note-mark" aria-hidden="true">↗</span>
+              <p>Based in Londrina, Paraná, Brazil. Contact details for collaboration inquiries will be shared here.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-panel" id="panel-research" role="tabpanel"
+          aria-labelledby="tab-research" tabindex="0" data-panel="research" hidden>
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">02 — Research areas</p>
+              <h2>Questions at every scale.</h2>
+            </div>
+            <p class="heading-aside">Our work connects mathematical ideas with the behavior of physical systems.</p>
+          </div>
+          <div class="topic-grid">
+            <article class="topic-card">
+              <span class="card-number">01</span>
+              <h3>Quantum matter</h3>
+              <p>Collective phenomena and emergent properties in quantum systems.</p>
+              <span class="card-arrow" aria-hidden="true">↗</span>
+            </article>
+            <article class="topic-card">
+              <span class="card-number">02</span>
+              <h3>Quantum field theory</h3>
+              <p>Fields, particles, and the theoretical frameworks that describe them.</p>
+              <span class="card-arrow" aria-hidden="true">↗</span>
+            </article>
+            <article class="topic-card">
+              <span class="card-number">03</span>
+              <h3>Many-body physics</h3>
+              <p>How interactions between many constituents give rise to new physics.</p>
+              <span class="card-arrow" aria-hidden="true">↗</span>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-panel" id="panel-members" role="tabpanel"
+          aria-labelledby="tab-members" tabindex="0" data-panel="members" hidden>
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">03 — People</p>
+              <h2>Meet the group.</h2>
+            </div>
+            <p class="heading-aside">A collaborative community of researchers and students.</p>
+          </div>
+          <div class="empty-state">
+            <span class="empty-icon" aria-hidden="true">✳</span>
+            <div>
+              <h3>Our people, together.</h3>
+              <p>Member profiles and research interests will be shared here.</p>
+            </div>
+            <span class="edit-hint">Add group members here</span>
+          </div>
+        </section>
+
+        <section class="content-panel" id="panel-presentations" role="tabpanel"
+          aria-labelledby="tab-presentations" tabindex="0" data-panel="presentations" hidden>
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">04 — Knowledge exchange</p>
+              <h2>Ideas in conversation.</h2>
+            </div>
+            <p class="heading-aside">Talks, seminars, and presentations from our community.</p>
+          </div>
+          <div class="empty-state">
+            <span class="empty-icon" aria-hidden="true">◌</span>
+            <div>
+              <h3>Coming into focus.</h3>
+              <p>Presentation recordings, slides, and seminar details will appear here.</p>
+            </div>
+            <span class="edit-hint">Add presentations here</span>
+          </div>
+        </section>
+
+        <section class="content-panel" id="panel-events" role="tabpanel"
+          aria-labelledby="tab-events" tabindex="0" data-panel="events" hidden>
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">05 — What's happening</p>
+              <h2>Save a little space.</h2>
+            </div>
+            <p class="heading-aside">Seminars, workshops, and upcoming events from the group.</p>
+          </div>
+          <div class="empty-state">
+            <span class="empty-icon" aria-hidden="true">⌁</span>
+            <div>
+              <h3>Something to look forward to.</h3>
+              <p>Upcoming events and announcements will be posted here.</p>
+            </div>
+            <span class="edit-hint">Add events here</span>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <span>Quantum Matter &amp; Quantum Field Theory</span>
+        <span>State University of Londrina <span class="footer-divider">·</span> Paraná, Brazil</span>
+        <a href="#home">Back to top ↑</a>
+      </footer>
+    </div>
+  </body>
+</html>
