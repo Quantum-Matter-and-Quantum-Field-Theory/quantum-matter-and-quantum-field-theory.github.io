@@ -79,8 +79,12 @@
               aria-selected="false" aria-controls="panel-events" tabindex="-1" data-tab="events">
               Events
             </button>
+            <button class="tab-button" id="tab-materials" type="button" role="tab"
+              aria-selected="false" aria-controls="panel-materials" tabindex="-1" data-tab="materials">
+              Teaching materials
+            </button>
           </div>
-          <span class="nav-index"><span id="current-index">01</span> / 05</span>
+          <span class="nav-index"><span id="current-index">01</span> / 06</span>
         </nav>
 
         <section class="content-panel" id="panel-about" role="tabpanel"
@@ -190,6 +194,25 @@
               <p>Upcoming events and announcements will be posted here.</p>
             </div>
             <span class="edit-hint">Add events here</span>
+          </div>
+        </section>
+
+        <section class="content-panel" id="panel-materials" role="tabpanel"
+          aria-labelledby="tab-materials" tabindex="0" data-panel="materials" hidden>
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">06 — Learning resources</p>
+              <h2>Knowledge to share.</h2>
+            </div>
+            <p class="heading-aside">Teaching materials created by our group for students and curious minds.</p>
+          </div>
+          <div class="empty-state">
+            <span class="empty-icon" aria-hidden="true">▤</span>
+            <div>
+              <h3>Made for learning.</h3>
+              <p>Lecture notes, problem sets, and other learning resources will be shared here.</p>
+            </div>
+            <span class="edit-hint">Add teaching materials here</span>
           </div>
         </section>
       </main>
