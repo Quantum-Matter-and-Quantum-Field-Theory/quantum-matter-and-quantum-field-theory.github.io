@@ -805,10 +805,16 @@ h2 {
    MEMBERS
    ======================================== */
 
+
 .member-card {
   text-align: center;
   padding: 24px;
+  background: transparent;
+  border: none;
+  min-height: auto;
+  box-shadow: none;
 }
+
 
 .member-photo {
   display: block;
