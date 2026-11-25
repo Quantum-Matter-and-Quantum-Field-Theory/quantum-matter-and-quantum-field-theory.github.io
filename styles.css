@@ -324,87 +324,15 @@ h1 span {
 
 .hero-visual {
   position: relative;
-  height: 282px;
-  overflow: hidden;
-  border: 1px solid var(--hero-border);
-  border-radius: 18px;
-  background:
-    radial-gradient(circle at 54% 49%, var(--hero-glow), transparent 32%),
-    linear-gradient(145deg, var(--hero-start), var(--hero-end) 70%);
+  height: 330px;
 }
 
-.visual-grid {
+.lattice-canvas {
   position: absolute;
   inset: 0;
-  opacity: 0.24;
-  background-image:
-    linear-gradient(var(--grid-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-  background-size: 32px 32px;
-  mask-image: radial-gradient(ellipse at center, black 0%, transparent 76%);
-}
-
-.visual-orbit {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  border: 1px solid rgb(var(--accent-rgb) / 48%);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.orbit-large {
-  width: 230px;
-  height: 93px;
-  transform: translate(-50%, -50%) rotate(-32deg);
-}
-
-.orbit-small {
-  width: 185px;
-  height: 74px;
-  border-color: rgb(var(--accent-rgb) / 29%);
-  transform: translate(-50%, -50%) rotate(53deg);
-}
-
-.visual-particle {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border: 2px solid var(--particle-outline);
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 16px rgb(var(--accent-rgb) / 85%);
-}
-
-.particle-one {
-  top: 27%;
-  left: 65%;
-}
-
-.particle-two {
-  top: 67%;
-  left: 32%;
-  width: 6px;
-  height: 6px;
-}
-
-.particle-three {
-  top: 53%;
-  left: 72%;
-  width: 5px;
-  height: 5px;
-  opacity: 0.72;
-}
-
-.visual-caption {
-  position: absolute;
-  right: 17px;
-  bottom: 15px;
-  color: var(--visual-caption);
-  font-family: var(--font-mono);
-  font-size: 9px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .section-nav {
@@ -710,7 +638,7 @@ h2 {
   }
 
   .hero-visual {
-    height: 210px;
+    height: 250px;
   }
 
   .tab-list {
