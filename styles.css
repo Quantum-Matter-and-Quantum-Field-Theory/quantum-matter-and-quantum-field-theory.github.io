@@ -714,20 +714,17 @@ h2 {
   }
 
   .tab-list {
-    width: calc(100% + 20px);
-    height: 55px;
-    gap: 0;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-
-  .tab-list::-webkit-scrollbar {
-    display: none;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 0 18px;
+    overflow: visible;
   }
 
   .tab-button {
     flex: 0 0 auto;
-    margin-right: 23px;
+    min-height: 44px;
+    margin-right: 0;
     font-size: 11px;
   }
 
