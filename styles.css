@@ -728,3 +728,42 @@ h2 {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ========================================
+   MEMBERS
+   ======================================== */
+
+
+.member-card {
+  text-align: center;
+  padding: 24px;
+  background: transparent;
+  border: none;
+  min-height: auto;
+  box-shadow: none;
+}
+
+
+.member-photo {
+  display: block;
+  width: 160px;
+  height: 160px;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  margin: 0 auto 16px;
+}
+
+.member-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  font-weight: 600;
+}
+
+.member-card p {
+  max-width: none;
+  font-size: 13px;
+  line-height: 1.6;
+}
