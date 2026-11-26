@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parent.parent
 AUTHORS_FILE = ROOT / "followed-authors.json"
 OUTPUT_FILE = ROOT / "arxiv-feed.json"
 
-MAX_PAPERS = 30
+MAX_PAPERS = 50
 
 CATEGORIES = [
     "hep-th",
