@@ -119,15 +119,11 @@ button {
 }
 
 .logo-placeholder {
-  position: relative;
   width: 60px;
   height: 60px;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  border: 1px solid var(--logo-border);
-  border-radius: 12px;
-  background: var(--logo-background);
+  display: block;
+  flex: 0 0 auto;
+  object-fit: contain;
 }
 
 .logo-orbit {
@@ -412,6 +408,17 @@ a:focus-visible {
   display: none;
 }
 
+.about-panel {
+  min-height: 0;
+  padding-top: 52px;
+}
+
+.about-panel h1 {
+  margin: 0;
+  font-size: 44px;
+  line-height: 1.12;
+}
+
 @keyframes panel-in {
   from {
     opacity: 0;
@@ -498,6 +505,10 @@ h2 {
   text-decoration: underline;
   text-decoration-color: var(--note-decoration);
   text-underline-offset: 3px;
+}
+
+.research-heading {
+  margin-top: 38px;
 }
 
 .topic-grid {
@@ -665,6 +676,14 @@ h2 {
     padding: 28px 0 31px;
   }
 
+  .about-panel {
+    padding-top: 34px;
+  }
+
+  .about-panel h1 {
+    font-size: 36px;
+  }
+
   .section-heading {
     display: block;
     margin-bottom: 20px;
@@ -677,6 +696,10 @@ h2 {
   .about-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+
+  .research-heading {
+    margin-top: 30px;
   }
 
   .topic-grid {
