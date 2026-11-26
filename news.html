@@ -1,13 +1,15 @@
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#101114">
-    <meta name="description" content="Physics events, qualifying exams, thesis defenses, and announcements from the Quantum Matter and Quantum Field Theory group.">
-    <title>Bulletin Boards — Quantum Matter Group</title>
+    <meta name="description" content="Latest news, research highlights, recommended papers, and upcoming events from our research community.">
+    <title>News &amp; Highlights — Quantum Matter Group</title>
     <script src="theme.js"></script>
     <link rel="stylesheet" href="styles.css">
+    <script src="news.js" defer></script>
   </head>
   <body>
     <div class="page-shell" id="top">
@@ -34,16 +36,62 @@
             <a class="tab-button" href="resources.html">Resources</a>
           </div>
         </nav>
-        <section class="content-panel">
-          <div class="section-heading">
-            <div><h1>News from the group</h1></div>
-          </div>
-          <div class="empty-state">
-            <span class="empty-icon" aria-hidden="true">⌁</span>
-            <div><h3>What's coming up.</h3><p>Event notices, qualification exams, thesis defenses, and other group announcements will be posted here.</p></div>
-            <span class="edit-hint">Add announcements here</span>
-          </div>
-        </section>
+        <section class="content-panel news-panel">
+  <div class="section-heading">
+    <div>
+      <h1>News &amp; Highlights</h1>
+      <p class="news-description">
+        Latest news, research highlights, recommended papers,
+        and upcoming events from our research community.
+      </p>
+    </div>
+  </div>
+
+  <div class="news-filters" id="news-filters"
+       role="group" aria-label="Filter news">
+    <button class="news-filter is-active"
+            data-category="all" aria-pressed="true">
+      All
+    </button>
+
+    <button class="news-filter"
+            data-category="group-news" aria-pressed="false">
+      Group News
+    </button>
+
+    <button class="news-filter"
+            data-category="recommended-paper" aria-pressed="false">
+      Recommended Papers
+    </button>
+      
+    <button class="news-filter"
+        data-category="recent-preprint" aria-pressed="false">
+      Recent Preprints
+    </button>
+
+    <button class="news-filter"
+            data-category="event" aria-pressed="false">
+      Seminars &amp; Events
+    </button>
+
+    <button class="news-filter"
+            data-category="publication" aria-pressed="false">
+      Publications
+    </button>
+
+    <button class="news-filter"
+            data-category="research-highlight" aria-pressed="false">
+      Research Highlights
+    </button>
+  </div>
+
+  <div class="news-grid" id="news-grid"
+       aria-live="polite"></div>
+
+  <noscript>
+    Please enable JavaScript to view the latest news.
+  </noscript>
+</section>
       </main>
       <footer class="site-footer"><span>Quantum Matter &amp; Quantum Field Theory</span><span>State University of Londrina <span class="footer-divider">·</span> Paraná, Brazil</span><a href="#top">Back to top ↑</a></footer>
     </div>
