@@ -75,6 +75,46 @@ jobs:
 
           rm -rf _site/.github _site/scripts
 
+      - name: Version local CSS and JavaScript
+        run: |
+          python3 - <<'PYTHON'
+          import os
+          import re
+          from pathlib import Path
+          from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
+
+          root = Path('_site').resolve()
+          version = os.environ['GITHUB_SHA'][:12]
+          pattern = re.compile(r"(?P<prefix>\b(?:src|href)\s*=\s*)(?P<quote>['\"])(?P<url>[^'\"]+)(?P=quote)", re.IGNORECASE)
+          count = 0
+
+          for page in root.rglob('*.html'):
+              def replace(match):
+                  global count
+                  parts = urlsplit(match.group('url'))
+                  if parts.scheme or parts.netloc or not parts.path:
+                      return match.group(0)
+                  if Path(parts.path).suffix.lower() not in ('.css', '.js'):
+                      return match.group(0)
+                  asset = (root / parts.path.lstrip('/') if parts.path.startswith('/') else page.parent / parts.path).resolve()
+                  if not asset.is_relative_to(root) or not asset.is_file():
+                      return match.group(0)
+                  query = [(k, v) for k, v in parse_qsl(parts.query, keep_blank_values=True) if k != 'v']
+                  query.append(('v', version))
+                  url = urlunsplit(('', '', parts.path, urlencode(query), parts.fragment))
+                  count += 1
+                  return match.group('prefix') + match.group('quote') + url + match.group('quote')
+
+              source = page.read_text(encoding='utf-8')
+              updated = pattern.sub(replace, source)
+              if updated != source:
+                  page.write_text(updated, encoding='utf-8')
+
+          if count == 0:
+              raise RuntimeError('No local CSS or JavaScript references were versioned.')
+          print(f'Versioned {count} local asset references with {version}.')
+          PYTHON
+
       - name: Upload website
         uses: actions/upload-pages-artifact@v4
         with:
