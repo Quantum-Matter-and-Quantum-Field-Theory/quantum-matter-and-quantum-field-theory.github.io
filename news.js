@@ -36,13 +36,17 @@ const categories = {
   "recommended-paper": "Recommended Paper",
   "recent-preprint": "Recent Preprint",
   "event": "Seminars & Events",
-  "publication": "Publication",
-  "research-highlight": "Research Highlight"
+  "publication": "Publication"
 };
 
 let arxivPosts = [];
+let youtubePosts = [];
 const PAGE_SIZE = 6;
-const state = { category: "all", search: "", author: "", limit: PAGE_SIZE };
+// Contextual news filters v1
+const state = { category: "all", search: "", author: "", channel: "", limit: PAGE_SIZE };
+let followedNames = [];
+let arxivStatus = { phase: "loading", updatedAt: null };
+let youtubeStatus = { phase: "loading", updatedAt: null };
 const newsGrid = document.getElementById("news-grid");
 const filterButtons = document.querySelectorAll(".news-filter[data-category]");
 const searchInput = document.getElementById("news-search");
@@ -54,6 +58,27 @@ const loadMore = document.getElementById("news-load-more");
 function normalizeSearch(value) {
   return String(value || "").normalize("NFD")
     .replace(/\p{M}/gu, "").toLowerCase().trim();
+}
+
+function isYouTubeSeminar(post) {
+  return post.category === "event" && post.source === "YouTube";
+}
+
+function isRecentVideo(post, now = Date.now()) {
+  const published = Date.parse(post.publishedAt || post.date);
+  const age = now - published;
+  return isYouTubeSeminar(post) && Number.isFinite(age) && age >= 0 && age < 7 * 86400000;
+}
+
+function videoWatchUrl(post) {
+  try {
+    const url = new URL(post.video || post.link);
+    if (url.protocol === "https:" && url.hostname === "www.youtube.com" &&
+        url.pathname === "/watch" && /^[A-Za-z0-9_-]{11}$/.test(url.searchParams.get("v") || "")) {
+      return "https://www.youtube.com/watch?v=" + url.searchParams.get("v");
+    }
+  } catch (error) { /* No valid video link. */ }
+  return "";
 }
 
 function isNewPreprint(post, now = Date.now()) {
@@ -69,7 +94,8 @@ function matchingPosts(posts, filters) {
     if (filters.category !== "all" && post.category !== filters.category) return false;
     if (filters.author && (post.category !== "recent-preprint" ||
       !(post.followedAuthors || []).includes(filters.author))) return false;
-    const searchable = normalizeSearch([post.title, post.author, post.reference].join(" "));
+    if (filters.channel && (!isYouTubeSeminar(post) || post.author !== filters.channel)) return false;
+    const searchable = normalizeSearch([post.title, post.author, post.reference, post.source, post.subject, post.affiliation].join(" "));
     return terms.every(term => searchable.includes(term));
   }).sort((a, b) => b.date.localeCompare(a.date));
 }
@@ -122,26 +148,48 @@ function typesetElements(elements) {
 
 function createNewsCard(post) {
   const card = document.createElement("article");
-  card.className = "news-card";
+  const videoCard = isYouTubeSeminar(post);
+  const watchUrl = videoCard ? videoWatchUrl(post) : "";
+  card.className = videoCard ? "news-card news-video-card" : "news-card";
   const content = document.createElement("div");
   content.className = "news-card-content";
   const meta = document.createElement("div");
   meta.className = "news-meta";
   const category = document.createElement("span");
   category.className = "news-category";
-  category.textContent = categories[post.category] || post.category;
+  category.textContent = videoCard ? "Recorded Seminar" : (categories[post.category] || post.category);
   if (post.reference) category.textContent += " · " + post.reference;
   meta.appendChild(category);
-  if (isNewPreprint(post)) {
+  if (isNewPreprint(post) || isRecentVideo(post)) {
     const badge = document.createElement("span");
     badge.className = "news-new";
     badge.textContent = "New";
-    badge.title = "Submitted within the last seven calendar days (UTC)";
+    badge.title = videoCard ? "Published within the last seven days" : "Submitted within the last seven calendar days (UTC)";
     meta.appendChild(badge);
   }
   const title = document.createElement("h2");
   title.textContent = post.title;
-  content.append(meta, title);
+  content.appendChild(meta);
+  if (videoCard && watchUrl) {
+    const preview = document.createElement("a");
+    preview.className = "news-video-thumbnail";
+    preview.href = watchUrl;
+    preview.target = "_blank";
+    preview.rel = "noopener noreferrer";
+    preview.setAttribute("aria-label", "Watch on YouTube: " + post.title);
+    const image = document.createElement("img");
+    const id = new URL(watchUrl).searchParams.get("v");
+    image.src = "https://i.ytimg.com/vi/" + id + "/hqdefault.jpg";
+    image.alt = "";
+    image.loading = "lazy";
+    image.addEventListener("error", () => image.remove());
+    const play = document.createElement("span");
+    play.className = "news-video-play";
+    play.setAttribute("aria-hidden", "true");
+    preview.append(image, play);
+    content.appendChild(preview);
+  }
+  content.appendChild(title);
   if (post.author) {
     const author = document.createElement("p");
     author.className = "news-author";
@@ -168,7 +216,10 @@ function createNewsCard(post) {
     year: "numeric", month: "long", day: "numeric", timeZone: "UTC"
   });
   const dateLabel = post.category === "recent-preprint" ? "Submitted on " :
-    post.category === "recommended-paper" ? "Recommended on " : "Posted on ";
+    post.category === "recommended-paper" ? "Recommended on " :
+    post.source === "YouTube" ? "Published on " :
+    post.eventStatus === "upcoming" ? "Scheduled for " :
+    post.eventStatus === "recorded" ? "Held on " : "Posted on ";
   date.textContent = dateLabel + formattedDate;
   content.appendChild(date);
   if (post.subject) {
@@ -200,7 +251,7 @@ function createNewsCard(post) {
       content.appendChild(section);
     }
   }
-  if (post.image) {
+  if (post.image && !videoCard) {
     const image = document.createElement("img");
     image.className = "news-image";
     image.src = post.image;
@@ -211,8 +262,8 @@ function createNewsCard(post) {
   }
   const links = document.createElement("div");
   links.className = "news-links";
-  for (const [url, label] of [[post.link, post.linkText || "Read more"], [post.pdf, "PDF"]]) {
-    if (!url) continue;
+  for (const [url, label] of [[post.link, post.linkText || "Read more"], [post.pdf, "PDF"], [post.video !== post.link ? post.video : "", "Watch seminar"]]) {
+    if (typeof url !== "string" || !/^https?:\/\//i.test(url)) continue;
     const link = document.createElement("a");
     link.className = "news-link";
     link.href = url;
@@ -229,7 +280,7 @@ function createNewsCard(post) {
 let visiblePosts = [];
 function renderNews({ append = false } = {}) {
   const current = ++revision;
-  const posts = matchingPosts([...newsPosts, ...arxivPosts], state);
+  const posts = matchingPosts([...newsPosts, ...arxivPosts, ...youtubePosts], state);
   const selected = posts.slice(0, state.limit);
   enqueue(() => {
     if (current !== revision) return;
@@ -264,13 +315,66 @@ function renderNews({ append = false } = {}) {
   });
 }
 
+function syncToolbar() {
+  const seminars = state.category === "event";
+  const authorMode = state.category === "all" || state.category === "recent-preprint";
+  const searchLabel = searchInput.closest("label")?.querySelector("span");
+  const filterLabel = authorFilter.closest("label")?.querySelector("span");
+  if (searchLabel) searchLabel.textContent = seminars ? "Search seminars" : state.category === "recent-preprint" ? "Search papers" : "Search news";
+  searchInput.placeholder = seminars ? "Search by title or channel" : state.category === "recent-preprint" ? "Search by title or author" : "Search by title, author, or channel";
+  if (filterLabel) filterLabel.textContent = seminars ? "YouTube channel" : "Followed author";
+  const names = seminars ? youtubePosts.map(post => post.author) : followedNames;
+  const sorted = [...new Set(names)].filter(name => typeof name === "string" && name.trim())
+    .sort((a, b) => a.localeCompare(b, "en"));
+  const all = document.createElement("option");
+  all.value = "";
+  all.textContent = seminars ? "All channels" : "All authors";
+  authorFilter.replaceChildren(all);
+  for (const name of sorted) {
+    const option = document.createElement("option");
+    option.value = option.textContent = name;
+    authorFilter.appendChild(option);
+  }
+  const key = seminars ? "channel" : "author";
+  if (!sorted.includes(state[key])) state[key] = "";
+  authorFilter.value = state[key];
+  authorFilter.disabled = (!seminars && !authorMode) || !sorted.length;
+}
+function updateFeedStatus() {
+  const seminars = state.category === "event";
+  const name = seminars ? "YouTube feed" : "arXiv feed";
+  const status = seminars ? youtubeStatus : arxivStatus;
+  if (status.phase === "loading") {
+    feedStatus.textContent = "Loading " + name + "…";
+    return;
+  }
+  if (status.phase === "error") {
+    feedStatus.textContent = name + " unavailable. Other sources are unaffected.";
+    return;
+  }
+  const date = new Date(status.updatedAt || "");
+  if (!Number.isFinite(date.getTime())) {
+    feedStatus.textContent = name + " · Last updated: unavailable";
+    return;
+  }
+  const time = document.createElement("time");
+  time.dateTime = date.toISOString();
+  time.textContent = new Intl.DateTimeFormat("en-US", {
+    dateStyle: "medium", timeStyle: "short", timeZone: "America/Sao_Paulo"
+  }).format(date) + " (BRT)";
+  feedStatus.replaceChildren(name + " · Last updated: ", time);
+}
 function setCategory(category) {
   state.category = category;
+  if (category !== "event") state.channel = "";
+  if (category !== "all" && category !== "recent-preprint") state.author = "";
   filterButtons.forEach(button => {
     const active = button.dataset.category === category;
     button.classList.toggle("is-active", active);
     button.setAttribute("aria-pressed", String(active));
   });
+  syncToolbar();
+  updateFeedStatus();
 }
 function resetResults() {
   state.limit = PAGE_SIZE;
@@ -279,10 +383,6 @@ function resetResults() {
 filterButtons.forEach(button => {
   button.addEventListener("click", () => {
     setCategory(button.dataset.category);
-    if (state.category !== "all" && state.category !== "recent-preprint") {
-      authorFilter.value = "";
-      state.author = "";
-    }
     resetResults();
   });
 });
@@ -291,36 +391,21 @@ searchInput.addEventListener("input", () => {
   resetResults();
 });
 authorFilter.addEventListener("change", () => {
-  state.author = authorFilter.value;
-  if (state.author) setCategory("recent-preprint");
+  if (state.category === "event") {
+    state.channel = authorFilter.value;
+  } else {
+    state.author = authorFilter.value;
+    if (state.author) setCategory("recent-preprint");
+  }
   resetResults();
 });
 loadMore.addEventListener("click", () => {
   state.limit += PAGE_SIZE;
   renderNews({ append: true });
 });
-
 function populateAuthors(authors) {
-  const names = [...new Set(authors)].filter(name => typeof name === "string" && name.trim())
-    .sort((a, b) => a.localeCompare(b, "en"));
-  for (const name of names) {
-    const option = document.createElement("option");
-    option.value = option.textContent = name;
-    authorFilter.appendChild(option);
-  }
-}
-function showUpdatedAt(value) {
-  const date = new Date(value || "");
-  if (!Number.isFinite(date.getTime())) {
-    feedStatus.textContent = "arXiv feed · Last updated: unavailable";
-    return;
-  }
-  const time = document.createElement("time");
-  time.dateTime = date.toISOString();
-  time.textContent = new Intl.DateTimeFormat("en-US", {
-    dateStyle: "medium", timeStyle: "short", timeZone: "America/Sao_Paulo"
-  }).format(date) + " (BRT)";
-  feedStatus.replaceChildren("arXiv feed · Last updated: ", time);
+  followedNames = authors;
+  if (state.category !== "event") syncToolbar();
 }
 async function loadArxivFeed() {
   try {
@@ -337,7 +422,8 @@ async function loadArxivFeed() {
       references.add(key);
       return true;
     });
-    showUpdatedAt(Array.isArray(data) ? null : data.updatedAt);
+    arxivStatus = { phase: "ready", updatedAt: Array.isArray(data) ? null : data.updatedAt };
+    updateFeedStatus();
     renderNews();
     let authors = posts.flatMap(post => post.followedAuthors || []);
     try {
@@ -351,9 +437,30 @@ async function loadArxivFeed() {
     }
     populateAuthors(authors);
   } catch (error) {
-    feedStatus.textContent = "arXiv feed unavailable. Manual posts are still shown.";
+    arxivStatus = { phase: "error", updatedAt: null };
+    updateFeedStatus();
     console.error("arXiv feed error:", error);
   }
 }
+async function loadYouTubeFeed() {
+  try {
+    const response = await fetch("youtube-feed.json", { cache: "no-cache" });
+    if (!response.ok) throw new Error("Could not load YouTube feed: " + response.status);
+    const data = await response.json();
+    if (!Array.isArray(data.posts)) throw new Error("Invalid YouTube feed.");
+    youtubePosts = data.posts.filter(post => post && isYouTubeSeminar(post) && videoWatchUrl(post) &&
+      typeof post.title === "string" && typeof post.date === "string" && Number.isFinite(Date.parse(post.date)));
+    youtubeStatus = { phase: "ready", updatedAt: data.updatedAt };
+    if (state.category === "event") syncToolbar();
+    updateFeedStatus();
+    renderNews();
+  } catch (error) {
+    youtubeStatus = { phase: "error", updatedAt: null };
+    updateFeedStatus();
+    console.warn("YouTube feed unavailable:", error);
+  }
+}
+setCategory("all");
 renderNews();
 loadArxivFeed();
+loadYouTubeFeed();

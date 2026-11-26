@@ -1,0 +1,42 @@
+
+{
+  "maxAgeDays": 90,
+  "maxVideos": 40,
+  "channels": [
+    {
+      "name": "Symmetry Seminar",
+      "id": "UCpVcScCG2fSmu23Gv1cWQpA",
+      "filterByKeywords": false
+    },
+    {
+      "name": "ICTP - High Energy Physics",
+      "id": "UC0XjPHyIE3NO4hK2rMO1Osw",
+      "filterByKeywords": true
+    },
+    {
+      "name": "ICTP - Condensed Matter Physics",
+      "id": "UCcW7z2pE37Z4I1koTwahBfA",
+      "filterByKeywords": true
+    },
+    {
+      "name": "Kavli Institute for Theoretical Physics",
+      "id": "UC6S-TJHOZnwXRhvBd8Ol_1A",
+      "filterByKeywords": true
+    },
+    {
+      "name": "Simons Foundation",
+      "id": "UCZVjCmJOQRpAQ_EruAIPqXg",
+      "filterByKeywords": true
+    },
+    {
+      "name": "Simons Center for Geometry and Physics",
+      "id": "UC6pOFUNZzTMxqFKaRR53WvQ",
+      "filterByKeywords": true
+    },
+    {
+      "name": "Perimeter Institute",
+      "id": "UCpHvNclapYpq8b0ZnGRoMeg",
+      "filterByKeywords": true
+    }
+  ]
+}

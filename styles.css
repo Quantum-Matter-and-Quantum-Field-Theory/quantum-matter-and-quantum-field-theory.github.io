@@ -1213,3 +1213,59 @@ details.news-abstract[open] p {
 @media (max-width: 760px) {
   .news-toolbar { grid-template-columns: 1fr; }
 }
+
+/* YouTube seminar cards */
+.news-card.news-video-card {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+}
+.news-video-card .news-card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+.news-video-thumbnail {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #16181c;
+  margin: 12px 0 16px;
+}
+.news-video-thumbnail img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.news-video-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 42px;
+  border-radius: 10px;
+  background: #d71920;
+  color: white;
+  box-shadow: 0 2px 12px #0006;
+  transition: background .15s ease;
+}
+.news-video-play::before {
+  content: "";
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 15px solid white;
+  margin-left: 3px;
+}
+.news-video-thumbnail:hover .news-video-play,
+.news-video-thumbnail:focus-visible .news-video-play { background: #ff0033; }
+.news-video-card .news-author { color: inherit; }
+.news-video-card .news-author span { color: var(--accent, #278ab5); }
+.news-video-card .news-links { margin-top: auto; padding-top: 16px; }
