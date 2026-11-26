@@ -36,7 +36,7 @@ jobs:
 
       - name: Validate arXiv feed
         run: |
-          python3 -c "import json; data = json.load(open('arxiv-feed.json', encoding='utf-8')); assert isinstance(data, list) and data, 'Empty or invalid arXiv feed'"
+          python3 -c "import json; data = json.load(open('arxiv-feed.json', encoding='utf-8')); assert isinstance(data, dict) and data.get('updatedAt') and isinstance(data.get('posts'), list) and data['posts'], 'Empty or invalid arXiv feed'"
 
       - name: Prepare website
         run: |

@@ -7,6 +7,7 @@ import urllib.request
 import xml.etree.ElementTree as ET
 
 from pathlib import Path
+from datetime import datetime, timezone
 
 
 # Configuration
@@ -224,7 +225,10 @@ with OUTPUT_FILE.open(
     "w", encoding="utf-8"
 ) as file:
     json.dump(
-        papers,
+        {
+            "updatedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "posts": papers
+        },
         file,
         ensure_ascii=False,
         indent=2
