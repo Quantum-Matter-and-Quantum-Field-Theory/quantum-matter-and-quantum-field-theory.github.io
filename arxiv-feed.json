@@ -1,482 +1,485 @@
-[
-  {
-    "title": "Möbius Fusion Algebra",
-    "category": "recent-preprint",
-    "date": "2026-11-22",
-    "author": "Ippo Orii, Yuji Tachikawa",
-    "reference": "arXiv:2611.29234",
-    "subject": "math.QA, hep-th, math-ph, math.GT",
-    "abstract": "Given a pseudo-unitary modular tensor category $\\mathcal{C}$ with an anti-monoidal involution $\\mathsf{P}$, we define a generally non-commutative algebra from this data, which we call the Möbius fusion algebra $\\mathfrak{M}$ of $(\\mathcal{C},\\mathsf{P})$, in terms of ribbon graphs drawn on the Möbius band, where the orientation-reversal of the Möbius band acts on the graphs by $\\mathsf{P}$. We show that this algebra is semisimple, and give a formula for the dimensions of its simple modules, in terms of the modular $S$-matrix of $\\mathcal{C}$ and a certain set of quantities extracted from the action of $\\mathsf{P}$. This formula is expected to play the role of a non-orientable analogue of the Verlinde formula, in the context of Reshetikhin-Turaev-type topological quantum field theories on non-orientable manifolds.",
-    "followedAuthors": [
-      "Yuji Tachikawa"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2611.29234",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2611.29234"
-  },
-  {
-    "title": "Computing $F$-Symbols from Modular Data",
-    "category": "recent-preprint",
-    "date": "2026-11-18",
-    "author": "Jonah Berean-Dutcher, Clay Cordova, Julio Parra-Martinez, Richard Tuddenham",
-    "reference": "arXiv:2611.24753",
-    "subject": "hep-th, cond-mat.str-el, math.QA",
-    "abstract": "We present a strategy for computing the $F$-symbols of unitary modular categories with a self-dual simple generator, starting from their modular data, which almost entirely avoids the non-linear solution of the pentagon equations. The algorithm climbs a ladder of braid group representations on successively more strands of the generator until enough $F$-symbols have been determined to propagate them to a complete solution. The strategy presented is successful in difficult cases through ranks 11 and 12, including $\\operatorname{Z}(\\mathrm{Haagerup}_3)$, and does not require the category to be multiplicity-free. Although the algorithm is implemented numerically, we describe a reliable means of recovering the exact $F$-symbols, assuming that in some gauge they lie in a given number field, and of certifying every pentagon and hexagon equation exactly. The exotic rank-11 anisotropic modular category B11-00119 (https://anyonatlas.org/data/B11-00119), with largest fusion coefficient 4, is used as a motivating example, for which the solve takes roughly 10 minutes on a laptop. We will continue to add $F$-symbol solutions to https://AnyonAtlas.org as they are completed.",
-    "followedAuthors": [
-      "Clay Cordova"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2611.24753",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2611.24753"
-  },
-  {
-    "title": "Learning the Anyon Atlas",
-    "category": "recent-preprint",
-    "date": "2026-11-18",
-    "author": "Jonah Berean-Dutcher, Clay Cordova, Julio Parra-Martinez, Richard Tuddenham, Zekai Zhu",
-    "reference": "arXiv:2611.24752",
-    "subject": "hep-th, cond-mat.str-el, cs.LG, math.QA",
-    "abstract": "We extend our previous search for the modular data of topological quantum field theories in 2+1 dimensions from 22 to 42 anyons, identifying 150,679 new modular data. We do so by adding to our algorithm three rejection gates, two of them based on logistic regression, that discard representations of $SL(2,\\mathbb{Z})$ unlikely to yield modular data. We estimate that roughly 80% of the modular data between ranks 23 and 42 has been identified after closing under known constructions. With this data, we find counterexamples to a conjecture of Geiko and Moore that the reality of the higher Gauss sums suffices for time-reversal symmetry in Chern-Simons theories, and propose a refined criterion. We demonstrate the scalability of this gated implementation by identifying prime modular data at rank 100 that is not realized by any Chern-Simons theory. The identified data through rank 42 has been made available at https://AnyonAtlas.org, to which further data will be added as it is found.",
-    "followedAuthors": [
-      "Clay Cordova"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2611.24752",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2611.24752"
-  },
-  {
-    "title": "Property F implies weak integrality for non-degenerate pivotal braided fusion categories",
-    "category": "recent-preprint",
-    "date": "2026-11-09",
-    "author": "Justin Asher, Jonah Berean-Dutcher, Clay Cordova, Julio Parra-Martinez, Richard Tuddenham",
-    "reference": "arXiv:2611.12836",
-    "subject": "math.QA, cond-mat.str-el, hep-th",
-    "abstract": "We prove that every non-degenerate pivotal braided fusion category with property F is pseudo-unitary and weakly integral. In particular, every modular category with property F is weakly integral. Neither sphericality nor pseudo-unitarity is assumed. Passing to the Drinfeld centre extends the result to degenerate categories whose dimensions are positive on the intersection of the Müger centre with the adjoint subcategory; these include every braided fusion category with a pseudo-unitary Galois conjugate. Physically, the result connects the arithmetic of topological orders to the computational power of anyon braiding: non-integer squared total quantum dimension guarantees infinite braid group images, a necessary condition for universal quantum computation.",
-    "followedAuthors": [
-      "Clay Cordova"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2611.12836",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2611.12836"
-  },
-  {
-    "title": "A Note On Lattice Definition of Gauge Theories With Chiral Fermions",
-    "category": "recent-preprint",
-    "date": "2026-11-03",
-    "author": "Edward Witten",
-    "reference": "arXiv:2611.05051",
-    "subject": "hep-lat, hep-ph, hep-th",
-    "abstract": "Because of the fermion doubling problem, it has been a longstanding challenge to describe a lattice algorithm for studying four-dimensional gauge theories coupled to chiral fermions. Recently, an algorithm to do so has been described by Craig, extending partial results in the previous literature. Here we describe a variant of this algorithm, based on interpolating a lattice gauge field over the continuum (as in Craig's work) and coupling the interpolated gauge field to continuum chiral fermions. The same variant was also proposed recently by Hsu. In any dimension and for any anomaly-free representation, this approach can be implemented on a computer in principle, but not in practice by Monte Carlo methods because the chiral fermion path integral is not positive.",
-    "followedAuthors": [
-      "Edward Witten"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2611.05051",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2611.05051"
-  },
-  {
-    "title": "Reconstruction of the conformal algebra from a critical groundstate on the (fuzzy) sphere",
-    "category": "recent-preprint",
-    "date": "2026-11-02",
-    "author": "Rolando Ramirez Camasca, Xiang Li, Ting-Chun Lin, John McGreevy",
-    "reference": "arXiv:2611.03817",
-    "subject": "hep-th, cond-mat.str-el, quant-ph",
-    "abstract": "Recently, we found a method to reconstruct the dilatation operator (sphere Hamiltonian) from a regulated conformal field theory groundstate. In this paper, we explore methods to construct the whole global conformal algebra, and test our construction using fuzzy sphere regularization. Starting from a groundstate of the same Hamiltonian, these methods perform better than constructions of the conformal generators based on a Hamiltonian density, are model-independent, require no additional tuning, and improve with system size. One purpose of reconstructing the conformal algebra is to identify conformal primary states, which we do with some success. We also find further evidence supporting the model of the short-distance corrections to the entanglement Hamiltonian proposed earlier and use it to make systematic improvements.",
-    "followedAuthors": [
-      "John McGreevy"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2611.03817",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2611.03817"
-  },
-  {
-    "title": "Monopole-Fermion Scattering from Twisted Conformal Boundary States",
-    "category": "recent-preprint",
-    "date": "2026-10-29",
-    "author": "Clay Córdova, Diego García-Sepúlveda, Lian-Tao Wang, Yen-Chieh Wang",
-    "reference": "arXiv:2610.40779",
-    "subject": "hep-th, cond-mat.str-el, hep-ph, math.QA",
-    "abstract": "We derive monopole-fermion scattering correlators from conformal boundary states in twisted sectors. The key ingredient is that symmetry-preserving boundary conditions contain sectors twisted by topological symmetry lines. Their overlaps determine correlators of operators attached to these lines, including the outgoing excitations required by charge conservation in the Callan-Rubakov effect. We construct the twisted boundary states of $N$ free Dirac fermions with $U(1)^N$-preserving boundary conditions, extending the familiar description in terms of charge lattices to shifted lattices describing twisted sectors. Using cluster decomposition and open-closed duality, we determine their coefficients and fix their normalization relative to the untwisted boundary state. We find that the Callan-Rubakov boundary condition yields a two-point function between an incoming fermion and an outgoing defect operator with a coefficient of unit modulus, even when the corresponding correlators of ordinary local fermions vanish. Finally, we relate these correlators to four-dimensional partial-wave scattering using gauge-covariant asymptotic states. We identify the missing $s$-wave contribution to the unitarity relation and argue that the twisted channel supplies it with precisely the required normalization.",
-    "followedAuthors": [
-      "Clay Cordova"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2610.40779",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2610.40779"
-  },
-  {
-    "title": "The Art of Orbifolding by Huge Non-Abelian Groups",
-    "category": "recent-preprint",
-    "date": "2026-10-26",
-    "author": "Jan Albert, Masaki Okada, Yuji Tachikawa",
-    "reference": "arXiv:2610.36024",
-    "subject": "hep-th",
-    "abstract": "We compute torus partition functions of orbifolds of two-dimensional chiral fermions by huge non-Abelian groups involving the Conway group, one of the sporadic finite simple groups. This seemingly standard problem turns out to contain, somewhat unexpectedly, multiple major issues hitherto unresolved, both at the level of the principle and at the level of practice. We describe in detail how they can be overcome. Although the methods described in this paper are generally applicable, the choice of the particular orbifolds we consider in this paper was motivated by the search for the periodicity element of topological modular forms. We will provide a brief introduction to this question, to explain why all the techniques in this paper had to be developed. Unfortunately, the orbifolds we considered turned out not to be the periodicity element.",
-    "followedAuthors": [
-      "Yuji Tachikawa"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2610.36024",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2610.36024"
-  },
-  {
-    "title": "The Anyon Atlas",
-    "category": "recent-preprint",
-    "date": "2026-10-18",
-    "author": "Jonah Berean-Dutcher, Clay Cordova, Julio Parra-Martinez, Richard Tuddenham",
-    "reference": "arXiv:2610.25439",
-    "subject": "hep-th, cond-mat.str-el, math.QA",
-    "abstract": "We classify possible topological quantum field theories in 2+1 dimensions with up to 22 anyons in the bosonic case and up to 26 in the fermionic case, through the modular data of modular and supermodular tensor categories. We construct such data via congruence representations of $\\mathrm{SL}(2,\\mathbb{Z})$ using a numerical optimization algorithm that scales to high rank. We chart the relations between the resulting theories, including anyon condensations and Chern-Simons realizations. We find examples of modular data that do not appear to arise from any Chern-Simons theory by any sequence of condensations of anyons or gaugings of ordinary global symmetries. These examples give qualitatively new topological quantum field theories, which go beyond any notion of gauge theory. For examples in this class with 11 and 12 anyon types, we solve the pentagon and hexagon equations explicitly, showing that these modular data are realized by full unitary topological quantum field theories. We also introduce https://www.AnyonAtlas.org, an online resource for exploring the data.",
-    "followedAuthors": [
-      "Clay Cordova"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2610.25439",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2610.25439"
-  },
-  {
-    "title": "Topological Aspects of the $c=2$ Model in the Continuum and on the Lattice",
-    "category": "recent-preprint",
-    "date": "2026-10-15",
-    "author": "Yichul Choi, Nathan Seiberg, Sahand Seifnashri, Wucheng Zhang",
-    "reference": "arXiv:2610.22485",
-    "subject": "hep-th, cond-mat.str-el",
-    "abstract": "We discuss the continuum two-dimensional conformal field theory, whose target space is a two-torus. In addition to its standard zero-form internal symmetries, the model also has a $-1$-form symmetry associated with its $θ$-parameter, which is also known as a background $B$-field. These symmetries combine into a higher group with anomalies. A spatially winding $B$-field generically breaks the spatial translation symmetry completely, and reduces the continuous target-space (internal) momentum symmetry to a (projectively realized) discrete subgroup. When $B$ varies linearly, a discrete translation subgroup survives, and it combines with the internal symmetry into a non-Abelian group, while the other translations survive as non-invertible symmetries. Even though the model lacks the standard spatial translation symmetry, the non-invertible translation symmetry explains why it is solvable via a Fourier decomposition. We then consider a lattice version of this system, using its modified Villain formulation. Surprisingly, all these subtleties in the symmetries of the continuum model exist on a finite lattice. Finally, we discuss various generalizations of this model, demonstrating that the phenomena we uncovered are more broadly valid.",
-    "followedAuthors": [
-      "Nathan Seiberg"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2610.22485",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2610.22485"
-  },
-  {
-    "title": "Anomalies, higher symmetries, and homotopy theory I: crossed precosheaves and a nonabelian Cech construction",
-    "category": "recent-preprint",
-    "date": "2026-10-13",
-    "author": "Anton Kapustin, Shixiong Xu",
-    "reference": "arXiv:2610.19004",
-    "subject": "math-ph, cond-mat.str-el, hep-th, math.AT",
-    "abstract": "Symmetries of a quantum field theory or a quantum lattice model are expected to be described not by a group but by a homotopy type, whose homotopy groups are the higher symmetry groups and whose Postnikov invariants encode 't Hooft anomalies. We propose a homotopy-theoretic definition of 't Hooft anomalies based on the structure of localized symmetries in the operator-algebraic approach. The input is a crossed precosheaf: a collection of groups attached to regions of space, equipped with pairings recording that the commutator of two transformations localized in two regions is localized in their intersection. To a crossed precosheaf and a finite family of regions we attach a pointed connected homotopy type, the Cech-Loday classifying space. As the family of regions ranges over finite covers of space, the classifying spaces form a pro-object in the homotopy category. There is a canonical map from the ordinary classifying space of the symmetry group to this pro-type. Composing this map with a group action gives an anomaly whose nontriviality obstructs gauging. In favorable cases, the Cech-Loday space is essentially independent of the cover. In such cases, the homotopy fiber of the canonical map is a candidate for the classifying space of the higher group of symmetries. We give examples of crossed precosheaves arising from gauge transformations in continuum field theory and from quantum cellular automata and finite-depth circuits. For quantum spin systems in one and two dimensions, our construction recovers the Else-Nayak index and its generalizations to two dimensions.",
-    "followedAuthors": [
-      "Anton Kapustin"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2610.19004",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2610.19004"
-  },
-  {
-    "title": "An Instability of the Quantum Markov Length",
-    "category": "recent-preprint",
-    "date": "2026-10-09",
-    "author": "David C. Newsom, Michael Levin",
-    "reference": "arXiv:2610.12929",
-    "subject": "quant-ph, cond-mat.stat-mech, cond-mat.str-el",
-    "abstract": "The Markov length, the length scale governing the exponential decay of conditional mutual information (CMI) in a quantum many-body state, has proven useful for characterizing mixed-state phases of matter. Nevertheless, we show that a state's Markov length is not generally stable under weak local channels. The failure of stability occurs already at a pure product state. We demonstrate this explicitly in a one-dimensional fermionic chain, where a fine-tuned depth-two circuit of nearest-neighbor Gaussian channels maps the vacuum to a state whose CMI decays \\emph{algebraically} and whose Markov length is therefore infinite, even when the channels are taken arbitrarily close to the identity. The algebraic decay is rooted in the nonanalyticity of the von Neumann entropy at rank-deficient density operators. We exhibit an analogous instability on an ordinary qubit chain. More generally, we show that the Markov length is unstable in any translation-invariant state with even a single rank-deficient reduced density operator. These results pose a challenge to recent definitions of mixed-state phase equivalence based on the Markov length.",
-    "followedAuthors": [
-      "Michael Levin"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2610.12929",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2610.12929"
-  },
-  {
-    "title": "An Observer in de Sitter Space, and Rereading Everett",
-    "category": "recent-preprint",
-    "date": "2026-10-03",
-    "author": "Edward Witten",
-    "reference": "arXiv:2610.04804",
-    "subject": "hep-th",
-    "abstract": "After re-examining a classic article by Hugh Everett, I will discuss the entropy of de Sitter space from the standpoint of an observer living in the space. This provides a nice example of the importance -- for certain questions -- of taking seriously the fact that in cosmology any observer is really part of the universe that is being observed. (This article has appeared in a special issue of International Journal of Modern Physics A in honor of Gerard 't Hooft.",
-    "followedAuthors": [
-      "Edward Witten"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2610.04804",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2610.04804"
-  },
-  {
-    "title": "Peeling off Abelian Anyons and Proliferation Transitions",
-    "category": "recent-preprint",
-    "date": "2026-10-03",
-    "author": "Meng Cheng, Nathan Seiberg",
-    "reference": "arXiv:2610.04704",
-    "subject": "cond-mat.str-el, hep-th",
-    "abstract": "We study the invertible one-form global symmetry of a (2+1)-dimensional topological quantum field theory (TQFT). A universal description of this symmetry ``peels off'' all the Abelian anyons from the rest of the TQFT. This allows us to study this symmetry and some of its consequences, independently of the details of the rest of the system. We then describe these Abelian anyons using $\\mathrm{U}(1)$ gauge fields with Chern-Simons terms and couple them to a scalar field, thus constructing a particular non-topological theory. This new theory, our transition field theory, exhibits a phase transition from the original TQFT to another phase. The latter is either gapless or another TQFT. This discussion generalizes and extends our earlier work (arXiv:2603.00245). In particular, we give a more detailed description of the global symmetries and their fates in the various phases.",
-    "followedAuthors": [
-      "Nathan Seiberg"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2610.04704",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2610.04704"
-  },
-  {
-    "title": "The Chern-Simons Function and the Quantum Hall Effect",
-    "category": "recent-preprint",
-    "date": "2026-09-18",
-    "author": "Edward Witten",
-    "reference": "arXiv:2609.21182",
-    "subject": "hep-th",
-    "abstract": "In this article, I will define the Chern-Simons invariant of a gauge connection over a three-manifold and explain some of the things that are special about it, in particular its role in understanding the quantum Hall effect, which is an important effect in condensed matter physics, and its generalization, the fractional quantum Hall effect. (The article is based on a lecture at a conference celebrating the 75th birthday of James Simons, held at the CUNY Graduate Center in 2013. It will appear in the Bulletin of the American Math Society.",
-    "followedAuthors": [
-      "Edward Witten"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2609.21182",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2609.21182"
-  },
-  {
-    "title": "Bosonic SPT and invertible phases and its relation to Steenrod's problem",
-    "category": "recent-preprint",
-    "date": "2026-07-16",
-    "author": "Shota Saito, Yuji Tachikawa, Yi Zhang",
-    "reference": "arXiv:2607.14662",
-    "subject": "hep-th, math.AT",
-    "abstract": "Bosonic invertible and symmetry-protected topological (SPT) phases are well-known to be described by ordinary cohomology groups in low dimensions, but `beyond-cohomology' phases appear in higher dimensions. We make a systematic study of them, and find that the first major non-triviality is a mod-3 phenomenon, and not a mod-2 phenomenon as in the case of fermionic phases. We also point out that this is a dual manifestation of the classic question of Steenrod, namely the issue of the existence of homology cycles without manifold representatives. Thom developed the theory of cobordisms to answer this question, and we explain how the same analysis leads to Dijkgraaf-Witten phases which are nontrivial on general simplicial complexes but become trivial on manifolds.",
-    "followedAuthors": [
-      "Yuji Tachikawa"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2607.14662",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2607.14662"
-  },
-  {
-    "title": "Symmetry-twisted multi-entropies: Order parameters for 2D SPT phases",
-    "category": "recent-preprint",
-    "date": "2026-07-13",
-    "author": "Ramanjit Sohal, Michael Levin, Ruben Verresen",
-    "reference": "arXiv:2607.12023",
-    "subject": "cond-mat.str-el, hep-th, quant-ph",
-    "abstract": "Although symmetry-protected topological phases (SPTs) can be distinguished by their entanglement properties, it has been unclear how to extract this information directly from expectation values beyond the 1D case. Here, we close this gap and propose a pair of nonlocal order parameters that can detect and distinguish all bosonic SPTs in 2D protected by internal discrete, Abelian unitary symmetries. The desired topological invariants are extracted by these quantities by effectively simulating the SPT path integral on topologically non-trivial spacetime manifolds. Our order parameters are defined in terms of expectation values of partial symmetry and permutation operations acting on fixed numbers of replicas of the system in finite spatial regions. These expectation values correspond to symmetry-twisted versions of multipartite entanglement quantities known as multi-entropies. We show explicitly that our two order parameters detect symmetry-protected four-party and six-party entanglement, respectively, and we constrain possible \"spurious\" contributions. We analytically test our proposal in fixed-point lattice models. Our results suggest multipartite entanglement to be a defining feature of SPTs; indeed, we expect our methods to generalize to fermionic and higher-dimensional systems.",
-    "followedAuthors": [
-      "Michael Levin"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2607.12023",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2607.12023"
-  },
-  {
-    "title": "A Note on Corrections to Entanglement Wedge Reconstruction",
-    "category": "recent-preprint",
-    "date": "2026-06-17",
-    "author": "Edward Witten",
-    "reference": "arXiv:2606.18639",
-    "subject": "hep-th",
-    "abstract": "If entanglement wedge reconstruction is exact, then (under certain assumptions) the area term in the RT formula is a c-number, indicating that the choice of a bulk quantum state does not influence the geometry. Recently Cao, Cheng, Karthikeyan, Li, and Preskill considered a generic perturbation away from exact entanglement wedge reconstruction. The optimal reconstruction was defined; based on this, an effective area function that depends nontrivially on the quantum state was defined and its properties were analyzed. Here we make one aspect of this picture more quantitative, by showing that if as expected the area term in the RT formula is of order 1/G while the bulk entropy is of order 1, then the corrections to entanglement wedge reconstruction are exponentially small (in G) relative to corrections to the area function. In the framework under discussion, there is an area function but no area operator; we discuss to what extent this is the expected behavior in holography.",
-    "followedAuthors": [
-      "Edward Witten"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2606.18639",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2606.18639"
-  },
-  {
-    "title": "Toward Entanglement Bootstrap for Conformal Field Theory in Any Dimension",
-    "category": "recent-preprint",
-    "date": "2026-06-10",
-    "author": "Rolando Ramirez Camasca, Xiang Li, Ting-Chun Lin, John McGreevy",
-    "reference": "arXiv:2606.12540",
-    "subject": "hep-th, cond-mat.str-el, quant-ph",
-    "abstract": "Given a quantum critical wavefunction in any dimension, we propose a reconstructed Hamiltonian, analogous to the ones previously found for 1+1d CFT and for 2+1d bosonic liquid topologically-ordered states. We test numerically that, for known regularized approximate CFT groundstates (on the icosahedron and the fuzzy sphere), (1) they are close to the groundstate of their reconstructed Hamiltonian, and (2) the spectrum of their reconstructed Hamiltonian on the unit sphere has CFT properties (integer spacing of descendants) and matches known low-lying energies. We show that this provides an automated method to improve the finite-size effects in a fixed Hilbert space.",
-    "followedAuthors": [
-      "John McGreevy"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2606.12540",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2606.12540"
-  },
-  {
-    "title": "Wormholes and Averaging over N",
-    "category": "recent-preprint",
-    "date": "2026-05-14",
-    "author": "Jonah Kudler-Flam, Edward Witten",
-    "reference": "arXiv:2605.15180",
-    "subject": "hep-th",
-    "abstract": "The gravitational path integral produces an asymptotic expansion in $G_N$, a fact which is puzzling in the case of observables that are expected to fluctuate wildly. Wormholes appear to compute ensemble averages of functions of such observables, though in typical constructions of AdS/CFT, there are no parameters to average over except, in some examples, a single integer $N$. We introduce a procedure that we call ``Mellin averaging'' to define a sort of asymptotic average of a function of $N$. We argue that Mellin averaging over $N$ may suffice to reproduce the apparent randomness seen in wormhole physics, provided that the dual theory admits an analytic continuation in $N$ and the relevant observables fluctuate on superpolynomially small scales in $N$. As a test case, we consider the spectral form factor in the regime where the double cone is believed to dominate the gravitational path integral and compare to a random matrix theory in which $N$ behaves as a continuous variable. We also describe some toy models of analytic continuation in $N$: a qubit model that can be analytically continued in $N$, and an explicit construction of a deterministic function of $N$ that simulates a sequence of independent draws from a Gaussian ensemble.",
-    "followedAuthors": [
-      "Edward Witten"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2605.15180",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2605.15180"
-  },
-  {
-    "title": "Crystalline topological invariants in quantum many-body systems",
-    "category": "recent-preprint",
-    "date": "2026-04-11",
-    "author": "Naren Manjunath, Maissam Barkeshli",
-    "reference": "arXiv:2604.10338",
-    "subject": "cond-mat.str-el, cond-mat.mes-hall, hep-th, math-ph, quant-ph",
-    "abstract": "Crystalline symmetries give rise to topological invariants that can distinguish quantum phases of matter. Understanding these in strongly interacting systems is an ongoing research direction requiring non-perturbative methods. Recent developments have demonstrated that even classic models, like the Harper-Hofstadter model of free fermions on a lattice in a magnetic field, yield a host of crystalline symmetry protected topological invariants. Here we review some of these developments, focusing mainly on how to characterize, classify, and detect invariants arising from lattice translation and rotation symmetries along with charge conservation in two-dimensional systems, including integer and fractional Chern insulators.",
-    "followedAuthors": [
-      "Maissam Barkeshli"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2604.10338",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2604.10338"
-  },
-  {
-    "title": "On Generalised Discrete Torsion",
-    "category": "recent-preprint",
-    "date": "2026-04-01",
-    "author": "Philip Boyle Smith, Yuji Tachikawa",
-    "reference": "arXiv:2604.01225",
-    "subject": "hep-th",
-    "abstract": "For a 2d gauged sigma model with target space $M$ and discrete gauge group $G$, we consider a generalisation of Vafa's discrete torsion $H^2(BG; U(1))$ that assigns different local discrete torsion phases to different singular loci of the orbifold $M/G$. Our generalised discrete torsion lives in $H^2_G(M; U(1))$, and gives a consistent implementation of Gaberdiel and Kaste's prescription for inserting such local discrete torsion phases by hand at higher genus. We revisit the original application to $T^6/\\mathbb{Z}_2^2$ and $T^7/\\mathbb{Z}_2^3$ orbifold CFTs, and determine what smooth Calabi-Yau and $G_2$ geometries result from different choices of the generalised discrete torsion. We find that the local discrete torsion phases can be different from each other, but are not completely independent either; in the $T^7/\\mathbb{Z}_2^3$ case for example, the orbifold CFTs only realise 3 out of the 9 possible Betti numbers of $G_2$ resolutions constructed by Joyce.",
-    "followedAuthors": [
-      "Yuji Tachikawa"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2604.01225",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2604.01225"
-  },
-  {
-    "title": "On the trivalent junction of three non-tachyonic heterotic string theories",
-    "category": "recent-preprint",
-    "date": "2026-03-30",
-    "author": "Yuji Tachikawa",
-    "reference": "arXiv:2603.28133",
-    "subject": "hep-th",
-    "abstract": "Recently, Altavista, Anastasi, Angius and Uranga discussed a method to construct junctions and bouquets of different perturbative string theories. Following this analysis, we here argue that three non-tachyonic ten-dimensional heterotic string theories can be joined together at a nine-dimensional junction. This is done by creating a two-dimensional non-conformal $\\mathcal{N}{=}(0,1)$ supersymmetric quantum field theory with three asymptotic ends, each equipped with one of the worldsheet theories of the supersymmetric $E_8\\times E_8$ theory, the supersymmetric $SO(32)$ theory, and the non-supersymmetric $SO(16)\\times SO(16)$ theory, respectively. It is actually a special case of a more general construction involving an arbitrary $\\mathbb{Z}_2$-symmetric theory $T$, its $\\mathbb{Z}_2$-orbifold $T/\\mathbb{Z}_2$, and the modified $\\mathbb{Z}_2$-orbifold $(T\\times q)/\\mathbb{Z}_2$, where $q$ is a certain $\\mathbb{Z}_2$-symmetric spin invertible theory.",
-    "followedAuthors": [
-      "Yuji Tachikawa"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2603.28133",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2603.28133"
-  },
-  {
-    "title": "What happens to wavepackets of fermions when scattered by the Maldacena-Ludwig wall?",
-    "category": "recent-preprint",
-    "date": "2026-03-26",
-    "author": "Yuji Tachikawa, Keita Tsuji, Masataka Watanabe",
-    "reference": "arXiv:2603.25508",
-    "subject": "hep-th, cond-mat.str-el",
-    "abstract": "We study wavepackets of exotic excitations after two-dimensional fermions are scattered by the boundary condition constructed by Maldacena and Ludwig, which turns elementary excitations into exotic fractionally-charged objects. They are of interest in the s-wave approximation of the fermion-monopole scattering in four-dimensional QED and of the multi-channel Kondo effect. We in particular give an explicit expression of the outgoing state of a pair of such particles; we then examine its properties, such as the charge density $\\langle J(x)\\rangle$ and the expectation value $\\langle N\\rangle$ of the number of fermions and anti-fermions in the state. The charge density $\\langle J(x)\\rangle$ is found to be localized with its integral finite and fractional, while the expectation value $\\langle N\\rangle$ diverges when the wavepacket is localized to a point.",
-    "followedAuthors": [
-      "Yuji Tachikawa"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2603.25508",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2603.25508"
-  },
-  {
-    "title": "On thermalization in many-body classical Floquet systems",
-    "category": "recent-preprint",
-    "date": "2026-03-13",
-    "author": "Anton Kapustin",
-    "reference": "arXiv:2603.13631",
-    "subject": "cond-mat.stat-mech, math-ph, nlin.CD",
-    "abstract": "It is expected that a generic closed many-body system prepared in a well-behaved initial state and subjected to a periodic drive will eventually thermalize, i.e. approach the state of maximal entropy. This property, while compatible with and even demanded by the physical intuition, is much stronger than ergodicity or mixing and is difficult to justify mathematically. We describe an infinite set of classical many-body Floquet systems of algebraic origin for which thermalization of very general initial states can be proved. For example, we show that a Gibbs state of any sufficiently uniform local differentiable Hamiltonian heats up to infinite temperature at long times. We show that in agreement with the physical intuition, the only obstruction to thermalization is the existence of local observables which are periodic in time.",
-    "followedAuthors": [
-      "Anton Kapustin"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2603.13631",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2603.13631"
-  },
-  {
-    "title": "Proliferation transitions from a topological phase in $2+1$ dimensions",
-    "category": "recent-preprint",
-    "date": "2026-02-27",
-    "author": "Meng Cheng, Nathan Seiberg",
-    "reference": "arXiv:2603.00245",
-    "subject": "cond-mat.str-el, hep-th",
-    "abstract": "We consider phase transitions out of a general topological phase in $2+1$ dimensions. We assume that the transition is triggered by a single Abelian anyon, which becomes light near the transition and whose worldlines proliferate after the transition. (This proliferation is often referred to as ``condensation.'') We describe the transition using a continuum field theory obtained by coupling the corresponding topological quantum field theory (TQFT) to a single complex scalar field associated with this anyon. With these assumptions, we find the most general relativistic field theory for such a transition. Even though for a given TQFT and a choice of anyon, there are infinitely many such field theories, the transition theory depends on only a single additional integer parameter. We analyze all these theories, their global symmetries, and their phases. In generic cases, the theory after the transition can be related to the original one via an Abelian hierarchy construction. In special cases, the theory after the transition is gapless, and with a particular deformation, it is related to the original TQFT by gauging an anomaly-free one-form global symmetry. We also explore the enrichment of this setup by a global U(1) symmetry. In some cases, enriching the original TQFT is incompatible with the full transition theory. Finally, we demonstrate our construction with many specific examples.",
-    "followedAuthors": [
-      "Nathan Seiberg"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2603.00245",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2603.00245"
-  },
-  {
-    "title": "Duality and Axion Wormholes",
-    "category": "recent-preprint",
-    "date": "2026-01-04",
-    "author": "Edward Witten",
-    "reference": "arXiv:2601.01587",
-    "subject": "hep-th",
-    "abstract": "The prototype of a Euclidean wormhole solution of Einstein gravity coupled to matter is the axion wormhole in four spacetime dimensions. In this primarily expository article, we spell out some details about this construction. The axion wormhole has a semiclassical description, found in the original paper [1], in which the matter system is a two-form gauge field B with three-form field strength H=dB. The two-form is dual to a massless scalar, but the wormhole does not have a semiclassical description in terms of the scalar. There is no contradiction here as the duality between the two-form and the scalar is not a simple transformation of classical fields but involves, in Euclidean signature, a Poisson resummation of the sum over fluxes. Because of the need for this Poisson resummation, the scalar field cannot be treated semiclassically in the wormhole throat. Nonetheless, it is straightforward to compute the effective action derived from the wormhole in the scalar (or two-form) language, recovering standard claims.",
-    "followedAuthors": [
-      "Edward Witten"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2601.01587",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2601.01587"
-  },
-  {
-    "title": "Tori, Klein Bottles, and Modulo 8 Parity/Time-reversal Anomalies of 2+1d Staggered Fermions",
-    "category": "recent-preprint",
-    "date": "2026-01-03",
-    "author": "Nathan Seiberg, Wucheng Zhang",
-    "reference": "arXiv:2601.01191",
-    "subject": "hep-th, cond-mat.str-el, hep-lat",
-    "abstract": "We study the symmetries of lattice staggered fermions in 2+1d. Using the symmetries, we can place the system on any sheared torus or Klein bottle. These different backgrounds provide diagnostics of various 't Hooft anomalies associated with the crystalline symmetries. We then compare the lattice model to its continuum limit. The symmetries of the lattice system are mapped in a nontrivial way to the symmetries of the continuum theories. Using this map, we match the 't Hooft anomalies on the lattice and the continuum. Along the way, we develop a general formalism to study Hamiltonian lattice models on nontrivial, compact, flat spaces.",
-    "followedAuthors": [
-      "Nathan Seiberg"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2601.01191",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2601.01191"
-  },
-  {
-    "title": "Chaos and thermalization in Clifford-Floquet dynamics",
-    "category": "recent-preprint",
-    "date": "2026-01-01",
-    "author": "Anton Kapustin, Daniil Radamovich",
-    "reference": "arXiv:2601.00511",
-    "subject": "quant-ph, cond-mat.stat-mech, math-ph",
-    "abstract": "We study the ergodic properties of a unitary Floquet dynamics arising from the repeated application of a translationally-invariant Clifford Quantum Cellular Automata to an infinite system of qubits in d dimensions. One expects that if the QCA does not exhibit any periodicity, a generic initial state of qubits will thermalize, that is, approach the infinite-temperature state. We show that this is true for many classes of states, both pure and mixed. In particular, this is true for all initial states that are short-range entangled and close to the equilibrium state. We also point out a subtle distinction between weak and strong thermalization.",
-    "followedAuthors": [
-      "Anton Kapustin"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2601.00511",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2601.00511"
-  },
-  {
-    "title": "Generalized Level-Rank Duality, Holomorphic Conformal Field Theory, and Non-Invertible Anyon Condensation",
-    "category": "recent-preprint",
-    "date": "2025-12-30",
-    "author": "Clay Cordova, Diego García-Sepúlveda, Jeffrey A. Harvey",
-    "reference": "arXiv:2512.24419",
-    "subject": "hep-th, cond-mat.str-el, math.QA",
-    "abstract": "We study the interplay between holomorphic conformal field theory and dualities of 3D topological quantum field theories generalizing the paradigm of level-rank duality. A holomorphic conformal field theory with a Kac-Moody subalgebra implies a topological interface between Chern-Simons gauge theories. Upon condensing a suitable set of anyons, such an interface yields a duality between topological field theories. We illustrate this idea using the $c=24$ holomorphic theories classified by Schellekens, which leads to a list of novel sporadic dualities. Some of these dualities necessarily involve condensation of anyons with non-abelian statistics, i.e. gauging non-invertible one-form global symmetries. Several of the examples we discover generalize from $c=24$ to an infinite series. This includes the fact that Spin$(n^{2})_{2}$ is dual to a twisted dihedral group gauge theory. Finally, if $-1$ is a quadratic residue modulo $k$, we deduce the existence of a sequence of holomorphic CFTs at central charge $c=2(k-1)$ with fusion category symmetry given by $\\mathrm{Spin}(k)_{2}$ or equivalently, the $\\mathbb{Z}_{2}$-equivariantization of a Tambara-Yamagami fusion category.",
-    "followedAuthors": [
-      "Clay Cordova"
-    ],
-    "image": "",
-    "link": "https://arxiv.org/abs/2512.24419",
-    "linkText": "arXiv",
-    "pdf": "https://arxiv.org/pdf/2512.24419"
-  }
-]
+{
+  "updatedAt": "2026-11-26T16:48:45+00:00",
+  "posts": [
+    {
+      "title": "Möbius Fusion Algebra",
+      "category": "recent-preprint",
+      "date": "2026-11-22",
+      "author": "Ippo Orii, Yuji Tachikawa",
+      "reference": "arXiv:2611.29234",
+      "subject": "math.QA, hep-th, math-ph, math.GT",
+      "abstract": "Given a pseudo-unitary modular tensor category $\\mathcal{C}$ with an anti-monoidal involution $\\mathsf{P}$, we define a generally non-commutative algebra from this data, which we call the Möbius fusion algebra $\\mathfrak{M}$ of $(\\mathcal{C},\\mathsf{P})$, in terms of ribbon graphs drawn on the Möbius band, where the orientation-reversal of the Möbius band acts on the graphs by $\\mathsf{P}$. We show that this algebra is semisimple, and give a formula for the dimensions of its simple modules, in terms of the modular $S$-matrix of $\\mathcal{C}$ and a certain set of quantities extracted from the action of $\\mathsf{P}$. This formula is expected to play the role of a non-orientable analogue of the Verlinde formula, in the context of Reshetikhin-Turaev-type topological quantum field theories on non-orientable manifolds.",
+      "followedAuthors": [
+        "Yuji Tachikawa"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2611.29234",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2611.29234"
+    },
+    {
+      "title": "Computing $F$-Symbols from Modular Data",
+      "category": "recent-preprint",
+      "date": "2026-11-18",
+      "author": "Jonah Berean-Dutcher, Clay Cordova, Julio Parra-Martinez, Richard Tuddenham",
+      "reference": "arXiv:2611.24753",
+      "subject": "hep-th, cond-mat.str-el, math.QA",
+      "abstract": "We present a strategy for computing the $F$-symbols of unitary modular categories with a self-dual simple generator, starting from their modular data, which almost entirely avoids the non-linear solution of the pentagon equations. The algorithm climbs a ladder of braid group representations on successively more strands of the generator until enough $F$-symbols have been determined to propagate them to a complete solution. The strategy presented is successful in difficult cases through ranks 11 and 12, including $\\operatorname{Z}(\\mathrm{Haagerup}_3)$, and does not require the category to be multiplicity-free. Although the algorithm is implemented numerically, we describe a reliable means of recovering the exact $F$-symbols, assuming that in some gauge they lie in a given number field, and of certifying every pentagon and hexagon equation exactly. The exotic rank-11 anisotropic modular category B11-00119 (https://anyonatlas.org/data/B11-00119), with largest fusion coefficient 4, is used as a motivating example, for which the solve takes roughly 10 minutes on a laptop. We will continue to add $F$-symbol solutions to https://AnyonAtlas.org as they are completed.",
+      "followedAuthors": [
+        "Clay Cordova"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2611.24753",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2611.24753"
+    },
+    {
+      "title": "Learning the Anyon Atlas",
+      "category": "recent-preprint",
+      "date": "2026-11-18",
+      "author": "Jonah Berean-Dutcher, Clay Cordova, Julio Parra-Martinez, Richard Tuddenham, Zekai Zhu",
+      "reference": "arXiv:2611.24752",
+      "subject": "hep-th, cond-mat.str-el, cs.LG, math.QA",
+      "abstract": "We extend our previous search for the modular data of topological quantum field theories in 2+1 dimensions from 22 to 42 anyons, identifying 150,679 new modular data. We do so by adding to our algorithm three rejection gates, two of them based on logistic regression, that discard representations of $SL(2,\\mathbb{Z})$ unlikely to yield modular data. We estimate that roughly 80% of the modular data between ranks 23 and 42 has been identified after closing under known constructions. With this data, we find counterexamples to a conjecture of Geiko and Moore that the reality of the higher Gauss sums suffices for time-reversal symmetry in Chern-Simons theories, and propose a refined criterion. We demonstrate the scalability of this gated implementation by identifying prime modular data at rank 100 that is not realized by any Chern-Simons theory. The identified data through rank 42 has been made available at https://AnyonAtlas.org, to which further data will be added as it is found.",
+      "followedAuthors": [
+        "Clay Cordova"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2611.24752",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2611.24752"
+    },
+    {
+      "title": "Property F implies weak integrality for non-degenerate pivotal braided fusion categories",
+      "category": "recent-preprint",
+      "date": "2026-11-09",
+      "author": "Justin Asher, Jonah Berean-Dutcher, Clay Cordova, Julio Parra-Martinez, Richard Tuddenham",
+      "reference": "arXiv:2611.12836",
+      "subject": "math.QA, cond-mat.str-el, hep-th",
+      "abstract": "We prove that every non-degenerate pivotal braided fusion category with property F is pseudo-unitary and weakly integral. In particular, every modular category with property F is weakly integral. Neither sphericality nor pseudo-unitarity is assumed. Passing to the Drinfeld centre extends the result to degenerate categories whose dimensions are positive on the intersection of the Müger centre with the adjoint subcategory; these include every braided fusion category with a pseudo-unitary Galois conjugate. Physically, the result connects the arithmetic of topological orders to the computational power of anyon braiding: non-integer squared total quantum dimension guarantees infinite braid group images, a necessary condition for universal quantum computation.",
+      "followedAuthors": [
+        "Clay Cordova"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2611.12836",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2611.12836"
+    },
+    {
+      "title": "A Note On Lattice Definition of Gauge Theories With Chiral Fermions",
+      "category": "recent-preprint",
+      "date": "2026-11-03",
+      "author": "Edward Witten",
+      "reference": "arXiv:2611.05051",
+      "subject": "hep-lat, hep-ph, hep-th",
+      "abstract": "Because of the fermion doubling problem, it has been a longstanding challenge to describe a lattice algorithm for studying four-dimensional gauge theories coupled to chiral fermions. Recently, an algorithm to do so has been described by Craig, extending partial results in the previous literature. Here we describe a variant of this algorithm, based on interpolating a lattice gauge field over the continuum (as in Craig's work) and coupling the interpolated gauge field to continuum chiral fermions. The same variant was also proposed recently by Hsu. In any dimension and for any anomaly-free representation, this approach can be implemented on a computer in principle, but not in practice by Monte Carlo methods because the chiral fermion path integral is not positive.",
+      "followedAuthors": [
+        "Edward Witten"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2611.05051",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2611.05051"
+    },
+    {
+      "title": "Reconstruction of the conformal algebra from a critical groundstate on the (fuzzy) sphere",
+      "category": "recent-preprint",
+      "date": "2026-11-02",
+      "author": "Rolando Ramirez Camasca, Xiang Li, Ting-Chun Lin, John McGreevy",
+      "reference": "arXiv:2611.03817",
+      "subject": "hep-th, cond-mat.str-el, quant-ph",
+      "abstract": "Recently, we found a method to reconstruct the dilatation operator (sphere Hamiltonian) from a regulated conformal field theory groundstate. In this paper, we explore methods to construct the whole global conformal algebra, and test our construction using fuzzy sphere regularization. Starting from a groundstate of the same Hamiltonian, these methods perform better than constructions of the conformal generators based on a Hamiltonian density, are model-independent, require no additional tuning, and improve with system size. One purpose of reconstructing the conformal algebra is to identify conformal primary states, which we do with some success. We also find further evidence supporting the model of the short-distance corrections to the entanglement Hamiltonian proposed earlier and use it to make systematic improvements.",
+      "followedAuthors": [
+        "John McGreevy"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2611.03817",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2611.03817"
+    },
+    {
+      "title": "Monopole-Fermion Scattering from Twisted Conformal Boundary States",
+      "category": "recent-preprint",
+      "date": "2026-10-29",
+      "author": "Clay Córdova, Diego García-Sepúlveda, Lian-Tao Wang, Yen-Chieh Wang",
+      "reference": "arXiv:2610.40779",
+      "subject": "hep-th, cond-mat.str-el, hep-ph, math.QA",
+      "abstract": "We derive monopole-fermion scattering correlators from conformal boundary states in twisted sectors. The key ingredient is that symmetry-preserving boundary conditions contain sectors twisted by topological symmetry lines. Their overlaps determine correlators of operators attached to these lines, including the outgoing excitations required by charge conservation in the Callan-Rubakov effect. We construct the twisted boundary states of $N$ free Dirac fermions with $U(1)^N$-preserving boundary conditions, extending the familiar description in terms of charge lattices to shifted lattices describing twisted sectors. Using cluster decomposition and open-closed duality, we determine their coefficients and fix their normalization relative to the untwisted boundary state. We find that the Callan-Rubakov boundary condition yields a two-point function between an incoming fermion and an outgoing defect operator with a coefficient of unit modulus, even when the corresponding correlators of ordinary local fermions vanish. Finally, we relate these correlators to four-dimensional partial-wave scattering using gauge-covariant asymptotic states. We identify the missing $s$-wave contribution to the unitarity relation and argue that the twisted channel supplies it with precisely the required normalization.",
+      "followedAuthors": [
+        "Clay Cordova"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2610.40779",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2610.40779"
+    },
+    {
+      "title": "The Art of Orbifolding by Huge Non-Abelian Groups",
+      "category": "recent-preprint",
+      "date": "2026-10-26",
+      "author": "Jan Albert, Masaki Okada, Yuji Tachikawa",
+      "reference": "arXiv:2610.36024",
+      "subject": "hep-th",
+      "abstract": "We compute torus partition functions of orbifolds of two-dimensional chiral fermions by huge non-Abelian groups involving the Conway group, one of the sporadic finite simple groups. This seemingly standard problem turns out to contain, somewhat unexpectedly, multiple major issues hitherto unresolved, both at the level of the principle and at the level of practice. We describe in detail how they can be overcome. Although the methods described in this paper are generally applicable, the choice of the particular orbifolds we consider in this paper was motivated by the search for the periodicity element of topological modular forms. We will provide a brief introduction to this question, to explain why all the techniques in this paper had to be developed. Unfortunately, the orbifolds we considered turned out not to be the periodicity element.",
+      "followedAuthors": [
+        "Yuji Tachikawa"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2610.36024",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2610.36024"
+    },
+    {
+      "title": "The Anyon Atlas",
+      "category": "recent-preprint",
+      "date": "2026-10-18",
+      "author": "Jonah Berean-Dutcher, Clay Cordova, Julio Parra-Martinez, Richard Tuddenham",
+      "reference": "arXiv:2610.25439",
+      "subject": "hep-th, cond-mat.str-el, math.QA",
+      "abstract": "We classify possible topological quantum field theories in 2+1 dimensions with up to 22 anyons in the bosonic case and up to 26 in the fermionic case, through the modular data of modular and supermodular tensor categories. We construct such data via congruence representations of $\\mathrm{SL}(2,\\mathbb{Z})$ using a numerical optimization algorithm that scales to high rank. We chart the relations between the resulting theories, including anyon condensations and Chern-Simons realizations. We find examples of modular data that do not appear to arise from any Chern-Simons theory by any sequence of condensations of anyons or gaugings of ordinary global symmetries. These examples give qualitatively new topological quantum field theories, which go beyond any notion of gauge theory. For examples in this class with 11 and 12 anyon types, we solve the pentagon and hexagon equations explicitly, showing that these modular data are realized by full unitary topological quantum field theories. We also introduce https://www.AnyonAtlas.org, an online resource for exploring the data.",
+      "followedAuthors": [
+        "Clay Cordova"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2610.25439",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2610.25439"
+    },
+    {
+      "title": "Topological Aspects of the $c=2$ Model in the Continuum and on the Lattice",
+      "category": "recent-preprint",
+      "date": "2026-10-15",
+      "author": "Yichul Choi, Nathan Seiberg, Sahand Seifnashri, Wucheng Zhang",
+      "reference": "arXiv:2610.22485",
+      "subject": "hep-th, cond-mat.str-el",
+      "abstract": "We discuss the continuum two-dimensional conformal field theory, whose target space is a two-torus. In addition to its standard zero-form internal symmetries, the model also has a $-1$-form symmetry associated with its $θ$-parameter, which is also known as a background $B$-field. These symmetries combine into a higher group with anomalies. A spatially winding $B$-field generically breaks the spatial translation symmetry completely, and reduces the continuous target-space (internal) momentum symmetry to a (projectively realized) discrete subgroup. When $B$ varies linearly, a discrete translation subgroup survives, and it combines with the internal symmetry into a non-Abelian group, while the other translations survive as non-invertible symmetries. Even though the model lacks the standard spatial translation symmetry, the non-invertible translation symmetry explains why it is solvable via a Fourier decomposition. We then consider a lattice version of this system, using its modified Villain formulation. Surprisingly, all these subtleties in the symmetries of the continuum model exist on a finite lattice. Finally, we discuss various generalizations of this model, demonstrating that the phenomena we uncovered are more broadly valid.",
+      "followedAuthors": [
+        "Nathan Seiberg"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2610.22485",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2610.22485"
+    },
+    {
+      "title": "Anomalies, higher symmetries, and homotopy theory I: crossed precosheaves and a nonabelian Cech construction",
+      "category": "recent-preprint",
+      "date": "2026-10-13",
+      "author": "Anton Kapustin, Shixiong Xu",
+      "reference": "arXiv:2610.19004",
+      "subject": "math-ph, cond-mat.str-el, hep-th, math.AT",
+      "abstract": "Symmetries of a quantum field theory or a quantum lattice model are expected to be described not by a group but by a homotopy type, whose homotopy groups are the higher symmetry groups and whose Postnikov invariants encode 't Hooft anomalies. We propose a homotopy-theoretic definition of 't Hooft anomalies based on the structure of localized symmetries in the operator-algebraic approach. The input is a crossed precosheaf: a collection of groups attached to regions of space, equipped with pairings recording that the commutator of two transformations localized in two regions is localized in their intersection. To a crossed precosheaf and a finite family of regions we attach a pointed connected homotopy type, the Cech-Loday classifying space. As the family of regions ranges over finite covers of space, the classifying spaces form a pro-object in the homotopy category. There is a canonical map from the ordinary classifying space of the symmetry group to this pro-type. Composing this map with a group action gives an anomaly whose nontriviality obstructs gauging. In favorable cases, the Cech-Loday space is essentially independent of the cover. In such cases, the homotopy fiber of the canonical map is a candidate for the classifying space of the higher group of symmetries. We give examples of crossed precosheaves arising from gauge transformations in continuum field theory and from quantum cellular automata and finite-depth circuits. For quantum spin systems in one and two dimensions, our construction recovers the Else-Nayak index and its generalizations to two dimensions.",
+      "followedAuthors": [
+        "Anton Kapustin"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2610.19004",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2610.19004"
+    },
+    {
+      "title": "An Instability of the Quantum Markov Length",
+      "category": "recent-preprint",
+      "date": "2026-10-09",
+      "author": "David C. Newsom, Michael Levin",
+      "reference": "arXiv:2610.12929",
+      "subject": "quant-ph, cond-mat.stat-mech, cond-mat.str-el",
+      "abstract": "The Markov length, the length scale governing the exponential decay of conditional mutual information (CMI) in a quantum many-body state, has proven useful for characterizing mixed-state phases of matter. Nevertheless, we show that a state's Markov length is not generally stable under weak local channels. The failure of stability occurs already at a pure product state. We demonstrate this explicitly in a one-dimensional fermionic chain, where a fine-tuned depth-two circuit of nearest-neighbor Gaussian channels maps the vacuum to a state whose CMI decays \\emph{algebraically} and whose Markov length is therefore infinite, even when the channels are taken arbitrarily close to the identity. The algebraic decay is rooted in the nonanalyticity of the von Neumann entropy at rank-deficient density operators. We exhibit an analogous instability on an ordinary qubit chain. More generally, we show that the Markov length is unstable in any translation-invariant state with even a single rank-deficient reduced density operator. These results pose a challenge to recent definitions of mixed-state phase equivalence based on the Markov length.",
+      "followedAuthors": [
+        "Michael Levin"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2610.12929",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2610.12929"
+    },
+    {
+      "title": "An Observer in de Sitter Space, and Rereading Everett",
+      "category": "recent-preprint",
+      "date": "2026-10-03",
+      "author": "Edward Witten",
+      "reference": "arXiv:2610.04804",
+      "subject": "hep-th",
+      "abstract": "After re-examining a classic article by Hugh Everett, I will discuss the entropy of de Sitter space from the standpoint of an observer living in the space. This provides a nice example of the importance -- for certain questions -- of taking seriously the fact that in cosmology any observer is really part of the universe that is being observed. (This article has appeared in a special issue of International Journal of Modern Physics A in honor of Gerard 't Hooft.",
+      "followedAuthors": [
+        "Edward Witten"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2610.04804",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2610.04804"
+    },
+    {
+      "title": "Peeling off Abelian Anyons and Proliferation Transitions",
+      "category": "recent-preprint",
+      "date": "2026-10-03",
+      "author": "Meng Cheng, Nathan Seiberg",
+      "reference": "arXiv:2610.04704",
+      "subject": "cond-mat.str-el, hep-th",
+      "abstract": "We study the invertible one-form global symmetry of a (2+1)-dimensional topological quantum field theory (TQFT). A universal description of this symmetry ``peels off'' all the Abelian anyons from the rest of the TQFT. This allows us to study this symmetry and some of its consequences, independently of the details of the rest of the system. We then describe these Abelian anyons using $\\mathrm{U}(1)$ gauge fields with Chern-Simons terms and couple them to a scalar field, thus constructing a particular non-topological theory. This new theory, our transition field theory, exhibits a phase transition from the original TQFT to another phase. The latter is either gapless or another TQFT. This discussion generalizes and extends our earlier work (arXiv:2603.00245). In particular, we give a more detailed description of the global symmetries and their fates in the various phases.",
+      "followedAuthors": [
+        "Nathan Seiberg"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2610.04704",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2610.04704"
+    },
+    {
+      "title": "The Chern-Simons Function and the Quantum Hall Effect",
+      "category": "recent-preprint",
+      "date": "2026-09-18",
+      "author": "Edward Witten",
+      "reference": "arXiv:2609.21182",
+      "subject": "hep-th",
+      "abstract": "In this article, I will define the Chern-Simons invariant of a gauge connection over a three-manifold and explain some of the things that are special about it, in particular its role in understanding the quantum Hall effect, which is an important effect in condensed matter physics, and its generalization, the fractional quantum Hall effect. (The article is based on a lecture at a conference celebrating the 75th birthday of James Simons, held at the CUNY Graduate Center in 2013. It will appear in the Bulletin of the American Math Society.",
+      "followedAuthors": [
+        "Edward Witten"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2609.21182",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2609.21182"
+    },
+    {
+      "title": "Bosonic SPT and invertible phases and its relation to Steenrod's problem",
+      "category": "recent-preprint",
+      "date": "2026-07-16",
+      "author": "Shota Saito, Yuji Tachikawa, Yi Zhang",
+      "reference": "arXiv:2607.14662",
+      "subject": "hep-th, math.AT",
+      "abstract": "Bosonic invertible and symmetry-protected topological (SPT) phases are well-known to be described by ordinary cohomology groups in low dimensions, but `beyond-cohomology' phases appear in higher dimensions. We make a systematic study of them, and find that the first major non-triviality is a mod-3 phenomenon, and not a mod-2 phenomenon as in the case of fermionic phases. We also point out that this is a dual manifestation of the classic question of Steenrod, namely the issue of the existence of homology cycles without manifold representatives. Thom developed the theory of cobordisms to answer this question, and we explain how the same analysis leads to Dijkgraaf-Witten phases which are nontrivial on general simplicial complexes but become trivial on manifolds.",
+      "followedAuthors": [
+        "Yuji Tachikawa"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2607.14662",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2607.14662"
+    },
+    {
+      "title": "Symmetry-twisted multi-entropies: Order parameters for 2D SPT phases",
+      "category": "recent-preprint",
+      "date": "2026-07-13",
+      "author": "Ramanjit Sohal, Michael Levin, Ruben Verresen",
+      "reference": "arXiv:2607.12023",
+      "subject": "cond-mat.str-el, hep-th, quant-ph",
+      "abstract": "Although symmetry-protected topological phases (SPTs) can be distinguished by their entanglement properties, it has been unclear how to extract this information directly from expectation values beyond the 1D case. Here, we close this gap and propose a pair of nonlocal order parameters that can detect and distinguish all bosonic SPTs in 2D protected by internal discrete, Abelian unitary symmetries. The desired topological invariants are extracted by these quantities by effectively simulating the SPT path integral on topologically non-trivial spacetime manifolds. Our order parameters are defined in terms of expectation values of partial symmetry and permutation operations acting on fixed numbers of replicas of the system in finite spatial regions. These expectation values correspond to symmetry-twisted versions of multipartite entanglement quantities known as multi-entropies. We show explicitly that our two order parameters detect symmetry-protected four-party and six-party entanglement, respectively, and we constrain possible \"spurious\" contributions. We analytically test our proposal in fixed-point lattice models. Our results suggest multipartite entanglement to be a defining feature of SPTs; indeed, we expect our methods to generalize to fermionic and higher-dimensional systems.",
+      "followedAuthors": [
+        "Michael Levin"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2607.12023",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2607.12023"
+    },
+    {
+      "title": "A Note on Corrections to Entanglement Wedge Reconstruction",
+      "category": "recent-preprint",
+      "date": "2026-06-17",
+      "author": "Edward Witten",
+      "reference": "arXiv:2606.18639",
+      "subject": "hep-th",
+      "abstract": "If entanglement wedge reconstruction is exact, then (under certain assumptions) the area term in the RT formula is a c-number, indicating that the choice of a bulk quantum state does not influence the geometry. Recently Cao, Cheng, Karthikeyan, Li, and Preskill considered a generic perturbation away from exact entanglement wedge reconstruction. The optimal reconstruction was defined; based on this, an effective area function that depends nontrivially on the quantum state was defined and its properties were analyzed. Here we make one aspect of this picture more quantitative, by showing that if as expected the area term in the RT formula is of order 1/G while the bulk entropy is of order 1, then the corrections to entanglement wedge reconstruction are exponentially small (in G) relative to corrections to the area function. In the framework under discussion, there is an area function but no area operator; we discuss to what extent this is the expected behavior in holography.",
+      "followedAuthors": [
+        "Edward Witten"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2606.18639",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2606.18639"
+    },
+    {
+      "title": "Toward Entanglement Bootstrap for Conformal Field Theory in Any Dimension",
+      "category": "recent-preprint",
+      "date": "2026-06-10",
+      "author": "Rolando Ramirez Camasca, Xiang Li, Ting-Chun Lin, John McGreevy",
+      "reference": "arXiv:2606.12540",
+      "subject": "hep-th, cond-mat.str-el, quant-ph",
+      "abstract": "Given a quantum critical wavefunction in any dimension, we propose a reconstructed Hamiltonian, analogous to the ones previously found for 1+1d CFT and for 2+1d bosonic liquid topologically-ordered states. We test numerically that, for known regularized approximate CFT groundstates (on the icosahedron and the fuzzy sphere), (1) they are close to the groundstate of their reconstructed Hamiltonian, and (2) the spectrum of their reconstructed Hamiltonian on the unit sphere has CFT properties (integer spacing of descendants) and matches known low-lying energies. We show that this provides an automated method to improve the finite-size effects in a fixed Hilbert space.",
+      "followedAuthors": [
+        "John McGreevy"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2606.12540",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2606.12540"
+    },
+    {
+      "title": "Wormholes and Averaging over N",
+      "category": "recent-preprint",
+      "date": "2026-05-14",
+      "author": "Jonah Kudler-Flam, Edward Witten",
+      "reference": "arXiv:2605.15180",
+      "subject": "hep-th",
+      "abstract": "The gravitational path integral produces an asymptotic expansion in $G_N$, a fact which is puzzling in the case of observables that are expected to fluctuate wildly. Wormholes appear to compute ensemble averages of functions of such observables, though in typical constructions of AdS/CFT, there are no parameters to average over except, in some examples, a single integer $N$. We introduce a procedure that we call ``Mellin averaging'' to define a sort of asymptotic average of a function of $N$. We argue that Mellin averaging over $N$ may suffice to reproduce the apparent randomness seen in wormhole physics, provided that the dual theory admits an analytic continuation in $N$ and the relevant observables fluctuate on superpolynomially small scales in $N$. As a test case, we consider the spectral form factor in the regime where the double cone is believed to dominate the gravitational path integral and compare to a random matrix theory in which $N$ behaves as a continuous variable. We also describe some toy models of analytic continuation in $N$: a qubit model that can be analytically continued in $N$, and an explicit construction of a deterministic function of $N$ that simulates a sequence of independent draws from a Gaussian ensemble.",
+      "followedAuthors": [
+        "Edward Witten"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2605.15180",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2605.15180"
+    },
+    {
+      "title": "Crystalline topological invariants in quantum many-body systems",
+      "category": "recent-preprint",
+      "date": "2026-04-11",
+      "author": "Naren Manjunath, Maissam Barkeshli",
+      "reference": "arXiv:2604.10338",
+      "subject": "cond-mat.str-el, cond-mat.mes-hall, hep-th, math-ph, quant-ph",
+      "abstract": "Crystalline symmetries give rise to topological invariants that can distinguish quantum phases of matter. Understanding these in strongly interacting systems is an ongoing research direction requiring non-perturbative methods. Recent developments have demonstrated that even classic models, like the Harper-Hofstadter model of free fermions on a lattice in a magnetic field, yield a host of crystalline symmetry protected topological invariants. Here we review some of these developments, focusing mainly on how to characterize, classify, and detect invariants arising from lattice translation and rotation symmetries along with charge conservation in two-dimensional systems, including integer and fractional Chern insulators.",
+      "followedAuthors": [
+        "Maissam Barkeshli"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2604.10338",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2604.10338"
+    },
+    {
+      "title": "On Generalised Discrete Torsion",
+      "category": "recent-preprint",
+      "date": "2026-04-01",
+      "author": "Philip Boyle Smith, Yuji Tachikawa",
+      "reference": "arXiv:2604.01225",
+      "subject": "hep-th",
+      "abstract": "For a 2d gauged sigma model with target space $M$ and discrete gauge group $G$, we consider a generalisation of Vafa's discrete torsion $H^2(BG; U(1))$ that assigns different local discrete torsion phases to different singular loci of the orbifold $M/G$. Our generalised discrete torsion lives in $H^2_G(M; U(1))$, and gives a consistent implementation of Gaberdiel and Kaste's prescription for inserting such local discrete torsion phases by hand at higher genus. We revisit the original application to $T^6/\\mathbb{Z}_2^2$ and $T^7/\\mathbb{Z}_2^3$ orbifold CFTs, and determine what smooth Calabi-Yau and $G_2$ geometries result from different choices of the generalised discrete torsion. We find that the local discrete torsion phases can be different from each other, but are not completely independent either; in the $T^7/\\mathbb{Z}_2^3$ case for example, the orbifold CFTs only realise 3 out of the 9 possible Betti numbers of $G_2$ resolutions constructed by Joyce.",
+      "followedAuthors": [
+        "Yuji Tachikawa"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2604.01225",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2604.01225"
+    },
+    {
+      "title": "On the trivalent junction of three non-tachyonic heterotic string theories",
+      "category": "recent-preprint",
+      "date": "2026-03-30",
+      "author": "Yuji Tachikawa",
+      "reference": "arXiv:2603.28133",
+      "subject": "hep-th",
+      "abstract": "Recently, Altavista, Anastasi, Angius and Uranga discussed a method to construct junctions and bouquets of different perturbative string theories. Following this analysis, we here argue that three non-tachyonic ten-dimensional heterotic string theories can be joined together at a nine-dimensional junction. This is done by creating a two-dimensional non-conformal $\\mathcal{N}{=}(0,1)$ supersymmetric quantum field theory with three asymptotic ends, each equipped with one of the worldsheet theories of the supersymmetric $E_8\\times E_8$ theory, the supersymmetric $SO(32)$ theory, and the non-supersymmetric $SO(16)\\times SO(16)$ theory, respectively. It is actually a special case of a more general construction involving an arbitrary $\\mathbb{Z}_2$-symmetric theory $T$, its $\\mathbb{Z}_2$-orbifold $T/\\mathbb{Z}_2$, and the modified $\\mathbb{Z}_2$-orbifold $(T\\times q)/\\mathbb{Z}_2$, where $q$ is a certain $\\mathbb{Z}_2$-symmetric spin invertible theory.",
+      "followedAuthors": [
+        "Yuji Tachikawa"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2603.28133",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2603.28133"
+    },
+    {
+      "title": "What happens to wavepackets of fermions when scattered by the Maldacena-Ludwig wall?",
+      "category": "recent-preprint",
+      "date": "2026-03-26",
+      "author": "Yuji Tachikawa, Keita Tsuji, Masataka Watanabe",
+      "reference": "arXiv:2603.25508",
+      "subject": "hep-th, cond-mat.str-el",
+      "abstract": "We study wavepackets of exotic excitations after two-dimensional fermions are scattered by the boundary condition constructed by Maldacena and Ludwig, which turns elementary excitations into exotic fractionally-charged objects. They are of interest in the s-wave approximation of the fermion-monopole scattering in four-dimensional QED and of the multi-channel Kondo effect. We in particular give an explicit expression of the outgoing state of a pair of such particles; we then examine its properties, such as the charge density $\\langle J(x)\\rangle$ and the expectation value $\\langle N\\rangle$ of the number of fermions and anti-fermions in the state. The charge density $\\langle J(x)\\rangle$ is found to be localized with its integral finite and fractional, while the expectation value $\\langle N\\rangle$ diverges when the wavepacket is localized to a point.",
+      "followedAuthors": [
+        "Yuji Tachikawa"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2603.25508",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2603.25508"
+    },
+    {
+      "title": "On thermalization in many-body classical Floquet systems",
+      "category": "recent-preprint",
+      "date": "2026-03-13",
+      "author": "Anton Kapustin",
+      "reference": "arXiv:2603.13631",
+      "subject": "cond-mat.stat-mech, math-ph, nlin.CD",
+      "abstract": "It is expected that a generic closed many-body system prepared in a well-behaved initial state and subjected to a periodic drive will eventually thermalize, i.e. approach the state of maximal entropy. This property, while compatible with and even demanded by the physical intuition, is much stronger than ergodicity or mixing and is difficult to justify mathematically. We describe an infinite set of classical many-body Floquet systems of algebraic origin for which thermalization of very general initial states can be proved. For example, we show that a Gibbs state of any sufficiently uniform local differentiable Hamiltonian heats up to infinite temperature at long times. We show that in agreement with the physical intuition, the only obstruction to thermalization is the existence of local observables which are periodic in time.",
+      "followedAuthors": [
+        "Anton Kapustin"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2603.13631",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2603.13631"
+    },
+    {
+      "title": "Proliferation transitions from a topological phase in $2+1$ dimensions",
+      "category": "recent-preprint",
+      "date": "2026-02-27",
+      "author": "Meng Cheng, Nathan Seiberg",
+      "reference": "arXiv:2603.00245",
+      "subject": "cond-mat.str-el, hep-th",
+      "abstract": "We consider phase transitions out of a general topological phase in $2+1$ dimensions. We assume that the transition is triggered by a single Abelian anyon, which becomes light near the transition and whose worldlines proliferate after the transition. (This proliferation is often referred to as ``condensation.'') We describe the transition using a continuum field theory obtained by coupling the corresponding topological quantum field theory (TQFT) to a single complex scalar field associated with this anyon. With these assumptions, we find the most general relativistic field theory for such a transition. Even though for a given TQFT and a choice of anyon, there are infinitely many such field theories, the transition theory depends on only a single additional integer parameter. We analyze all these theories, their global symmetries, and their phases. In generic cases, the theory after the transition can be related to the original one via an Abelian hierarchy construction. In special cases, the theory after the transition is gapless, and with a particular deformation, it is related to the original TQFT by gauging an anomaly-free one-form global symmetry. We also explore the enrichment of this setup by a global U(1) symmetry. In some cases, enriching the original TQFT is incompatible with the full transition theory. Finally, we demonstrate our construction with many specific examples.",
+      "followedAuthors": [
+        "Nathan Seiberg"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2603.00245",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2603.00245"
+    },
+    {
+      "title": "Duality and Axion Wormholes",
+      "category": "recent-preprint",
+      "date": "2026-01-04",
+      "author": "Edward Witten",
+      "reference": "arXiv:2601.01587",
+      "subject": "hep-th",
+      "abstract": "The prototype of a Euclidean wormhole solution of Einstein gravity coupled to matter is the axion wormhole in four spacetime dimensions. In this primarily expository article, we spell out some details about this construction. The axion wormhole has a semiclassical description, found in the original paper [1], in which the matter system is a two-form gauge field B with three-form field strength H=dB. The two-form is dual to a massless scalar, but the wormhole does not have a semiclassical description in terms of the scalar. There is no contradiction here as the duality between the two-form and the scalar is not a simple transformation of classical fields but involves, in Euclidean signature, a Poisson resummation of the sum over fluxes. Because of the need for this Poisson resummation, the scalar field cannot be treated semiclassically in the wormhole throat. Nonetheless, it is straightforward to compute the effective action derived from the wormhole in the scalar (or two-form) language, recovering standard claims.",
+      "followedAuthors": [
+        "Edward Witten"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2601.01587",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2601.01587"
+    },
+    {
+      "title": "Tori, Klein Bottles, and Modulo 8 Parity/Time-reversal Anomalies of 2+1d Staggered Fermions",
+      "category": "recent-preprint",
+      "date": "2026-01-03",
+      "author": "Nathan Seiberg, Wucheng Zhang",
+      "reference": "arXiv:2601.01191",
+      "subject": "hep-th, cond-mat.str-el, hep-lat",
+      "abstract": "We study the symmetries of lattice staggered fermions in 2+1d. Using the symmetries, we can place the system on any sheared torus or Klein bottle. These different backgrounds provide diagnostics of various 't Hooft anomalies associated with the crystalline symmetries. We then compare the lattice model to its continuum limit. The symmetries of the lattice system are mapped in a nontrivial way to the symmetries of the continuum theories. Using this map, we match the 't Hooft anomalies on the lattice and the continuum. Along the way, we develop a general formalism to study Hamiltonian lattice models on nontrivial, compact, flat spaces.",
+      "followedAuthors": [
+        "Nathan Seiberg"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2601.01191",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2601.01191"
+    },
+    {
+      "title": "Chaos and thermalization in Clifford-Floquet dynamics",
+      "category": "recent-preprint",
+      "date": "2026-01-01",
+      "author": "Anton Kapustin, Daniil Radamovich",
+      "reference": "arXiv:2601.00511",
+      "subject": "quant-ph, cond-mat.stat-mech, math-ph",
+      "abstract": "We study the ergodic properties of a unitary Floquet dynamics arising from the repeated application of a translationally-invariant Clifford Quantum Cellular Automata to an infinite system of qubits in d dimensions. One expects that if the QCA does not exhibit any periodicity, a generic initial state of qubits will thermalize, that is, approach the infinite-temperature state. We show that this is true for many classes of states, both pure and mixed. In particular, this is true for all initial states that are short-range entangled and close to the equilibrium state. We also point out a subtle distinction between weak and strong thermalization.",
+      "followedAuthors": [
+        "Anton Kapustin"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2601.00511",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2601.00511"
+    },
+    {
+      "title": "Generalized Level-Rank Duality, Holomorphic Conformal Field Theory, and Non-Invertible Anyon Condensation",
+      "category": "recent-preprint",
+      "date": "2025-12-30",
+      "author": "Clay Cordova, Diego García-Sepúlveda, Jeffrey A. Harvey",
+      "reference": "arXiv:2512.24419",
+      "subject": "hep-th, cond-mat.str-el, math.QA",
+      "abstract": "We study the interplay between holomorphic conformal field theory and dualities of 3D topological quantum field theories generalizing the paradigm of level-rank duality. A holomorphic conformal field theory with a Kac-Moody subalgebra implies a topological interface between Chern-Simons gauge theories. Upon condensing a suitable set of anyons, such an interface yields a duality between topological field theories. We illustrate this idea using the $c=24$ holomorphic theories classified by Schellekens, which leads to a list of novel sporadic dualities. Some of these dualities necessarily involve condensation of anyons with non-abelian statistics, i.e. gauging non-invertible one-form global symmetries. Several of the examples we discover generalize from $c=24$ to an infinite series. This includes the fact that Spin$(n^{2})_{2}$ is dual to a twisted dihedral group gauge theory. Finally, if $-1$ is a quadratic residue modulo $k$, we deduce the existence of a sequence of holomorphic CFTs at central charge $c=2(k-1)$ with fusion category symmetry given by $\\mathrm{Spin}(k)_{2}$ or equivalently, the $\\mathbb{Z}_{2}$-equivariantization of a Tambara-Yamagami fusion category.",
+      "followedAuthors": [
+        "Clay Cordova"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2512.24419",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2512.24419"
+    }
+  ]
+}
