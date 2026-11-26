@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-26T16:48:45+00:00",
+  "updatedAt": "2026-11-26T21:33:40+00:00",
   "posts": [
     {
       "title": "Möbius Fusion Algebra",
@@ -50,6 +50,22 @@
       "pdf": "https://arxiv.org/pdf/2611.24752"
     },
     {
+      "title": "Planckian Charge Equilibration in Fast Scramblers",
+      "category": "recent-preprint",
+      "date": "2026-11-09",
+      "author": "Jaewon Kim, Eduardo Fradkin",
+      "reference": "arXiv:2611.13081",
+      "subject": "cond-mat.str-el, hep-th",
+      "abstract": "The Planckian time, $τ_{\\rm Pl}=\\hbar/(k_BT)$, is conjectured to set a lower limit on thermal relaxation times in strongly interacting quantum matter. Rigorous bounds limit both how rapidly quantum information can scramble and how soon hydrodynamics can emerge, yet the relation between the scrambling and equilibration rates remains unclear. We address this question by studying the relaxation of a charge imbalance between two subsystems of the complex Sachdev--Ye--Kitaev model and its Yukawa generalizations, which exhibit maximal scrambling. In the low-temperature conformal regime, we find through a linear response analysis that the slowest decay of this imbalance occurs at rate $Γ=2π(2Δ-d)k_BT/\\hbar$, where $Δ$ is the fermion scaling dimension and $d=0,1$ is the spatial dimension. These results establish Planckian charge equilibration in maximally scrambling systems and show that maximal scrambling alone does not fix its dimensionless prefactor.",
+      "followedAuthors": [
+        "Eduardo Fradkin"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2611.13081",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2611.13081"
+    },
+    {
       "title": "Property F implies weak integrality for non-degenerate pivotal braided fusion categories",
       "category": "recent-preprint",
       "date": "2026-11-09",
@@ -64,6 +80,22 @@
       "link": "https://arxiv.org/abs/2611.12836",
       "linkText": "arXiv",
       "pdf": "https://arxiv.org/pdf/2611.12836"
+    },
+    {
+      "title": "Threshold-Free Symmetry-Enriched Topological Quantum Memory",
+      "category": "recent-preprint",
+      "date": "2026-11-04",
+      "author": "Abhijat Sarma, Ruochen Ma, Cenke Xu",
+      "reference": "arXiv:2611.07017",
+      "subject": "quant-ph, cond-mat.str-el",
+      "abstract": "We show that non-Abelian symmetry enrichment can protect a toric code memory against incoherent electric noise at any bond error probability $p\\in[0,1]$. For a toric code on the honeycomb lattice coupled to $Sp(N)$ rotors, with electric anyons carrying the fundamental representation, we construct an efficient minimum-weight decoder whose logical error probability decays exponentially with system size for $N\\ge40$, a conservative sufficient bound. The same decoder also rules out strong-to-weak spontaneous symmetry breaking in the fundamental channel of $Sp(N)$ under the corresponding local decoherence in two dimensions. The construction extends to other symmetries, including $SU(N)$.",
+      "followedAuthors": [
+        "Cenke Xu"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2611.07017",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2611.07017"
     },
     {
       "title": "A Note On Lattice Definition of Gauge Theories With Chiral Fermions",
@@ -98,6 +130,22 @@
       "pdf": "https://arxiv.org/pdf/2611.03817"
     },
     {
+      "title": "Faster-than-power-law decay of order parameter correlations in the two-dimensional RP$^2$ model: a rigorous result by vibe-proving",
+      "category": "recent-preprint",
+      "date": "2026-10-30",
+      "author": "Masaki Oshikawa",
+      "reference": "arXiv:2610.41256",
+      "subject": "cond-mat.stat-mech, hep-lat, math-ph",
+      "abstract": "We consider the RP$^2$ model on the two-dimensional square lattice with nearest-neighbor interactions. It is obtained by replacing the spin in the standard classical Heisenberg model with a director, which does not distinguish two opposite directions. Unlike the standard classical Heisenberg model or the O(3) nonlinear sigma model, the RP$^2$ (and its cousin RP$^3$) model allows point vortex defects classified by $π_1(RP^2)= Z_2$ in two dimensions. It is tempting to expect the $Z_2$ vortices to induce a phase transition analogous to the well-established Berezinskii-Kosterlitz-Thouless transition in the O(2) model (XY model) in two dimensions. Indeed, the possibilities of a critical phase or a critical point with power-law correlations of the order parameter in the RP$^2$ and RP$^3$ models have been discussed in the literature. However, the challenging nature of the problem has prevented a definitive conclusion on the phase diagram so far. In this paper, we report a rigorous mathematical proof by Artificial Intelligence (ChatGPT 6 Astra) that the absolute value of the two-point correlation function of order parameters at distance $r$ in the RP$^2$ and RP$^3$ models on the two-dimensional square lattice is bounded above by $C_β\\exp{(-c_β[\\log(2+r)]^2)}$ for any finite inverse temperature $β\\ge0$, with positive constants $C_β$ and $c_β$ depending only on $β$. Namely, the correlation function decays faster than any power of $r$. The proof is formalized and verified in Lean; the formalization is publicly available at doi:10.5281/zenodo.23548847 . A heuristic argument based on a one-parameter effective theory ansatz at large distances combined with the rigorous correlation bound suggests (but does not prove) that the $Z_2$ vortices are always unbound at any nonzero temperature.",
+      "followedAuthors": [
+        "Masaki Oshikawa"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2610.41256",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2610.41256"
+    },
+    {
       "title": "Monopole-Fermion Scattering from Twisted Conformal Boundary States",
       "category": "recent-preprint",
       "date": "2026-10-29",
@@ -128,6 +176,86 @@
       "link": "https://arxiv.org/abs/2610.36024",
       "linkText": "arXiv",
       "pdf": "https://arxiv.org/pdf/2610.36024"
+    },
+    {
+      "title": "Lifshitz Phase of Quantum Gravity: The Infrared Fixed Point of the (2+1)D Unimodular Hořava-Chern-Simons Model",
+      "category": "recent-preprint",
+      "date": "2026-10-25",
+      "author": "Maxim Zelenko, Dam Thanh Son",
+      "reference": "arXiv:2610.34024",
+      "subject": "hep-th, cond-mat.mes-hall, gr-qc",
+      "abstract": "We consider a nonrelativistic gravity theory in (2+1) dimensions with $w_\\infty$ gauge symmetry that we call unimodular Hořava-Chern-Simons gravity. The theory has three dimensionless couplings, one of which is the Chern-Simons level $κ$. At large $|κ|$, the theory flows from an asymptotically free UV fixed point to an IR fixed point with anisotropic scale invariance characterized by a dynamical critical exponent $z=2-\\tfrac32|κ|^{-1}$. We speculate that unimodular Hořava-Chern-Simons gravity undergoes a phase transition from this scale-invariant phase to a confining phase when $κ$ drops below a critical value.",
+      "followedAuthors": [
+        "Dam Thanh Son"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2610.34024",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2610.34024"
+    },
+    {
+      "title": "Revisiting monodromy defects in $\\text{O}(N)$ conformal field theories",
+      "category": "recent-preprint",
+      "date": "2026-10-25",
+      "author": "Jiechao Feng, Nayan Myerson-Jain, G. Shankar, Taige Wang, Meng Cheng",
+      "reference": "arXiv:2610.33972",
+      "subject": "hep-th, cond-mat.str-el",
+      "abstract": "Monodromy defects are fundamental objects in extended quantum systems with global symmetries. We study such defects in $\\text{O}(N)$ conformal field theories (CFT), which describe the universality class of $\\text{O}(N)$ spontaneous symmetry breaking transitions. In particular, we consider partial-monodromy defects, whose corresponding symmetry transformations only act on a subset of the fundamental $\\text{O}(N)$ vector field. We develop an analytical theory of the defect phases, using both renormalization group and large $N$ expansion. In general (spacetime) dimensions $3\\leq d<4$, multiple defect CFTs are identified, which are described by appropriate boundary conditions for the vector field near the defect. Near $d=3$, we show that in the large $N$ limit, a stable defect CFT always exists, characterized by the so-called (\"standard\") \"alternate\" boundary conditions for the (twisted) untwisted fields, whose defect correlations are (suppressed) enhanced. We then perform large-scale classical Monte Carlo simulations of monodromy defects in the O(3) CFT in an improved lattice model and numerically extract the defect scaling dimensions. The numerical results are in qualitative agreement with the stable defect CFT identified in the field theory.",
+      "followedAuthors": [
+        "Meng Cheng"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2610.33972",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2610.33972"
+    },
+    {
+      "title": "Quantum gravity on the bulk cone",
+      "category": "recent-preprint",
+      "date": "2026-10-22",
+      "author": "Ahmed Almheiri, Matthew Dodelson, Zohar Komargodski",
+      "reference": "arXiv:2610.31610",
+      "subject": "hep-th",
+      "abstract": "Bulk-cone singularities in holographic correlators encode propagation along bulk null geodesics. The prototypical example is an AdS black hole, where incoming null geodesics can wind around the photon sphere and return to the boundary. These singularities appear in real time in the thermal two-point function at finite volume. We show that conformal field theories dual to gravitational theories at finite $G_N$ cannot have such singularities. We rule out these singularities both for individual microstates and for the thermal state. The main thrust of the argument is to invoke an analytic continuation in the temperature. As a microscopic example, we construct an AdS$_3$ geometry with two colliding shocks which exhibits a bulk cone singularity. We show by an explicit calculation in the CFT that this singularity is smoothed out at finite $G_N$. Qualitatively, the singularity resolution is a consequence of the fuzziness of the bulk solution in quantum gravity.",
+      "followedAuthors": [
+        "Zohar Komargodski"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2610.31610",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2610.31610"
+    },
+    {
+      "title": "Field theories and critical excitations at anyon condensation transitions",
+      "category": "recent-preprint",
+      "date": "2026-10-20",
+      "author": "Luisa Eck, Xie Chen",
+      "reference": "arXiv:2610.28148",
+      "subject": "cond-mat.str-el, hep-th",
+      "abstract": "Anyon condensation transitions remain challenging to characterize especially when the condensing anyons are non-abelian. We develop two complementary approaches for extracting information about the transition from the categorical data of the parent topological order and the condensate. The first adapts a Ginzburg-Landau procedure developed for $1+1$D transitions in the SymTFT setting to $2+1$D anyon condensation transitions. The construction applies when the anyons participating in the condensate have integer quantum dimensions. The second gives a criterion for identifying which point and loop excitations become critical at a continuous transition. The key step is to determine which anyon loops remain condensed throughout. All other loops become critical, while a point excitation becomes critical if it braids trivially with every condensed loop. We illustrate both proposals in several abelian and non-abelian examples.",
+      "followedAuthors": [
+        "Xie Chen"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2610.28148",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2610.28148"
+    },
+    {
+      "title": "Field Theory of the Gutzwiller Projection",
+      "category": "recent-preprint",
+      "date": "2026-10-19",
+      "author": "Abhijat Sarma, Cenke Xu, Chong Wang",
+      "reference": "arXiv:2610.27050",
+      "subject": "cond-mat.str-el",
+      "abstract": "The Gutzwiller projection produces a well-known ansatz for spin-liquid and quantum Hall ground-state wavefunctions that is amenable to numerical simulation, with the Laughlin wavefunction being the most celebrated example. A long-standing issue is the precise relation between the Gutzwiller projection and the closely related parton gauge theory. Here, we clarify this issue by providing a field-theoretic description of the Gutzwiller projection. In a path integral description, the universal physics of the projected state is described in terms of a gauge field supported on a temporal slab of vanishing width $ε\\rightarrow 0$ coupled to the bulk matter fields. We analytically derive the universal physics of various Gutzwiller projected states. Our construction is also applicable to discrete symmetries, and we use it to analyze various projected SPT states. Among our results, we show that the Gutzwiller projection is not a good ansatz for the long-distance properties of $U(1)$ Dirac spin liquids, spinon Fermi surface spin liquids or composite Fermi liquids, and that the Gutzwiller projection of a quantum spin Hall state has only quasi-long range order. In contrast, in examples where the gauge field is gapped, including Laughlin states, $\\mathbb{Z}_2$ spin liquids and Luttinger liquids, we show that the slab gauge theory from Gutzwiller projection reproduces the correct universal physics of the full parton gauge theory. We also present a generalization of our field theory that describes $G$-intertwining defects, with application to self-duality defects of recent theoretical interest.",
+      "followedAuthors": [
+        "Cenke Xu"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2610.27050",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2610.27050"
     },
     {
       "title": "The Anyon Atlas",
@@ -194,6 +322,38 @@
       "pdf": "https://arxiv.org/pdf/2610.12929"
     },
     {
+      "title": "Zero Mode Operators and Charge-Conjugation Defects in Non-Abelian Fractional Quantum Hall-Superconductor Heterostructures",
+      "category": "recent-preprint",
+      "date": "2026-10-06",
+      "author": "Junyi Cao, Eduardo Fradkin",
+      "reference": "arXiv:2610.08907",
+      "subject": "cond-mat.str-el, cond-mat.mes-hall, cond-mat.supr-con, quant-ph",
+      "abstract": "We study zero modes bound to charge-conjugation defects in fractional quantum Hall-superconductor (FQH-SC) heterostructures built from Abelian and non-Abelian FQH states. Although the associated defects are well described by $G$-crossed braided tensor categories, a local operator description of their zero modes is not generally known. We generalize the bulk-to-boundary construction of localized zero mode operators to FQH-SCs with non-Abelian parent topological orders, mapping bulk Wilson operators in the folded theory to localized zero mode operators in the one-dimensional FQH-SC theory. This construction distinguishes zero mode anyons from the local zero mode operators that act on the defect Hilbert space and yields a generalized zero mode algebra. It also determines the fusion-channel dependence of tunneling: tunneling of zero mode operators probes bulk monodromy, while direct zero mode anyon transfer probes $G$-crossed associativity data. Applying this framework, we recover the $\\mathbb{Z}_{2m}$ parafermion zero mode structure of fermionic Laughlin FQH-SCs at filling $ν=1/m$, obtain a $\\mathbb{Z}_2^{(n)}\\times\\mathbb{Z}_N$ structure for generalized Moore-Read states at filling $ν=1/m$, with $N=2m$ for fermionic states and $N=m$ for bosonic states, and find a $\\mathrm{Fib}\\times\\mathbb{Z}_N$ structure for the $k=3$ Read-Rezayi state at filling $ν=3/(3M+2)$, with $N=2(3M+2)$ for fermionic states and $N=(3M+2)/2$ for bosonic states. In the Read-Rezayi case, zero mode operator tunneling and direct zero mode anyon transfer yield distinct universal amplitude ratios between the neutral fusion channels, providing a characteristic signature of the underlying Fibonacci defect structure.",
+      "followedAuthors": [
+        "Eduardo Fradkin"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2610.08907",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2610.08907"
+    },
+    {
+      "title": "Climbing the Fusion Tree: Center Ordering and Decoding Hierarchy in Non-Abelian Mixed States",
+      "category": "recent-preprint",
+      "date": "2026-10-05",
+      "author": "Pablo Sala, Vlad Temkin, Cenke Xu, Daniel Podolsky, Ehud Altman",
+      "reference": "arXiv:2610.06692",
+      "subject": "quant-ph, cond-mat.stat-mech, cond-mat.str-el",
+      "abstract": "We develop an operational approach to strong-to-weak spontaneous symmetry breaking (sw-SSB) of a non-Abelian symmetry group G. We formulate it as the decoding task of distinguishing two strongly symmetric states that differ by a pair of inserted irreps, after both are corrupted by strongly symmetric decoherence. For finite G, this task is dual to distinguishing logical states of the quantum double D(G) under pure-charge noise. We derive a hierarchy of statistical mechanics models describing optimal decoding from the fusion outcomes measured on successively larger nested regions. As for maximum-likelihood decoders of Abelian codes the measured irreps act as quenched disorder obeying a Nishimori-like condition. Strikingly, because local irreps do not determine how they fuse globally, the strong $G\\times G$ symmetry is realized only nonlocally, and irreps trivially charged under Z(G) (the center of G) can hide inside noise-generated ones. As a result, the strong symmetry spontaneously breaks down to Z(G), times the weak symmetry. The only transition at nonzero error rate is then an ordering of the center, whose threshold cannot decrease as the hierarchy is ascended. This conclusion holds at any finite level of the hierarchy for non-nilpotent groups. We confirm these predictions with tensor-network calculations for $S_3$ and SU(2). At the first level, the $S_3$ model, whose center is trivial, shows no transition, and the fidelity correlations of all irreps provably decay to non-zero values. The SU(2) model exhibits a $Z_2$ transition consistent with the Nishimori-Ising universality class, where the fidelity correlations of spin-$1/2$ irreps become long-range. The threshold rises from the first to the second level of the hierarchy by $16\\%$. Our results provide a systematic framework for studying non-Abelian sw-SSB and for constructing decoders for non Abelian topological codes.",
+      "followedAuthors": [
+        "Cenke Xu"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2610.06692",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2610.06692"
+    },
+    {
       "title": "An Observer in de Sitter Space, and Rereading Everett",
       "category": "recent-preprint",
       "date": "2026-10-03",
@@ -218,12 +378,61 @@
       "subject": "cond-mat.str-el, hep-th",
       "abstract": "We study the invertible one-form global symmetry of a (2+1)-dimensional topological quantum field theory (TQFT). A universal description of this symmetry ``peels off'' all the Abelian anyons from the rest of the TQFT. This allows us to study this symmetry and some of its consequences, independently of the details of the rest of the system. We then describe these Abelian anyons using $\\mathrm{U}(1)$ gauge fields with Chern-Simons terms and couple them to a scalar field, thus constructing a particular non-topological theory. This new theory, our transition field theory, exhibits a phase transition from the original TQFT to another phase. The latter is either gapless or another TQFT. This discussion generalizes and extends our earlier work (arXiv:2603.00245). In particular, we give a more detailed description of the global symmetries and their fates in the various phases.",
       "followedAuthors": [
-        "Nathan Seiberg"
+        "Nathan Seiberg",
+        "Meng Cheng"
       ],
       "image": "",
       "link": "https://arxiv.org/abs/2610.04704",
       "linkText": "arXiv",
       "pdf": "https://arxiv.org/pdf/2610.04704"
+    },
+    {
+      "title": "Detectors in Nonrelativistic Conformal Field Theories",
+      "category": "recent-preprint",
+      "date": "2026-09-29",
+      "author": "Cyuan-Han Chang, Subham Dutta Chowdhury, Ian Moult, Dam Thanh Son",
+      "reference": "arXiv:2609.38301",
+      "subject": "hep-th, hep-ph, nucl-th",
+      "abstract": "Correlations in asymptotic fluxes provide one of the primary experimental means of studying physical systems. In the context of relativistic QFT, the formalization of such experiments in terms of detector operators has led to significant progress. Motivated by these successes, in this paper we initiate a study of detector operators in nonrelativistic conformal field theories (NRCFTs). In NRCFTs, fluxes are distributed in both angle and velocity, making the natural detector operator the energy flux differential in velocity, $\\mathcal{E}_v(\\hat{n})$. We provide non-perturbative definitions of these operators in NRCFTs, and study their symmetries and algebra. We calculate one-point functions of these detector observables in a variety of few and many body states of representative NRCFTs, including free fermions, as well as fermions at unitarity. In interacting three-body states, they exhibit a remarkably rich behavior reflective of the Efimov three-body wave-function, including the formation of an enhanced \"jet\" structure due to the presence of resonant interactions. We use these detectors to derive a nonrelativistic generalization of the Hofman-Maldacena conformal collider bounds by arguing for positivity of $\\mathcal{E}_v(\\hat{n})$, and imposing this in spin 1 states. We outline a number of future directions for the study of detectors in NRCFTs, and discuss how they can be measured in a variety of experimental platforms from cold atoms to low energy neutron experiments.",
+      "followedAuthors": [
+        "Dam Thanh Son"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2609.38301",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2609.38301"
+    },
+    {
+      "title": "Fate of Bouncing Singularities at Finite $G_N$",
+      "category": "recent-preprint",
+      "date": "2026-09-25",
+      "author": "Zohar Komargodski",
+      "reference": "arXiv:2609.31309",
+      "subject": "hep-th",
+      "abstract": "The gravity approximation to a thermal two-point function can develop a complex-time singularity associated with a trajectory that reaches the black-hole singularity. We show that the corresponding singularity is absent at finite $G_N$. This is done by extending Conformal Field Theory analyticity properties to the second sheet (and to the universal cover). We also put two different upper bounds on the amplitude of the correlator at the would-be singularity, by certain finite partial sums, and by a certain partition function on a manifold with nontrivial topology, where two thermal geometries are glued. We discuss the possible implications for the black hole singularity.",
+      "followedAuthors": [
+        "Zohar Komargodski"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2609.31309",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2609.31309"
+    },
+    {
+      "title": "Anyon Crystallization by Statistics",
+      "category": "recent-preprint",
+      "date": "2026-09-21",
+      "author": "Zohar Komargodski, Xuzixiang Lou, Ivri Nagar, Domenico Orlando, Susanne Reffert, Amit Sever",
+      "reference": "arXiv:2609.25249",
+      "subject": "hep-th, cond-mat.quant-gas, cond-mat.str-el",
+      "abstract": "We revisit the long-standing problem of the anyon gas. We study the solvable near-bosonic limit of a large number of anyons $N$ at fixed $N/k$, where $1/k$ characterizes the statistical interaction. In this limit, the ground state is a crystal with order $N/k$ lattice sites. The statistical interactions, mediated by a long-range gauge field, are completely screened within the crystalline phase. The resulting state is a conventional crystal without superfluidity. We characterize this anyon crystal by determining its unit-cell size, ground-state energy, acoustic excitations, angular momentum crossings, and other properties. Our results indicate a quantum phase transition between the crystal at $k>k_c$ and a superfluid at $k<k_c$, with a critical value $k_c\\simeq2\\text{--}5$. These results imply that an anyon gas with only statistical interactions is not necessarily a superfluid, contrary to common lore. We also present a detailed analysis of the renormalization-group evolution of anyon--anyon interactions, identifying many new potential fixed points and elucidating finite-size effects.",
+      "followedAuthors": [
+        "Zohar Komargodski"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2609.25249",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2609.25249"
     },
     {
       "title": "The Chern-Simons Function and the Quantum Hall Effect",
@@ -240,6 +449,102 @@
       "link": "https://arxiv.org/abs/2609.21182",
       "linkText": "arXiv",
       "pdf": "https://arxiv.org/pdf/2609.21182"
+    },
+    {
+      "title": "Ginzburg-Landau Theory for Non-Invertible Symmetry-Breaking Transitions",
+      "category": "recent-preprint",
+      "date": "2026-09-06",
+      "author": "Vibhu Ravindran, Luisa Eck, Xie Chen",
+      "reference": "arXiv:2609.06751",
+      "subject": "cond-mat.str-el, hep-th, quant-ph",
+      "abstract": "Recently, a generalized Landau paradigm has been proposed, in which a broad class of \"unconventional\" phase transitions lying beyond the original symmetry-breaking framework of Landau are understood as the symmetry-breaking transitions of generalized symmetries. In particular, in (1+1)D, such \"topological\" or \"deconfined\" transitions can be mapped to the symmetry-breaking transitions of non-invertible symmetries. How to extract the universal dynamical properties of the transitions from this understanding? In this paper, we follow the Ginzburg-Landau philosophy and develop a field-theoretic description of such critical points in terms of the fluctuations of local order parameters, now of non-invertible symmetries. The Symmetry Topological Field Theory formalism plays a central role in our analysis, allowing us to identify the algebra of local order parameters from the Lagrangian algebra of a (2+1)D topological order. We illustrate the key ideas and the full steps of this generalized Ginzburg-Landau procedure using the transitions between gapped phases with a simple non-invertible symmetry --- the Rep($S_3$) symmetry.",
+      "followedAuthors": [
+        "Xie Chen"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2609.06751",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2609.06751"
+    },
+    {
+      "title": "Note on proliferation transitions of non-Abelian anyons",
+      "category": "recent-preprint",
+      "date": "2026-08-20",
+      "author": "Meng Cheng",
+      "reference": "arXiv:2608.20604",
+      "subject": "cond-mat.str-el, hep-th",
+      "abstract": "We study phase transitions out of a (2+1)d topological phase driven by the proliferation of anyons in a braided fusion subcategory. We describe a general theoretical framework for such transitions, in which the topological quantum field theory (TQFT) is coupled to dynamical matter associated with anyons in the subcategory. We interpret this construction using symmetry topological field theory (SymTFT), where the dynamics is localized on the symmetry boundary of the (3+1)d slab. We analyze several examples, and present explicit Chern-Simons-Higgs (CSH) field theories realizing the proliferation transitions. We also examine proliferation transitions that implement gauging of non-invertible one-form symmetry in the parent TQFT. This includes a general construction for ${\\rm Rep}(G)$ one-form symmetry for a finite group $G$, and a CSH realization of the non-invertible one-form gauging ${\\rm SU}(2)_{10}\\rightarrow {\\rm Spin}(5)_1$. We discuss which anyons proliferate at these transitions.",
+      "followedAuthors": [
+        "Meng Cheng"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2608.20604",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2608.20604"
+    },
+    {
+      "title": "Interferometric Signatures of Zero Modes in Fractional Quantum Hall-Superconductor Heterostructures",
+      "category": "recent-preprint",
+      "date": "2026-08-19",
+      "author": "Junyi Cao, Ramanjit Sohal, Angela Kou, Eduardo Fradkin",
+      "reference": "arXiv:2608.19312",
+      "subject": "cond-mat.str-el, cond-mat.mes-hall, cond-mat.supr-con, quant-ph",
+      "abstract": "Fractional quantum Hall-superconductor (FQH-SC) heterostructures are predicted to host defect-bound parafermion zero modes (PZMs). We propose two related configurations to probe their fusion structure. In a Josephson junction coupled to a single quantum point contact (QPC), quasiparticle tunneling switches the defect fusion channel, producing stochastic transitions between branches of the fractional Josephson spectrum. Embedding the junction in a two-QPC Fabry-Pérot interferometer provides a complementary probe. Weak zero mode tunneling produces fusion-channel-dependent interference while strong tunneling makes the interferometer probe a superposition of fusion channels and strongly suppresses the signal: in the topological limit it vanishes exactly, revealing the defects' non-Abelian nature even when the parent FQH state is Abelian.",
+      "followedAuthors": [
+        "Eduardo Fradkin"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2608.19312",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2608.19312"
+    },
+    {
+      "title": "Nonrelativistic Conformal Collider Physics of Multiparticle Point Production",
+      "category": "recent-preprint",
+      "date": "2026-08-18",
+      "author": "Cyuan-Han Chang, Subham Dutta Chowdhury, Ian Moult, Dam Thanh Son",
+      "reference": "arXiv:2608.18202",
+      "subject": "hep-th, hep-ph, nucl-th",
+      "abstract": "We define detector operators in the nonrelativistic conformal field theory describing fermions at unitarity. We reduce the problem of computing the momentum distribution and correlation between final particles produced by a local source (\"point-produced\") to the computation of correlation functions involving the detector operators. The general formalism is applied to the point production of three unitary fermions, where we find the momentum and angular distribution of final particles. We discuss a nonrelativistic version of celestial holography, which maps the asymptotic out-state to a quantum wave function in the so-called \"oscillator frame.\"",
+      "followedAuthors": [
+        "Dam Thanh Son"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2608.18202",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2608.18202"
+    },
+    {
+      "title": "Chern insulator boundary criticality",
+      "category": "recent-preprint",
+      "date": "2026-08-18",
+      "author": "Benjamin Moy, Eduardo Fradkin",
+      "reference": "arXiv:2608.18199",
+      "subject": "cond-mat.str-el, cond-mat.mes-hall, hep-lat, hep-th",
+      "abstract": "We investigate signatures of chirality at Chern insulator transitions in the presence of a boundary. The transition between a trivial insulator and a Chern insulator with Chern number $C=1$ is described by a massless Dirac fermion whose parity anomaly gives a critical Hall conductivity $σ_{xy}=\\frac{1}{2}\\frac{e^2}{h}$. Using a Dirac mass domain wall construction, we show that the chiral edge mode delocalizes into the bulk at criticality, but the boundary fermion correlation function retains a chiral structure and acquires the scaling dimension of the bulk fermion. We compute current correlation functions and demonstrate that the anomaly of the bulk Hall response is matched by delocalized chiral modes near the boundary. Using only the residual conformal symmetry of a (2+1)d conformal field theory (CFT) in a half-space, we identify parity-odd terms in current and energy-momentum tensor correlation functions that encode these modes and determine their electromagnetic and gravitational anomaly coefficients. Our analysis therefore applies to general time-reversal breaking (2+1)d CFTs, beyond the free Dirac transition. In particular, the analysis of the gravitational anomaly is also applicable to the free Majorana CFT governing the transition between a trivial superconductor and a topological superconductor. We also extend our results to more general Chern number changing transitions and to the transition between a (3+1)d topological insulator and a trivial insulator.",
+      "followedAuthors": [
+        "Eduardo Fradkin"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2608.18199",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2608.18199"
+    },
+    {
+      "title": "Particle-Vortex Duality of Hydrodynamics",
+      "category": "recent-preprint",
+      "date": "2026-08-03",
+      "author": "Cenke Xu, Matthew P. A. Fisher",
+      "reference": "arXiv:2608.02732",
+      "subject": "cond-mat.str-el, quant-ph",
+      "abstract": "Equipped with the recently recognized symmetry structure of mixed states of matter and \"strong-weak spontaneous symmetry breaking\" (SW-SSB), we develop a quantum particle-vortex duality of emergent model-F and model-A hydrodynamics of 2d boson/rotor systems. This duality relation demonstrates that classical hydrodynamics of 2d bosons can be described in terms of the charge symmetry $U(1)_c$, but also equivalently in terms of the dual (emergent) 1-form symmetry $U(1)^{(1)}_e$, as well as $U(1)_v$ associated with the conservation of vortices. This duality provides a bridge between the hydrodynamics of matter and magnetohydrodynamics.",
+      "followedAuthors": [
+        "Cenke Xu"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2608.02732",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2608.02732"
     },
     {
       "title": "Bosonic SPT and invertible phases and its relation to Steenrod's problem",
@@ -274,6 +579,22 @@
       "pdf": "https://arxiv.org/pdf/2607.12023"
     },
     {
+      "title": "Theory of Spinful Relativistic Superfluids",
+      "category": "recent-preprint",
+      "date": "2026-07-05",
+      "author": "Dam Thanh Son",
+      "reference": "arXiv:2607.04408",
+      "subject": "nucl-th, cond-mat.supr-con, hep-th",
+      "abstract": "We construct an effective field theory description of relativistic superfluids with nonzero angular momentum density. At first order in the derivative expansion, the effective action contains a term with a quantized coefficient, which encodes the Berry phase for the angular momentum of the superfluid condensate. From this single term we derive a number of physical effects, including the relativistic Mermin-Ho relation, an anomalous Ettingshausen effect (exchangeable for an anomalous Hall effect), and an anomalous Hall viscosity.",
+      "followedAuthors": [
+        "Dam Thanh Son"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2607.04408",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2607.04408"
+    },
+    {
       "title": "A Note on Corrections to Entanglement Wedge Reconstruction",
       "category": "recent-preprint",
       "date": "2026-06-17",
@@ -306,6 +627,38 @@
       "pdf": "https://arxiv.org/pdf/2606.12540"
     },
     {
+      "title": "Vestigial Nematic Order at Zero Temperature in Two-Dimensional Frustrated Quantum Antiferromagnets",
+      "category": "recent-preprint",
+      "date": "2026-05-29",
+      "author": "Matthew C. O'Brien, Eduardo Fradkin",
+      "reference": "arXiv:2606.00211",
+      "subject": "cond-mat.str-el",
+      "abstract": "The phase diagram of the two-dimensional quantum $J_1$-$J_3$ Heisenberg antiferromagnet on a square lattice is a long-standing open problem. Despite recent advances in numerical techniques for quantum spin models, a detailed analytical theory is still lacking. We address this problem using a semiclassical approach based on a continuum nonlinear sigma model effective field theory, applying the nonperturbative large-$N$ technique to map out the phase diagram and determine the magnetic correlations. We show that previously-overlooked interactions are crucial for stabilizing a vestigial nematic phase, both at finite and zero temperature. Our results reveal that the spontaneous breaking of global symmetries in the $J_1$-$J_3$ model is controlled by the strength of infrared quantum fluctuations which are enhanced by proximity to the classical Lifshitz point.",
+      "followedAuthors": [
+        "Eduardo Fradkin"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2606.00211",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2606.00211"
+    },
+    {
+      "title": "Spontaneous breaking of non-invertible symmetries and duality to beyond-Landau transitions",
+      "category": "recent-preprint",
+      "date": "2026-05-26",
+      "author": "Xie Chen, Shang Liu, Da-chuan Lu, Nathanan Tantivasadakarn",
+      "reference": "arXiv:2605.27672",
+      "subject": "cond-mat.str-el, hep-th",
+      "abstract": "Spontaneous symmetry breaking is a well-understood mechanism for generating distinct phases of matter. Recently, the notion of symmetry has been broadened to include operations without inverses, leading to the concept of non-invertible symmetries. How do symmetry-breaking phases associated with non-invertible symmetries differ from those arising from conventional invertible symmetries? We address this question using concrete lattice models of the gapped phases with non-invertible Rep($H_8$) symmetry as an example. We find that, despite the symmetry being non-invertible, the symmetry-breaking phases can still be characterized by the long-range correlation of local order parameters, which obey a more general algebraic structure than in the invertible setting. Furthermore, via generalized gauging, certain non-invertible symmetry-breaking transitions can be mapped to deconfined quantum critical points of invertible symmetries, and vice versa. We establish precise conditions under which this duality holds and illustrate them with several families of examples, providing a systematic route to studying beyond-Landau phase transitions.",
+      "followedAuthors": [
+        "Xie Chen"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2605.27672",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2605.27672"
+    },
+    {
       "title": "Wormholes and Averaging over N",
       "category": "recent-preprint",
       "date": "2026-05-14",
@@ -322,20 +675,52 @@
       "pdf": "https://arxiv.org/pdf/2605.15180"
     },
     {
-      "title": "Crystalline topological invariants in quantum many-body systems",
+      "title": "Criticality on Rényi Defects at (2+1)$D$ O(3) Quantum Critical Points",
       "category": "recent-preprint",
-      "date": "2026-04-11",
-      "author": "Naren Manjunath, Maissam Barkeshli",
-      "reference": "arXiv:2604.10338",
-      "subject": "cond-mat.str-el, cond-mat.mes-hall, hep-th, math-ph, quant-ph",
-      "abstract": "Crystalline symmetries give rise to topological invariants that can distinguish quantum phases of matter. Understanding these in strongly interacting systems is an ongoing research direction requiring non-perturbative methods. Recent developments have demonstrated that even classic models, like the Harper-Hofstadter model of free fermions on a lattice in a magnetic field, yield a host of crystalline symmetry protected topological invariants. Here we review some of these developments, focusing mainly on how to characterize, classify, and detect invariants arising from lattice translation and rotation symmetries along with charge conservation in two-dimensional systems, including integer and fractional Chern insulators.",
+      "date": "2026-04-30",
+      "author": "Yanzhang Zhu, Zhe Wang, Meng Cheng, Zheng Yan",
+      "reference": "arXiv:2605.00104",
+      "subject": "cond-mat.str-el, cond-mat.stat-mech, hep-th, quant-ph",
+      "abstract": "At a quantum critical point, the universal scaling behavior of Rényi entanglement entropy is controlled by the universality class of the codimension-two Rényi (or conical) defects in the infrared theory. In this work we perform a systematic study of critical correlations along Rényi defect lines in (2+1)$D$ quantum spin models realizing quantum phase transitions described by the O(3) Wilson-Fisher universality class, using large-scale quantum Monte Carlo simulations. We present numerical evidence that, for a fixed Rényi index $n$, there exist multiple Rényi defect universality classes, with distinct critical exponents for the O(3) order parameter on the defect. These universality classes are realized by choosing microscopically different entanglement cuts in lattice models, which we classify as ordinary, special and extraordinary according to their relation to surface criticality. For the extraordinary entanglement cut, we further find evidence for a phase transition on the defect as a function of the Rényi index. Our results highlight the key role of defect universality classes in determining the universal scaling of Rényi entropy, and provide a framework for understanding the previously observed dependence of Rényi entropy scaling on microscopic lattice details.",
       "followedAuthors": [
-        "Maissam Barkeshli"
+        "Meng Cheng"
       ],
       "image": "",
-      "link": "https://arxiv.org/abs/2604.10338",
+      "link": "https://arxiv.org/abs/2605.00104",
       "linkText": "arXiv",
-      "pdf": "https://arxiv.org/pdf/2604.10338"
+      "pdf": "https://arxiv.org/pdf/2605.00104"
+    },
+    {
+      "title": "Observation of Strong-to-Weak Spontaneous Symmetry Breaking in a Dephased Fermi Gas",
+      "category": "recent-preprint",
+      "date": "2026-04-17",
+      "author": "Si Wang, Thomas G. Kiely, Dorothee Tell, Johannes Obermeyer, Marnix Barendregt, Petar Bojović, Philipp M. Preiss, Abhijat Sarma, Titus Franz, Matthew P. A. Fisher, Cenke Xu, Immanuel Bloch",
+      "reference": "arXiv:2604.16137",
+      "subject": "cond-mat.quant-gas, quant-ph",
+      "abstract": "Symmetry-based classification of quantum phases of matter is one of the most foundational organizing principles in physics; however, an analogous framework for mixed, decohered quantum states has only begun to emerge. A central new concept is strong-to-weak spontaneous symmetry breaking (SW-SSB), a sharp transition in mixed quantum states that is invisible to any observable linear in the density matrix and that has since been predicted across a broad class of open and monitored quantum systems. It also provides a unifying language for phenomena as disparate as the decodability of topological quantum memories and the emergence of classical hydrodynamics from decohered quantum dynamics. Here we report the first experimental observation of SW-SSB, in dephased single-component fermionic matter imaged by a quantum gas microscope. A quantum-classical estimator built on a machine-learned Gaussian reference state gives direct access to the nonlinear Rényi-1 and Rényi-2 correlators that diagnose SW-SSB, and reveals long-range Rényi order in the dephased Fermi liquid. Adding a commensurate superlattice drives the underlying fermions through a metal-to-insulator transition that, after full dephasing, manifests as a sharp SW-SSB phase transition. Our results uncover the symmetry principle behind information-theoretic transitions in open quantum systems, and extend Landau's symmetry paradigm into the regime of real, decohering quantum devices.",
+      "followedAuthors": [
+        "Cenke Xu"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2604.16137",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2604.16137"
+    },
+    {
+      "title": "A Guide to Symmetric Mass Generation in Lattice-QCD",
+      "category": "recent-preprint",
+      "date": "2026-04-02",
+      "author": "Anna Hasenfratz, Cenke Xu",
+      "reference": "arXiv:2604.02424",
+      "subject": "hep-lat, cond-mat.str-el, hep-th",
+      "abstract": "Symmetric mass generation (SMG) has attracted growing interest in both condensed matter theory and lattice-QCD communities. Here we formulate general criteria for SMG and examine their compatibility with lattice-QCD. We propose possible RG-flow scenarios near the SMG transition, and argue that meson mass ratio can serve as a probe of the SMG transition viewed as a UV fixed point. We further identify Goldstone tetraquark meson states as phenomenological signatures of the \"type-II'' SMG phase.",
+      "followedAuthors": [
+        "Cenke Xu"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2604.02424",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2604.02424"
     },
     {
       "title": "On Generalised Discrete Torsion",
@@ -352,6 +737,22 @@
       "link": "https://arxiv.org/abs/2604.01225",
       "linkText": "arXiv",
       "pdf": "https://arxiv.org/pdf/2604.01225"
+    },
+    {
+      "title": "Lieb-Schultz-Mattis Anomalies and Anomaly Matching",
+      "category": "recent-preprint",
+      "date": "2026-04-01",
+      "author": "Liujun Zou, Meng Cheng",
+      "reference": "arXiv:2604.00347",
+      "subject": "cond-mat.str-el, cond-mat.quant-gas, hep-th, math-ph",
+      "abstract": "Lieb-Schultz-Mattis (LSM) anomalies are powerful symmetry-based constraints on the correlation, entanglement and dynamics of quantum many-body systems. In this review, we discuss various LSM anomalies and anomaly matching. We start with a pedagogical introduction to these subjects in quantum spin chains, and then generalize the discussion to higher dimensions and other systems. Besides covering the topics related to the standard LSM anomalies, we also review LSM anomalies in disordered systems where the lattice symmetries are only preserved on average, fermionic systems, and systems where the symmetric short-range entangled states are possible but must be nontrivial symmetry-protected topological phases.",
+      "followedAuthors": [
+        "Meng Cheng"
+      ],
+      "image": "",
+      "link": "https://arxiv.org/abs/2604.00347",
+      "linkText": "arXiv",
+      "pdf": "https://arxiv.org/pdf/2604.00347"
     },
     {
       "title": "On the trivalent junction of three non-tachyonic heterotic string theories",
@@ -386,100 +787,20 @@
       "pdf": "https://arxiv.org/pdf/2603.25508"
     },
     {
-      "title": "On thermalization in many-body classical Floquet systems",
+      "title": "Inequality for Strong-Weak Spontaneous Symmetry Breaking in Fermionic Open Quantum systems",
       "category": "recent-preprint",
-      "date": "2026-03-13",
-      "author": "Anton Kapustin",
-      "reference": "arXiv:2603.13631",
-      "subject": "cond-mat.stat-mech, math-ph, nlin.CD",
-      "abstract": "It is expected that a generic closed many-body system prepared in a well-behaved initial state and subjected to a periodic drive will eventually thermalize, i.e. approach the state of maximal entropy. This property, while compatible with and even demanded by the physical intuition, is much stronger than ergodicity or mixing and is difficult to justify mathematically. We describe an infinite set of classical many-body Floquet systems of algebraic origin for which thermalization of very general initial states can be proved. For example, we show that a Gibbs state of any sufficiently uniform local differentiable Hamiltonian heats up to infinite temperature at long times. We show that in agreement with the physical intuition, the only obstruction to thermalization is the existence of local observables which are periodic in time.",
+      "date": "2026-03-25",
+      "author": "Abhijat Sarma, Cenke Xu",
+      "reference": "arXiv:2603.24671",
+      "subject": "quant-ph, cond-mat.str-el",
+      "abstract": "Under decoherence, an initial Gaussian (free-fermion) state evolves into a non-Gaussian mixed state, so the resulting decohered fermionic state is not exactly solvable in general. We show through an inequality that a class of Rényi-2 correlators of the decohered fermion state are upper-bounded by the Rényi-2 correlator serving as a proximate diagnostic of strong-weak spontaneous symmetry breaking (SW-SSB) of the charge-U(1) symmetry. This inequality holds for arbitrary decoherence strength and suggests that decoherence drives fermionic quantum matter toward U(1) SW-SSB. We also make connections between our inequality and other subjects such as projected quantum spin Hall insulator and Dirac spin liquid states.",
       "followedAuthors": [
-        "Anton Kapustin"
+        "Cenke Xu"
       ],
       "image": "",
-      "link": "https://arxiv.org/abs/2603.13631",
+      "link": "https://arxiv.org/abs/2603.24671",
       "linkText": "arXiv",
-      "pdf": "https://arxiv.org/pdf/2603.13631"
-    },
-    {
-      "title": "Proliferation transitions from a topological phase in $2+1$ dimensions",
-      "category": "recent-preprint",
-      "date": "2026-02-27",
-      "author": "Meng Cheng, Nathan Seiberg",
-      "reference": "arXiv:2603.00245",
-      "subject": "cond-mat.str-el, hep-th",
-      "abstract": "We consider phase transitions out of a general topological phase in $2+1$ dimensions. We assume that the transition is triggered by a single Abelian anyon, which becomes light near the transition and whose worldlines proliferate after the transition. (This proliferation is often referred to as ``condensation.'') We describe the transition using a continuum field theory obtained by coupling the corresponding topological quantum field theory (TQFT) to a single complex scalar field associated with this anyon. With these assumptions, we find the most general relativistic field theory for such a transition. Even though for a given TQFT and a choice of anyon, there are infinitely many such field theories, the transition theory depends on only a single additional integer parameter. We analyze all these theories, their global symmetries, and their phases. In generic cases, the theory after the transition can be related to the original one via an Abelian hierarchy construction. In special cases, the theory after the transition is gapless, and with a particular deformation, it is related to the original TQFT by gauging an anomaly-free one-form global symmetry. We also explore the enrichment of this setup by a global U(1) symmetry. In some cases, enriching the original TQFT is incompatible with the full transition theory. Finally, we demonstrate our construction with many specific examples.",
-      "followedAuthors": [
-        "Nathan Seiberg"
-      ],
-      "image": "",
-      "link": "https://arxiv.org/abs/2603.00245",
-      "linkText": "arXiv",
-      "pdf": "https://arxiv.org/pdf/2603.00245"
-    },
-    {
-      "title": "Duality and Axion Wormholes",
-      "category": "recent-preprint",
-      "date": "2026-01-04",
-      "author": "Edward Witten",
-      "reference": "arXiv:2601.01587",
-      "subject": "hep-th",
-      "abstract": "The prototype of a Euclidean wormhole solution of Einstein gravity coupled to matter is the axion wormhole in four spacetime dimensions. In this primarily expository article, we spell out some details about this construction. The axion wormhole has a semiclassical description, found in the original paper [1], in which the matter system is a two-form gauge field B with three-form field strength H=dB. The two-form is dual to a massless scalar, but the wormhole does not have a semiclassical description in terms of the scalar. There is no contradiction here as the duality between the two-form and the scalar is not a simple transformation of classical fields but involves, in Euclidean signature, a Poisson resummation of the sum over fluxes. Because of the need for this Poisson resummation, the scalar field cannot be treated semiclassically in the wormhole throat. Nonetheless, it is straightforward to compute the effective action derived from the wormhole in the scalar (or two-form) language, recovering standard claims.",
-      "followedAuthors": [
-        "Edward Witten"
-      ],
-      "image": "",
-      "link": "https://arxiv.org/abs/2601.01587",
-      "linkText": "arXiv",
-      "pdf": "https://arxiv.org/pdf/2601.01587"
-    },
-    {
-      "title": "Tori, Klein Bottles, and Modulo 8 Parity/Time-reversal Anomalies of 2+1d Staggered Fermions",
-      "category": "recent-preprint",
-      "date": "2026-01-03",
-      "author": "Nathan Seiberg, Wucheng Zhang",
-      "reference": "arXiv:2601.01191",
-      "subject": "hep-th, cond-mat.str-el, hep-lat",
-      "abstract": "We study the symmetries of lattice staggered fermions in 2+1d. Using the symmetries, we can place the system on any sheared torus or Klein bottle. These different backgrounds provide diagnostics of various 't Hooft anomalies associated with the crystalline symmetries. We then compare the lattice model to its continuum limit. The symmetries of the lattice system are mapped in a nontrivial way to the symmetries of the continuum theories. Using this map, we match the 't Hooft anomalies on the lattice and the continuum. Along the way, we develop a general formalism to study Hamiltonian lattice models on nontrivial, compact, flat spaces.",
-      "followedAuthors": [
-        "Nathan Seiberg"
-      ],
-      "image": "",
-      "link": "https://arxiv.org/abs/2601.01191",
-      "linkText": "arXiv",
-      "pdf": "https://arxiv.org/pdf/2601.01191"
-    },
-    {
-      "title": "Chaos and thermalization in Clifford-Floquet dynamics",
-      "category": "recent-preprint",
-      "date": "2026-01-01",
-      "author": "Anton Kapustin, Daniil Radamovich",
-      "reference": "arXiv:2601.00511",
-      "subject": "quant-ph, cond-mat.stat-mech, math-ph",
-      "abstract": "We study the ergodic properties of a unitary Floquet dynamics arising from the repeated application of a translationally-invariant Clifford Quantum Cellular Automata to an infinite system of qubits in d dimensions. One expects that if the QCA does not exhibit any periodicity, a generic initial state of qubits will thermalize, that is, approach the infinite-temperature state. We show that this is true for many classes of states, both pure and mixed. In particular, this is true for all initial states that are short-range entangled and close to the equilibrium state. We also point out a subtle distinction between weak and strong thermalization.",
-      "followedAuthors": [
-        "Anton Kapustin"
-      ],
-      "image": "",
-      "link": "https://arxiv.org/abs/2601.00511",
-      "linkText": "arXiv",
-      "pdf": "https://arxiv.org/pdf/2601.00511"
-    },
-    {
-      "title": "Generalized Level-Rank Duality, Holomorphic Conformal Field Theory, and Non-Invertible Anyon Condensation",
-      "category": "recent-preprint",
-      "date": "2025-12-30",
-      "author": "Clay Cordova, Diego García-Sepúlveda, Jeffrey A. Harvey",
-      "reference": "arXiv:2512.24419",
-      "subject": "hep-th, cond-mat.str-el, math.QA",
-      "abstract": "We study the interplay between holomorphic conformal field theory and dualities of 3D topological quantum field theories generalizing the paradigm of level-rank duality. A holomorphic conformal field theory with a Kac-Moody subalgebra implies a topological interface between Chern-Simons gauge theories. Upon condensing a suitable set of anyons, such an interface yields a duality between topological field theories. We illustrate this idea using the $c=24$ holomorphic theories classified by Schellekens, which leads to a list of novel sporadic dualities. Some of these dualities necessarily involve condensation of anyons with non-abelian statistics, i.e. gauging non-invertible one-form global symmetries. Several of the examples we discover generalize from $c=24$ to an infinite series. This includes the fact that Spin$(n^{2})_{2}$ is dual to a twisted dihedral group gauge theory. Finally, if $-1$ is a quadratic residue modulo $k$, we deduce the existence of a sequence of holomorphic CFTs at central charge $c=2(k-1)$ with fusion category symmetry given by $\\mathrm{Spin}(k)_{2}$ or equivalently, the $\\mathbb{Z}_{2}$-equivariantization of a Tambara-Yamagami fusion category.",
-      "followedAuthors": [
-        "Clay Cordova"
-      ],
-      "image": "",
-      "link": "https://arxiv.org/abs/2512.24419",
-      "linkText": "arXiv",
-      "pdf": "https://arxiv.org/pdf/2512.24419"
+      "pdf": "https://arxiv.org/pdf/2603.24671"
     }
   ]
 }
