@@ -1,5 +1,5 @@
 
-name: Update arXiv Feed and Deploy Website
+name: Update Scientific Feeds and Deploy Website
 
 on:
   schedule:
@@ -38,11 +38,41 @@ jobs:
         run: |
           python3 -c "import json; data = json.load(open('arxiv-feed.json', encoding='utf-8')); assert isinstance(data, dict) and data.get('updatedAt') and isinstance(data.get('posts'), list) and data['posts'], 'Empty or invalid arXiv feed'"
 
+      - name: Restore previous YouTube feed
+        uses: actions/cache/restore@v5
+        continue-on-error: true
+        with:
+          path: youtube-feed.json
+          key: youtube-feed-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            youtube-feed-v1-
+
+      - name: Update YouTube feed
+        id: youtube_update
+        continue-on-error: true
+        run: |
+          python3 scripts/fetch_youtube.py
+
+          python3 -c "import json; data = json.load(open('youtube-feed.json', encoding='utf-8')); assert isinstance(data, dict) and data.get('updatedAt') and isinstance(data.get('posts'), list), 'Invalid YouTube feed'"
+
+      - name: Save YouTube feed
+        if: steps.youtube_update.outcome == 'success'
+        uses: actions/cache/save@v5
+        continue-on-error: true
+        with:
+          path: youtube-feed.json
+          key: youtube-feed-v1-${{ github.run_id }}-${{ github.run_attempt }}
+
       - name: Prepare website
         run: |
           mkdir -p _site
           git archive HEAD | tar -x -C _site
           cp arxiv-feed.json _site/arxiv-feed.json
+
+          if [ -f youtube-feed.json ]; then
+            cp youtube-feed.json _site/youtube-feed.json
+          fi
+
           rm -rf _site/.github _site/scripts
 
       - name: Upload website

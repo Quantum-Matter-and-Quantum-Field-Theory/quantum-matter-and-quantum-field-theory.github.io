@@ -1,0 +1,34 @@
+
+{
+  "upcomingDays": 30,
+  "pastDays": 30,
+  "maxEvents": 30,
+  "keywords": [
+    "generalized symmetry",
+    "generalized symmetries",
+    "non-invertible",
+    "quantum field theory",
+    "topological order",
+    "topological phases",
+    "quantum matter",
+    "topological defects",
+    "higher-form",
+    "gauge theory",
+    "gauge theories",
+    "quantum information",
+    "quantum entanglement",
+    "anyons",
+    "conformal field theory",
+    "mathematical physics",
+    "condensed matter",
+    "quantum gravity",
+    "holography",
+    "anomalies"
+  ],
+  "sources": {
+    "researchseminars": {
+      "enabled": true,
+      "url": "https://researchseminars.org/api/0/search/talks"
+    }
+  }
+}
