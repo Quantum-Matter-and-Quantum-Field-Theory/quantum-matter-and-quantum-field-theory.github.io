@@ -88,12 +88,27 @@ function isNewPreprint(post, now = Date.now()) {
   return Number.isFinite(age) && age >= 0 && age < 7 * 86400000;
 }
 
+// Author filters stay in the selected category v2
+function recommendedAuthors() {
+  return newsPosts.filter(post => post.category === "recommended-paper")
+    .flatMap(post => String(post.author || "").split(","))
+    .map(name => name.trim()).filter(Boolean);
+}
+function matchesPaperAuthor(post, author) {
+  const expected = normalizeSearch(author);
+  if (post.category === "recent-preprint") {
+    return (post.followedAuthors || []).some(name => normalizeSearch(name) === expected);
+  }
+  if (post.category === "recommended-paper") {
+    return String(post.author || "").split(",").some(name => normalizeSearch(name) === expected);
+  }
+  return false;
+}
 function matchingPosts(posts, filters) {
   const terms = normalizeSearch(filters.search).split(/\s+/).filter(Boolean);
   return posts.filter(post => {
     if (filters.category !== "all" && post.category !== filters.category) return false;
-    if (filters.author && (post.category !== "recent-preprint" ||
-      !(post.followedAuthors || []).includes(filters.author))) return false;
+    if (filters.author && !matchesPaperAuthor(post, filters.author)) return false;
     if (filters.channel && (!isYouTubeSeminar(post) || post.author !== filters.channel)) return false;
     const searchable = normalizeSearch([post.title, post.author, post.reference, post.source, post.subject, post.affiliation].join(" "));
     return terms.every(term => searchable.includes(term));
@@ -317,15 +332,25 @@ function renderNews({ append = false } = {}) {
 
 function syncToolbar() {
   const seminars = state.category === "event";
-  const authorMode = state.category === "all" || state.category === "recent-preprint";
+  const recommended = state.category === "recommended-paper";
+  const papers = recommended || state.category === "recent-preprint";
+  const authorMode = state.category === "all" || papers;
   const searchLabel = searchInput.closest("label")?.querySelector("span");
   const filterLabel = authorFilter.closest("label")?.querySelector("span");
-  if (searchLabel) searchLabel.textContent = seminars ? "Search seminars" : state.category === "recent-preprint" ? "Search papers" : "Search news";
-  searchInput.placeholder = seminars ? "Search by title or channel" : state.category === "recent-preprint" ? "Search by title or author" : "Search by title, author, or channel";
-  if (filterLabel) filterLabel.textContent = seminars ? "YouTube channel" : "Followed author";
-  const names = seminars ? youtubePosts.map(post => post.author) : followedNames;
-  const sorted = [...new Set(names)].filter(name => typeof name === "string" && name.trim())
-    .sort((a, b) => a.localeCompare(b, "en"));
+  if (searchLabel) searchLabel.textContent = seminars ? "Search seminars" : papers ? "Search papers" : "Search news";
+  searchInput.placeholder = seminars ? "Search by title or channel" : papers ? "Search by title or author" : "Search by title, author, or channel";
+  if (filterLabel) filterLabel.textContent = seminars ? "YouTube channel" : state.category === "recent-preprint" ? "Followed author" : "Author";
+  const names = seminars ? youtubePosts.map(post => post.author) :
+    recommended ? recommendedAuthors() :
+    state.category === "all" ? [...recommendedAuthors(), ...followedNames] :
+    authorMode ? followedNames : [];
+  const unique = new Map();
+  for (const name of names) {
+    if (typeof name !== "string" || !name.trim()) continue;
+    const key = seminars ? name : normalizeSearch(name);
+    if (!unique.has(key)) unique.set(key, name);
+  }
+  const sorted = [...unique.values()].sort((a, b) => a.localeCompare(b, "en"));
   const all = document.createElement("option");
   all.value = "";
   all.textContent = seminars ? "All channels" : "All authors";
@@ -336,7 +361,8 @@ function syncToolbar() {
     authorFilter.appendChild(option);
   }
   const key = seminars ? "channel" : "author";
-  if (!sorted.includes(state[key])) state[key] = "";
+  state[key] = sorted.find(name => seminars ? name === state[key] :
+    normalizeSearch(name) === normalizeSearch(state[key])) || "";
   authorFilter.value = state[key];
   authorFilter.disabled = (!seminars && !authorMode) || !sorted.length;
 }
@@ -367,7 +393,7 @@ function updateFeedStatus() {
 function setCategory(category) {
   state.category = category;
   if (category !== "event") state.channel = "";
-  if (category !== "all" && category !== "recent-preprint") state.author = "";
+  if (!["all", "recent-preprint", "recommended-paper"].includes(category)) state.author = "";
   filterButtons.forEach(button => {
     const active = button.dataset.category === category;
     button.classList.toggle("is-active", active);
@@ -395,7 +421,6 @@ authorFilter.addEventListener("change", () => {
     state.channel = authorFilter.value;
   } else {
     state.author = authorFilter.value;
-    if (state.author) setCategory("recent-preprint");
   }
   resetResults();
 });
