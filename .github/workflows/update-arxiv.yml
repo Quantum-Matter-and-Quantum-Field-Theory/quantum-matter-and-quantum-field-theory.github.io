@@ -63,6 +63,60 @@ jobs:
           path: youtube-feed.json
           key: youtube-feed-v1-${{ github.run_id }}-${{ github.run_attempt }}
 
+      - name: Restore previous scientific events feed
+        uses: actions/cache/restore@v5
+        continue-on-error: true
+        with:
+          path: events-feed.json
+          key: events-feed-v2-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            events-feed-v2-
+            events-feed-v1-
+
+      - name: Install event collector dependencies
+        id: events_dependencies
+        timeout-minutes: 10
+        continue-on-error: true
+        run: |
+          python3 -m venv "$RUNNER_TEMP/events-venv"
+          "$RUNNER_TEMP/events-venv/bin/python" -m pip install -r requirements.txt
+          "$RUNNER_TEMP/events-venv/bin/python" -m playwright install --with-deps chromium
+
+      - name: Update scientific events feed
+        id: events_update
+        if: steps.events_dependencies.outcome == 'success'
+        timeout-minutes: 35
+        continue-on-error: true
+        run: |
+          # Keep a valid fallback even if the collector fails or times out.
+          if ! python3 -c "import json; d=json.load(open('events-feed.json', encoding='utf-8')); assert isinstance(d, dict) and isinstance(d.get('updatedAt'), str) and d['updatedAt'] and isinstance(d.get('posts'), list) and all(isinstance(p, dict) and isinstance(p.get('title'), str) and isinstance(p.get('date'), str) for p in d['posts']), 'Invalid events feed'"; then
+            git show HEAD:events-feed.json > events-feed.json
+          fi
+          python3 -c "import json; d=json.load(open('events-feed.json', encoding='utf-8')); assert isinstance(d, dict) and isinstance(d.get('updatedAt'), str) and d['updatedAt'] and isinstance(d.get('posts'), list) and all(isinstance(p, dict) and isinstance(p.get('title'), str) and isinstance(p.get('date'), str) for p in d['posts']), 'Invalid events feed'"
+          cp events-feed.json "$RUNNER_TEMP/events-feed-backup.json"
+          "$RUNNER_TEMP/events-venv/bin/python" -u scripts/fetch_events.py
+          python3 -c "import json; d=json.load(open('events-feed.json', encoding='utf-8')); assert isinstance(d, dict) and isinstance(d.get('updatedAt'), str) and d['updatedAt'] and isinstance(d.get('posts'), list) and all(isinstance(p, dict) and isinstance(p.get('title'), str) and isinstance(p.get('date'), str) for p in d['posts']), 'Invalid events feed'"
+
+      - name: Recover last valid events feed on failure
+        if: steps.events_update.outcome != 'success'
+        run: |
+          if [ -f "$RUNNER_TEMP/events-feed-backup.json" ]; then
+            cp "$RUNNER_TEMP/events-feed-backup.json" events-feed.json
+          fi
+          if ! python3 -c "import json; d=json.load(open('events-feed.json', encoding='utf-8')); assert isinstance(d, dict) and isinstance(d.get('updatedAt'), str) and d['updatedAt'] and isinstance(d.get('posts'), list) and all(isinstance(p, dict) and isinstance(p.get('title'), str) and isinstance(p.get('date'), str) for p in d['posts']), 'Invalid events feed'"; then
+            git show HEAD:events-feed.json > events-feed.json
+          fi
+          python3 -c "import json; d=json.load(open('events-feed.json', encoding='utf-8')); assert isinstance(d, dict) and isinstance(d.get('updatedAt'), str) and d['updatedAt'] and isinstance(d.get('posts'), list) and all(isinstance(p, dict) and isinstance(p.get('title'), str) and isinstance(p.get('date'), str) for p in d['posts']), 'Invalid events feed'"
+          echo '::warning::Scientific event collection did not complete; publishing the previous valid feed.'
+
+      - name: Save scientific events feed
+        if: steps.events_update.outcome == 'success'
+        uses: actions/cache/save@v5
+        continue-on-error: true
+        with:
+          path: events-feed.json
+          key: events-feed-v2-${{ github.run_id }}-${{ github.run_attempt }}
+
       - name: Prepare website
         run: |
           mkdir -p _site
@@ -71,6 +125,14 @@ jobs:
 
           if [ -f youtube-feed.json ]; then
             cp youtube-feed.json _site/youtube-feed.json
+          fi
+
+          if [ -f events-feed.json ]; then
+            if python3 -c "import json; d=json.load(open('events-feed.json', encoding='utf-8')); assert isinstance(d, dict) and isinstance(d.get('updatedAt'), str) and d['updatedAt'] and isinstance(d.get('posts'), list) and all(isinstance(p, dict) and isinstance(p.get('title'), str) and isinstance(p.get('date'), str) for p in d['posts']), 'Invalid events feed'"; then
+              cp events-feed.json _site/events-feed.json
+            else
+              echo '::warning::Invalid events feed; using the committed fallback.'
+            fi
           fi
 
           rm -rf _site/.github _site/scripts

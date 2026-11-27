@@ -41,9 +41,12 @@ const categories = {
 
 let arxivPosts = [];
 let youtubePosts = [];
+// Group News opportunities v1
+let groupEvents = [];
+let eventsStatus = { phase: "loading", updatedAt: null };
 const PAGE_SIZE = 6;
 // Contextual news filters v1
-const state = { category: "all", search: "", author: "", channel: "", limit: PAGE_SIZE };
+const state = { category: "all", search: "", author: "", channel: "", opportunity: "", institution: "", limit: PAGE_SIZE };
 let followedNames = [];
 let arxivStatus = { phase: "loading", updatedAt: null };
 let youtubeStatus = { phase: "loading", updatedAt: null };
@@ -104,15 +107,91 @@ function matchesPaperAuthor(post, author) {
   }
   return false;
 }
+function isGroupEvent(post) {
+  return post.category === "group-news" && Boolean(post.startDate);
+}
+function opportunityType(post) {
+  return post.eventType || "Group Announcement";
+}
+function eventDateRange(post) {
+  const formatter = new Intl.DateTimeFormat("en-US", {
+    year: "numeric", month: "long", day: "numeric", timeZone: "UTC"
+  });
+  const start = new Date(post.startDate);
+  const end = new Date(post.endDate || post.startDate);
+  return Number.isFinite(end.getTime()) && end >= start
+    ? formatter.formatRange(start, end) : formatter.format(start);
+}
+// Group News institution filter v1
+const institutionLabel = document.createElement("label");
+institutionLabel.className = "news-field";
+institutionLabel.htmlFor = "news-institution-filter";
+institutionLabel.hidden = true;
+const institutionCaption = document.createElement("span");
+institutionCaption.textContent = "Institution";
+const institutionFilter = document.createElement("select");
+institutionFilter.id = "news-institution-filter";
+institutionLabel.append(institutionCaption, institutionFilter);
+const institutionToolbar = authorFilter.closest(".news-toolbar");
+institutionToolbar.appendChild(institutionLabel);
+
+function institutionName(post) {
+  return String(post.institution || post.reference || post.source || post.author || "").trim();
+}
+function syncInstitutionFilter() {
+  const active = state.category === "group-news";
+  institutionLabel.hidden = !active;
+  institutionToolbar.classList.toggle("news-group-toolbar", active);
+  if (!active) {
+    state.institution = "";
+    institutionFilter.value = "";
+    return;
+  }
+  const names = new Map();
+  for (const post of [...newsPosts, ...groupEvents]) {
+    if (post.category !== "group-news") continue;
+    const name = institutionName(post);
+    if (name && !names.has(normalizeSearch(name))) names.set(normalizeSearch(name), name);
+  }
+  const sorted = [...names.values()].sort((a, b) => a.localeCompare(b, "en"));
+  const all = document.createElement("option");
+  all.value = "";
+  all.textContent = "All institutions";
+  institutionFilter.replaceChildren(all);
+  for (const name of sorted) {
+    const option = document.createElement("option");
+    option.value = option.textContent = name;
+    institutionFilter.appendChild(option);
+  }
+  state.institution = sorted.find(name => normalizeSearch(name) === normalizeSearch(state.institution)) || "";
+  institutionFilter.value = state.institution;
+  institutionFilter.disabled = !sorted.length;
+}
+institutionFilter.addEventListener("change", () => {
+  if (state.category !== "group-news") return;
+  state.institution = institutionFilter.value;
+  resetResults();
+});
+
 function matchingPosts(posts, filters) {
   const terms = normalizeSearch(filters.search).split(/\s+/).filter(Boolean);
   return posts.filter(post => {
     if (filters.category !== "all" && post.category !== filters.category) return false;
     if (filters.author && !matchesPaperAuthor(post, filters.author)) return false;
     if (filters.channel && (!isYouTubeSeminar(post) || post.author !== filters.channel)) return false;
-    const searchable = normalizeSearch([post.title, post.author, post.reference, post.source, post.subject, post.affiliation].join(" "));
+    if (filters.opportunity && (post.category !== "group-news" || opportunityType(post) !== filters.opportunity)) return false;
+    if (filters.institution && (post.category !== "group-news" || normalizeSearch(institutionName(post)) !== normalizeSearch(filters.institution))) return false;
+    const searchable = normalizeSearch([post.title, post.author, post.reference, post.source, post.subject, post.affiliation, post.eventType, post.location, institutionName(post)].join(" "));
     return terms.every(term => searchable.includes(term));
-  }).sort((a, b) => b.date.localeCompare(a.date));
+  }).sort((a, b) => {
+    if (filters.category === "group-news" && Boolean(a.manualGroupNews) !== Boolean(b.manualGroupNews)) {
+      return a.manualGroupNews ? -1 : 1;
+    }
+    const ae = isGroupEvent(a), be = isGroupEvent(b);
+    if (ae && be) return a.startDate.localeCompare(b.startDate) || a.title.localeCompare(b.title);
+    if (ae !== be) return ae ? (filters.category === "group-news" ? -1 : 1) : (filters.category === "group-news" ? 1 : -1);
+    return b.date.localeCompare(a.date);
+  });
 }
 
 // Serialize typesetting and DOM replacement; never block on loading the CDN.
@@ -161,9 +240,118 @@ function typesetElements(elements) {
   });
 }
 
+
+// Shared event destinations v1
+function groupSharedEventLinks(posts) {
+  const buckets = new Map();
+  function destination(post) {
+    if (!isGroupEvent(post) || !post.link) return '';
+    try {
+      const url = new URL(post.link);
+      if (!['https:', 'http:'].includes(url.protocol)) return '';
+      // Preserve query strings and fragments: they may identify distinct events.
+      return JSON.stringify([post.source || post.author || '', url.href]);
+    } catch (_) { return ''; }
+  }
+  for (const post of posts) {
+    const key = destination(post);
+    if (!key) continue;
+    if (!buckets.has(key)) buckets.set(key, []);
+    buckets.get(key).push(post);
+  }
+  const emitted = new Set();
+  const cards = [];
+  for (const post of posts) {
+    const key = destination(post);
+    const events = buckets.get(key);
+    if (!events || events.length < 2) {
+      cards.push(post);
+    } else if (!emitted.has(key)) {
+      emitted.add(key);
+      cards.push({ ...post, sharedEvents: events });
+    }
+  }
+  return cards;
+}
+
+function createSharedEventCard(post) {
+  const events = post.sharedEvents;
+  const card = document.createElement('article');
+  card.className = 'news-card';
+  const content = document.createElement('div');
+  content.className = 'news-card-content';
+  const source = post.source || post.author || 'Scientific events';
+  const calendar = events.every(event => event.linkText === 'Official calendar');
+  const years = [...new Set(events.map(event => event.startDate.slice(0, 4)))];
+  const meta = document.createElement('div');
+  meta.className = 'news-meta';
+  const category = document.createElement('span');
+  category.className = 'news-category';
+  category.textContent = (calendar ? 'Scientific Calendar' : 'Scientific Events') + ' · ' + source;
+  meta.appendChild(category);
+  const title = document.createElement('h2');
+  title.textContent = source + ' — ' + (years.length === 1 ? years[0] + ' ' : '') + (calendar ? 'Scientific Calendar' : 'Upcoming Events');
+  const count = document.createElement('p');
+  count.className = 'news-subject';
+  count.textContent = events.length + ' upcoming activities · Shared official page';
+  content.append(meta, title, count);
+  const details = document.createElement('details');
+  details.className = 'news-abstract';
+  details.open = true;
+  const summary = document.createElement('summary');
+  summary.className = 'news-abstract-toggle';
+  summary.textContent = 'Upcoming activities (' + events.length + ')';
+  const list = document.createElement('div');
+  for (const event of events) {
+    const item = document.createElement('div');
+    item.style.padding = '0.7rem 0';
+    const type = document.createElement('p');
+    type.className = 'news-category';
+    type.textContent = opportunityType(event);
+    const heading = document.createElement('strong');
+    heading.textContent = event.title;
+    const date = document.createElement('p');
+    date.className = 'news-subject';
+    date.textContent = eventDateRange(event);
+    item.append(type, heading, date);
+    if (event.location) {
+      const location = document.createElement('p');
+      location.className = 'news-subject';
+      location.textContent = event.location;
+      item.appendChild(location);
+    }
+    if (event.applicationDeadline) {
+      const deadline = new Date(event.applicationDeadline);
+      if (Number.isFinite(deadline.getTime())) {
+        const line = document.createElement('p');
+        line.className = 'news-subject';
+        line.textContent = 'Application deadline: ' + deadline.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+        item.appendChild(line);
+      }
+    }
+    list.appendChild(item);
+  }
+  details.append(summary, list);
+  content.appendChild(details);
+  const links = document.createElement('div');
+  links.className = 'news-links';
+  const link = document.createElement('a');
+  link.className = 'news-link';
+  link.href = post.link;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.textContent = (calendar ? 'Official calendar' : 'Event website') + ' ↗';
+  links.appendChild(link);
+  content.appendChild(links);
+  card.appendChild(content);
+  return card;
+}
+
 function createNewsCard(post) {
+  if (post.sharedEvents) return createSharedEventCard(post);
   const card = document.createElement("article");
   const videoCard = isYouTubeSeminar(post);
+  const groupEvent = isGroupEvent(post);
   const watchUrl = videoCard ? videoWatchUrl(post) : "";
   card.className = videoCard ? "news-card news-video-card" : "news-card";
   const content = document.createElement("div");
@@ -172,7 +360,7 @@ function createNewsCard(post) {
   meta.className = "news-meta";
   const category = document.createElement("span");
   category.className = "news-category";
-  category.textContent = videoCard ? "Recorded Seminar" : (categories[post.category] || post.category);
+  category.textContent = videoCard ? "Recorded Seminar" : (groupEvent || post.announcementOnly) ? opportunityType(post) : (categories[post.category] || post.category);
   if (post.reference) category.textContent += " · " + post.reference;
   meta.appendChild(category);
   if (isNewPreprint(post) || isRecentVideo(post)) {
@@ -235,13 +423,23 @@ function createNewsCard(post) {
     post.source === "YouTube" ? "Published on " :
     post.eventStatus === "upcoming" ? "Scheduled for " :
     post.eventStatus === "recorded" ? "Held on " : "Posted on ";
-  date.textContent = dateLabel + formattedDate;
+  date.textContent = groupEvent ? eventDateRange(post) : dateLabel + formattedDate;
+  if (groupEvent) date.dateTime = post.startDate;
   content.appendChild(date);
-  if (post.subject) {
+  if (post.subject || (groupEvent && post.location)) {
     const subject = document.createElement("p");
     subject.className = "news-subject";
-    subject.textContent = post.subject;
+    subject.textContent = groupEvent ? (post.location || post.subject) : post.subject;
     content.appendChild(subject);
+  }
+  if (groupEvent) {
+    const deadline = document.createElement("p");
+    deadline.className = "news-subject";
+    const value = new Date(post.applicationDeadline || "");
+    deadline.textContent = "Application deadline: " + (Number.isFinite(value.getTime())
+      ? value.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })
+      : "Check official website");
+    content.appendChild(deadline);
   }
   if (post.abstract || post.description) {
     const paragraph = document.createElement("p");
@@ -295,7 +493,8 @@ function createNewsCard(post) {
 let visiblePosts = [];
 function renderNews({ append = false } = {}) {
   const current = ++revision;
-  const posts = matchingPosts([...newsPosts, ...arxivPosts, ...youtubePosts], state);
+  const matches = matchingPosts([...newsPosts, ...arxivPosts, ...youtubePosts, ...groupEvents], state);
+  const posts = groupSharedEventLinks(matches);
   const selected = posts.slice(0, state.limit);
   enqueue(() => {
     if (current !== revision) return;
@@ -324,7 +523,10 @@ function renderNews({ append = false } = {}) {
       empty.textContent = "No posts match your filters.";
       newsGrid.appendChild(empty);
     }
-    resultCount.textContent = "Showing " + selected.length + " of " + posts.length + " posts";
+    const grouped = posts.some(post => post.sharedEvents);
+    resultCount.textContent = grouped
+      ? "Showing " + selected.length + " of " + posts.length + " cards · " + matches.length + " matching posts"
+      : "Showing " + selected.length + " of " + posts.length + " posts";
     loadMore.hidden = selected.length >= posts.length;
     typesetElements(toTypeset);
   });
@@ -333,14 +535,16 @@ function renderNews({ append = false } = {}) {
 function syncToolbar() {
   const seminars = state.category === "event";
   const recommended = state.category === "recommended-paper";
+  const group = state.category === "group-news";
   const papers = recommended || state.category === "recent-preprint";
   const authorMode = state.category === "all" || papers;
   const searchLabel = searchInput.closest("label")?.querySelector("span");
   const filterLabel = authorFilter.closest("label")?.querySelector("span");
-  if (searchLabel) searchLabel.textContent = seminars ? "Search seminars" : papers ? "Search papers" : "Search news";
-  searchInput.placeholder = seminars ? "Search by title or channel" : papers ? "Search by title or author" : "Search by title, author, or channel";
-  if (filterLabel) filterLabel.textContent = seminars ? "YouTube channel" : state.category === "recent-preprint" ? "Followed author" : "Author";
-  const names = seminars ? youtubePosts.map(post => post.author) :
+  if (searchLabel) searchLabel.textContent = group ? "Search opportunities" : seminars ? "Search seminars" : papers ? "Search papers" : "Search news";
+  searchInput.placeholder = group ? "Search by title, institution, or location" : seminars ? "Search by title or channel" : papers ? "Search by title or author" : "Search by title, author, or channel";
+  if (filterLabel) filterLabel.textContent = group ? "Opportunity type" : seminars ? "YouTube channel" : state.category === "recent-preprint" ? "Followed author" : "Author";
+  const names = group ? [...newsPosts, ...groupEvents].filter(post => post.category === "group-news").map(opportunityType) :
+    seminars ? youtubePosts.map(post => post.author) :
     recommended ? recommendedAuthors() :
     state.category === "all" ? [...recommendedAuthors(), ...followedNames] :
     authorMode ? followedNames : [];
@@ -353,23 +557,25 @@ function syncToolbar() {
   const sorted = [...unique.values()].sort((a, b) => a.localeCompare(b, "en"));
   const all = document.createElement("option");
   all.value = "";
-  all.textContent = seminars ? "All channels" : "All authors";
+  all.textContent = group ? "All opportunities" : seminars ? "All channels" : "All authors";
   authorFilter.replaceChildren(all);
   for (const name of sorted) {
     const option = document.createElement("option");
     option.value = option.textContent = name;
     authorFilter.appendChild(option);
   }
-  const key = seminars ? "channel" : "author";
+  const key = group ? "opportunity" : seminars ? "channel" : "author";
   state[key] = sorted.find(name => seminars ? name === state[key] :
     normalizeSearch(name) === normalizeSearch(state[key])) || "";
   authorFilter.value = state[key];
-  authorFilter.disabled = (!seminars && !authorMode) || !sorted.length;
+  authorFilter.disabled = (!group && !seminars && !authorMode) || !sorted.length;
+  syncInstitutionFilter();
 }
 function updateFeedStatus() {
   const seminars = state.category === "event";
-  const name = seminars ? "YouTube feed" : "arXiv feed";
-  const status = seminars ? youtubeStatus : arxivStatus;
+  const group = state.category === "group-news";
+  const name = group ? "Scientific events feed" : seminars ? "YouTube feed" : "arXiv feed";
+  const status = group ? eventsStatus : seminars ? youtubeStatus : arxivStatus;
   if (status.phase === "loading") {
     feedStatus.textContent = "Loading " + name + "…";
     return;
@@ -393,6 +599,7 @@ function updateFeedStatus() {
 function setCategory(category) {
   state.category = category;
   if (category !== "event") state.channel = "";
+  if (category !== "group-news") state.opportunity = "";
   if (!["all", "recent-preprint", "recommended-paper"].includes(category)) state.author = "";
   filterButtons.forEach(button => {
     const active = button.dataset.category === category;
@@ -417,7 +624,9 @@ searchInput.addEventListener("input", () => {
   resetResults();
 });
 authorFilter.addEventListener("change", () => {
-  if (state.category === "event") {
+  if (state.category === "group-news") {
+    state.opportunity = authorFilter.value;
+  } else if (state.category === "event") {
     state.channel = authorFilter.value;
   } else {
     state.author = authorFilter.value;
@@ -485,7 +694,93 @@ async function loadYouTubeFeed() {
     console.warn("YouTube feed unavailable:", error);
   }
 }
+// Manual Group News v1
+function validGroupNewsDate(value) {
+  if (typeof value !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+  const date = new Date(value + "T00:00:00Z");
+  return Number.isFinite(date.getTime()) && date.toISOString().slice(0, 10) === value;
+}
+function manualGroupNewsPosts(data, today) {
+  if (!data || !Array.isArray(data.posts)) throw new Error("Invalid group-news.json: expected a posts array.");
+  const seen = new Set();
+  const posts = [];
+  for (const item of data.posts) {
+    if (!item || item.enabled === false) continue;
+    if (typeof item.title !== "string" || !item.title.trim() || !validGroupNewsDate(item.date)) {
+      console.warn("Invalid manual Group News entry:", item);
+      continue;
+    }
+    if (item.date > today) continue;
+    if (item.expiresOn && (!validGroupNewsDate(item.expiresOn) || item.expiresOn < today)) continue;
+    const title = item.title.trim();
+    const key = normalizeSearch(title) + "|" + item.date;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    const institution = "UEL";
+    let link = "";
+    if (typeof item.link === "string" && item.link) {
+      try {
+        const url = new URL(item.link);
+        if (["https:", "http:"].includes(url.protocol)) link = url.href;
+      } catch (_) { /* An optional invalid link is omitted. */ }
+    }
+    posts.push({
+      category: "group-news", eventType: "Group Announcement", announcementOnly: true,
+      manualGroupNews: true, title, date: item.date, institution, source: "Research Group",
+      reference: institution,
+      author: typeof item.author === "string" && item.author.trim() ? item.author.trim() : "Quantum Matter and Quantum Field Theory Group",
+      description: typeof item.description === "string" ? item.description.trim() : "",
+      link, linkText: typeof item.linkText === "string" && item.linkText.trim() ? item.linkText.trim() : "Read more"
+    });
+  }
+  return posts;
+}
+async function loadManualGroupNews() {
+  try {
+    const response = await fetch("group-news.json", { cache: "no-cache" });
+    if (!response.ok) throw new Error("Could not load group-news.json: " + response.status);
+    const data = await response.json();
+    const today = new Intl.DateTimeFormat("sv-SE", { timeZone: "America/Sao_Paulo", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+    const posts = manualGroupNewsPosts(data, today);
+    newsPosts.push(...posts);
+    if (state.category === "group-news") syncToolbar();
+    renderNews();
+  } catch (error) {
+    console.warn("Manual Group News unavailable:", error);
+  }
+}
+
+async function loadGroupEvents() {
+  try {
+    const response = await fetch("events-feed.json", { cache: "no-cache" });
+    if (!response.ok) throw new Error("Could not load events feed: " + response.status);
+    const data = await response.json();
+    if (!Array.isArray(data.posts)) throw new Error("Invalid events feed.");
+    const today = new Intl.DateTimeFormat("sv-SE", { timeZone: "America/Sao_Paulo", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+    // SBF announcement cards v2
+    groupEvents = data.posts.filter(post => {
+      if (!post || post.category !== "group-news" || typeof post.title !== "string") return false;
+      if (post.announcementOnly === true) {
+        if (typeof post.date !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(post.date)) return false;
+        const age = Date.parse(today) - Date.parse(post.date);
+        return Number.isFinite(age) && age >= 0 && age <= 45 * 86400000;
+      }
+      return typeof post.startDate === "string" && /^\d{4}-\d{2}-\d{2}$/.test(post.startDate) &&
+        Number.isFinite(Date.parse(post.startDate)) && post.startDate > today;
+    }).map(post => ({ ...post, date: post.announcementOnly ? post.date : post.startDate }));
+    eventsStatus = { phase: "ready", updatedAt: data.updatedAt };
+    if (state.category === "group-news") syncToolbar();
+    updateFeedStatus();
+    renderNews();
+  } catch (error) {
+    eventsStatus = { phase: "error", updatedAt: null };
+    updateFeedStatus();
+    console.warn("Scientific events feed unavailable:", error);
+  }
+}
 setCategory("all");
 renderNews();
 loadArxivFeed();
 loadYouTubeFeed();
+loadGroupEvents();
+loadManualGroupNews();

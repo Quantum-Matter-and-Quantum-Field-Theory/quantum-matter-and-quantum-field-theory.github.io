@@ -1,0 +1,13 @@
+
+{
+  "posts": [
+    {
+      "enabled": true,
+      "title": "Welcome to Our Scientific Bulletin",
+      "date": "2026-11-27",
+      "description": "Our research group now provides an updated bulletin of scientific events, research opportunities, recent preprints, and seminars.",
+      "link": "",
+      "linkText": "Read more"
+    }
+  ]
+}

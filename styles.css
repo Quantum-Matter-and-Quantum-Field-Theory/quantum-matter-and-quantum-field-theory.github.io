@@ -1269,3 +1269,12 @@ details.news-abstract[open] p {
 .news-video-card .news-author { color: inherit; }
 .news-video-card .news-author span { color: var(--accent, #278ab5); }
 .news-video-card .news-links { margin-top: auto; padding-top: 16px; }
+
+/* Group News institution filter v1 */
+.news-toolbar.news-group-toolbar {
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);
+}
+.news-field[hidden] { display: none; }
+@media (max-width: 760px) {
+  .news-toolbar.news-group-toolbar { grid-template-columns: 1fr; }
+}
