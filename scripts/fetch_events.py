@@ -920,6 +920,9 @@ def final_source_dates(html, source):
                         a=date(int(m[4]),MONTHS[m[3].lower()],int(m[1])); b=date(int(m[4]),MONTHS[m[3].lower()],int(m[2]))
                     if a<=b: ranges.add((a,b))
                 except (KeyError,ValueError): pass
+        # Full dates with a year on both sides, only in explicitly labelled ranges.
+        for match in re.finditer(r'\b(?:event dates?|date of event|dates?|period|event period|when)\s*:\s*([^\n]{1,100})', n):
+            ranges.update(iip_full_date_ranges(match[1]))
         # Event structured data, if present; not article publication dates.
         for m in re.finditer(r'<script\b[^>]*type=[\"\']application/ld\+json[\"\'][^>]*>(.*?)</script>',html,re.I|re.S):
             try: pending=[json.loads(m[1])]
@@ -1003,6 +1006,13 @@ def discover_iip_uel(source,today):
                     if title2 and final_source_relevant(title2,source,url): title=title2
                     published=published2 or published
                 except Exception as exc: print(f'{ref} event rendering unavailable: {url}: {exc}',flush=True)
+            # The IIP listing attaches its explicit event range to the individual link.
+            # Only use it when detail-page dates are absent, not when they conflict.
+            if source['id']=='iip' and '/events/' in url and not pair and not has_dates:
+                label_ranges = iip_full_date_ranges(label)
+                if len(label_ranges) == 1:
+                    pair = next(iter(label_ranges))
+                    has_dates = True
             if not final_source_relevant(title,source,url): continue
             post=dict(id=prefix+hashlib.sha256(url.encode()).hexdigest()[:16],category='group-news',title=title,author=source['name'],source=source['name'],reference=ref,link=url)
             if pair:
@@ -1084,14 +1094,40 @@ def scientific_event_relevant(post):
     return True
 
 
+
+# Collection progress and IIP full date ranges v1
+
+def iip_full_date_ranges(text):
+    """Read explicitly paired English dates; never infer a missing year."""
+    month_names = ('January February March April May June July August September October November December').lower().split()
+    months = {alias: i for i, name in enumerate(month_names, 1)
+              for alias in (name, name[:3])}
+    months['sept'] = 9
+    words = '|'.join(sorted(months, key=len, reverse=True))
+    part = rf'({words})\.?\s+(\d{{1,2}})(?:st|nd|rd|th)?\s*,?\s+(20\d{{2}})'
+    pattern = rf'\b{part}\s*(?:[-–—]|to|until)\s*{part}\b'
+    found = set()
+    for m in re.finditer(pattern, str(text), flags=re.I):
+        try:
+            a = date(int(m[3]), months[m[1].lower()], int(m[2]))
+            b = date(int(m[6]), months[m[4].lower()], int(m[5]))
+            if a <= b:
+                found.add((a, b))
+        except (ValueError, KeyError):
+            continue
+    return found
+
+
 def main():
+    collection_started = time.monotonic()
     config = json.loads(CONFIG.read_text(encoding='utf-8'))
     today = datetime.now(timezone.utc).date()
     posts = {}
     success = 0
-    for source in config['sources']:
-        if not source.get('enabled', True):
-            continue
+    enabled_sources = [source for source in config['sources'] if source.get('enabled', True)]
+    print(f'Starting scientific event collection: {len(enabled_sources)} enabled sources.', flush=True)
+    for index, source in enumerate(enabled_sources, 1):
+        print(f"\n[{index}/{len(enabled_sources)}] Fetching {source['name']}...", flush=True)
         if source['id'] == 'sbf':
             found = sbf_reviewed_posts(source, today)
             for post in found:
@@ -1141,6 +1177,10 @@ def main():
                         raise RuntimeError('Previously available next-year calendar unavailable. Previous feed preserved.') from exc
     if not success:
         raise RuntimeError('No calendar was collected. Previous feed preserved.')
+    before_future = len(posts)
+    posts = {key: post for key, post in posts.items()
+             if not post.get('startDate') or post['startDate'] > today.isoformat()}
+    print(f'Started or past events removed: {before_future - len(posts)}', flush=True)
     before_relevance = len(posts)
     posts = {key: post for key, post in posts.items() if scientific_event_relevant(post)}
     print(f'Out-of-scope events removed: {before_relevance - len(posts)}', flush=True)
@@ -1158,7 +1198,8 @@ def main():
             print(f"  Published {post['date']} | {post['eventType']} | {post['title']}")
         else:
             print(f"  {post['startDate']} to {post['endDate']} | {post['eventType']} | {post['title']}")
-    print(f'Output: {OUTPUT}')
+    print(f'Output: {OUTPUT}', flush=True)
+    print(f'Collection completed. Total elapsed: {time.monotonic() - collection_started:.1f} seconds.', flush=True)
 
 
 if __name__ == '__main__':

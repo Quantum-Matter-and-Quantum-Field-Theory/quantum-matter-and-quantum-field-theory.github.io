@@ -1,21 +1,6 @@
 {
-  "updatedAt": "2026-11-27T16:49:38+00:00",
+  "updatedAt": "2026-11-27T16:57:01+00:00",
   "posts": [
-    {
-      "id": "fapesp-calendar:c5facfa52e29875a",
-      "category": "group-news",
-      "title": "Encontros do Grupo de Pesquisa em Física Nuclear e Partículas",
-      "author": "Agência FAPESP",
-      "source": "Agência FAPESP",
-      "reference": "FAPESP",
-      "eventType": "Scientific Event",
-      "date": "2026-11-27",
-      "startDate": "2026-11-27",
-      "applicationDeadline": null,
-      "link": "https://agencia.fapesp.br/encontros-do-grupo-de-pesquisa-em-fisica-nuclear-e-particulas/59702",
-      "linkText": "Event website",
-      "endDate": "2026-11-27"
-    },
     {
       "title": "2027 UFPE Physics Summer School",
       "author": "Federal University of Pernambuco (UFPE)",
@@ -68,6 +53,36 @@
       "linkText": "Event website"
     },
     {
+      "id": "iip-local:11cb9a9e2f2ab76e",
+      "category": "group-news",
+      "title": "Workshop In Person IIP Auditorium Apr 19, 2027 - Apr 23, 2027 Soft Matter Unbound: From Sand to Cells",
+      "author": "International Institute of Physics - UFRN",
+      "source": "International Institute of Physics - UFRN",
+      "reference": "IIP-UFRN",
+      "link": "https://www.iip.ufrn.br/en/events/soft-matter-unbound-from-sand-to-cells",
+      "eventType": "Workshop",
+      "date": "2027-04-19",
+      "startDate": "2027-04-19",
+      "endDate": "2027-04-23",
+      "applicationDeadline": null,
+      "linkText": "Event website"
+    },
+    {
+      "id": "iip-local:ff79c5897dced814",
+      "category": "group-news",
+      "title": "Strongly Correlated Electron Systems Program and Workshop In Person IIP Auditorium Jul 05, 2027 - Jul 30, 2027 Strongly Correlated Quantum Matter – Legacy and Future Prospects",
+      "author": "International Institute of Physics - UFRN",
+      "source": "International Institute of Physics - UFRN",
+      "reference": "IIP-UFRN",
+      "link": "https://www.iip.ufrn.br/en/events/strongly-correlated-quantum-matter",
+      "eventType": "Workshop",
+      "date": "2027-07-05",
+      "startDate": "2027-07-05",
+      "endDate": "2027-07-30",
+      "applicationDeadline": null,
+      "linkText": "Event website"
+    },
+    {
       "id": "ictp-saifr:8441d7b826f01ac2",
       "category": "group-news",
       "title": "X Perimeter-SAIFR-IFT Journeys into Theoretical Physics School",
@@ -83,6 +98,21 @@
       "applicationDeadline": null,
       "link": "https://www.ictp-saifr.org/2027-activities/",
       "linkText": "Official calendar"
+    },
+    {
+      "id": "iip-local:65c58b9d7cbc5981",
+      "category": "group-news",
+      "title": "String Theory and Mathematical Physics School and Workshop In Person IIP Auditorium Aug 09, 2027 - Aug 20, 2027 Frontiers in Quantum Gravity and Holography",
+      "author": "International Institute of Physics - UFRN",
+      "source": "International Institute of Physics - UFRN",
+      "reference": "IIP-UFRN",
+      "link": "https://www.iip.ufrn.br/en/events/frontiers-in-quantum-gravity-and-holography",
+      "eventType": "School",
+      "date": "2027-08-09",
+      "startDate": "2027-08-09",
+      "endDate": "2027-08-20",
+      "applicationDeadline": null,
+      "linkText": "Event website"
     },
     {
       "id": "ictp-saifr:39996cdcb0cdd385",

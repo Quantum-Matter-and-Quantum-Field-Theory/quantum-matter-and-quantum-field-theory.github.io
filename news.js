@@ -766,7 +766,7 @@ async function loadGroupEvents() {
         return Number.isFinite(age) && age >= 0 && age <= 45 * 86400000;
       }
       return typeof post.startDate === "string" && /^\d{4}-\d{2}-\d{2}$/.test(post.startDate) &&
-        Number.isFinite(Date.parse(post.startDate)) && post.startDate >= today;
+        Number.isFinite(Date.parse(post.startDate)) && post.startDate > today;
     }).map(post => ({ ...post, date: post.announcementOnly ? post.date : post.startDate }));
     eventsStatus = { phase: "ready", updatedAt: data.updatedAt };
     if (state.category === "group-news") syncToolbar();
