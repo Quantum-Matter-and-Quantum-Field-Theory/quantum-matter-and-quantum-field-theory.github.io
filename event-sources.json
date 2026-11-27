@@ -1,0 +1,194 @@
+{
+  "maxEvents": 40,
+  "keywords": [
+    "theoretical physics",
+    "mathematical physics",
+    "quantum field theory",
+    "quantum matter",
+    "quantum materials",
+    "quantum many-body",
+    "many-body dynamics",
+    "quantum computing",
+    "quantum information",
+    "quantum simulation",
+    "quantum systems",
+    "quantum chaos",
+    "quantum sensors",
+    "quantum gravity",
+    "topological",
+    "symmetry",
+    "symmetries",
+    "condensed matter",
+    "statistical physics",
+    "gauge theory",
+    "particle physics",
+    "string theory",
+    "holography",
+    "strongly correlated"
+  ],
+  "sources": [
+    {
+      "id": "ictp-saifr",
+      "name": "ICTP-SAIFR",
+      "enabled": true,
+      "url": "https://www.ictp-saifr.org/{year}-embed-activities/",
+      "calendarUrl": "https://www.ictp-saifr.org/{year}-activities/"
+    },
+    {
+      "id": "sbf",
+      "name": "Brazilian Physical Society (SBF)",
+      "enabled": true,
+      "url": "https://www.sbfisica.org.br/v1/sbf/categoria/oportunidades/eventos/",
+      "reviewedEvents": [
+        {
+          "title": "2027 UFPE Physics Summer School",
+          "author": "Federal University of Pernambuco (UFPE)",
+          "eventType": "School",
+          "startDate": "2027-01-25",
+          "endDate": "2027-02-05",
+          "location": "Recife, Brazil",
+          "applicationDeadline": "2026-11-27",
+          "link": "https://sites.ufpe.br/veraofisica/",
+          "announcement": "https://www.sbfisica.org.br/v1/sbf/curso-de-verao-do-departamento-de-fisica-da-ufpe/"
+        },
+        {
+          "title": "MAGIC 2027 — Matter, Astrophysics, Gravitation, Ions, and Cosmology",
+          "author": "Brazilian Physical Society (SBF) announcement",
+          "eventType": "Workshop",
+          "startDate": "2027-04-12",
+          "endDate": "2027-04-15",
+          "location": "Imbituba, Santa Catarina, Brazil",
+          "applicationDeadline": null,
+          "link": "https://indico.global/event/18561/overview",
+          "announcement": "https://www.sbfisica.org.br/v1/sbf/3rd-workshop-on-matter-astrophysics-gravitation-ions-and-cosmology/"
+        }
+      ]
+    },
+    {
+      "id": "cbpf",
+      "name": "Brazilian Center for Research in Physics (CBPF)",
+      "reference": "CBPF",
+      "enabled": true,
+      "kind": "institutional-announcements",
+      "url": "https://www.gov.br/cbpf/pt-br",
+      "allowedHosts": [
+        "www.gov.br",
+        "gov.br"
+      ],
+      "articlePrefix": "/cbpf/pt-br/assuntos/noticias/",
+      "maxAnnouncements": 15
+    },
+    {
+      "id": "ifusp",
+      "name": "Institute of Physics - University of São Paulo",
+      "reference": "IFUSP",
+      "enabled": true,
+      "kind": "university-announcements",
+      "allowedHosts": [
+        "portal.if.usp.br"
+      ],
+      "listings": [
+        "https://portal.if.usp.br/ifusp/",
+        "https://portal.if.usp.br/ifusp/eventos",
+        "https://portal.if.usp.br/pesquisa/pt-br/noticias"
+      ],
+      "articlePattern": "/(?:ifusp|pesquisa|imprensa)/(?:pt-br/)?(?:node/\\d+|(?:noticiadestaque|not[ií]cia|evento(?:-agregado)?)(?:/[^/]+|-\\d+))",
+      "maxAnnouncements": 15
+    },
+    {
+      "id": "ifgw",
+      "name": "Gleb Wataghin Institute of Physics - UNICAMP",
+      "reference": "IFGW",
+      "enabled": true,
+      "kind": "university-announcements",
+      "allowedHosts": [
+        "portal.ifi.unicamp.br"
+      ],
+      "listings": [
+        "https://portal.ifi.unicamp.br/",
+        "https://portal.ifi.unicamp.br/extensao",
+        "https://portal.ifi.unicamp.br/a-instituicao/noticias"
+      ],
+      "articlePattern": "/a-instituicao/noticias/\\d+-[^/]+/\\d+-[^/]+",
+      "maxAnnouncements": 15
+    },
+    {
+      "id": "ufmg",
+      "name": "Department of Physics - UFMG",
+      "reference": "UFMG",
+      "enabled": true,
+      "kind": "additional-calendar",
+      "allowedHosts": [
+        "www.fisica.ufmg.br",
+        "fisica.ufmg.br"
+      ],
+      "listings": [
+        "https://www.fisica.ufmg.br/eventos/",
+        "https://www.fisica.ufmg.br/posgraduacao/categorias/noticias/"
+      ]
+    },
+    {
+      "id": "principia",
+      "name": "Instituto Principia",
+      "reference": "Instituto Principia",
+      "enabled": true,
+      "kind": "additional-calendar",
+      "allowedHosts": [
+        "www.institutoprincipia.org",
+        "institutoprincipia.org"
+      ],
+      "listings": [
+        "https://www.institutoprincipia.org/agenda-de-eventos"
+      ]
+    },
+    {
+      "id": "fapesp",
+      "name": "Agência FAPESP",
+      "reference": "FAPESP",
+      "enabled": true,
+      "kind": "additional-calendar",
+      "allowedHosts": [
+        "agencia.fapesp.br"
+      ],
+      "listings": [
+        "https://agencia.fapesp.br/agenda"
+      ]
+    },
+    {
+      "id": "iip",
+      "name": "International Institute of Physics - UFRN",
+      "reference": "IIP-UFRN",
+      "enabled": true,
+      "kind": "iip-uel-events",
+      "allowedHosts": [
+        "www.iip.ufrn.br",
+        "iip.ufrn.br"
+      ],
+      "listings": [
+        "https://www.iip.ufrn.br/en/events",
+        "https://www.iip.ufrn.br/en/news"
+      ],
+      "location": "Natal, Brazil"
+    },
+    {
+      "id": "uel",
+      "name": "State University of Londrina - UEL",
+      "reference": "UEL",
+      "enabled": true,
+      "kind": "iip-uel-events",
+      "allowedHosts": [
+        "portal.uel.br",
+        "departamentos.uel.br",
+        "pos.uel.br"
+      ],
+      "listings": [
+        "https://portal.uel.br/eventos/",
+        "https://portal.uel.br/eventos/?s=fisica",
+        "https://departamentos.uel.br/fisica/eventos/",
+        "https://pos.uel.br/fisica/editais/",
+        "https://pos.uel.br/fisica/"
+      ],
+      "location": "Londrina, Brazil"
+    }
+  ]
+}
